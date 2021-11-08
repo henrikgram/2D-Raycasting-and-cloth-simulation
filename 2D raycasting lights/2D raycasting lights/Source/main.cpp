@@ -16,7 +16,7 @@ using namespace sf;
 using namespace std;
 
 
-int main()
+int mai2n()
 {
 	CircleShape intersectCircle;
 	// Create the main window
