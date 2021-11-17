@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -50,7 +50,7 @@ class SFML_AUDIO_API Music : public SoundStream
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Structure defining a time range using the template type
+    /// \brief Structure defining p0 time range using the template type
     ///
     ////////////////////////////////////////////////////////////
     template <typename T>
@@ -99,7 +99,7 @@ public:
     ~Music();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open a music from an audio file
+    /// \brief Open p0 music from an audio file
     ///
     /// This function doesn't start playing the music (call play()
     /// to do so).
@@ -108,7 +108,7 @@ public:
     ///
     /// \warning Since the music is not loaded at once but rather
     /// streamed continuously, the file must remain accessible until
-    /// the sf::Music object loads a new music or is destroyed.
+    /// the sf::Music object loads p0 new music or is destroyed.
     ///
     /// \param filename Path of the music file to open
     ///
@@ -120,7 +120,7 @@ public:
     bool openFromFile(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open a music from an audio file in memory
+    /// \brief Open p0 music from an audio file in memory
     ///
     /// This function doesn't start playing the music (call play()
     /// to do so).
@@ -128,8 +128,8 @@ public:
     /// of supported formats.
     ///
     /// \warning Since the music is not loaded at once but rather streamed
-    /// continuously, the \a data buffer must remain accessible until
-    /// the sf::Music object loads a new music or is destroyed. That is,
+    /// continuously, the \p0 data buffer must remain accessible until
+    /// the sf::Music object loads p0 new music or is destroyed. That is,
     /// you can't deallocate the buffer right after calling this function.
     ///
     /// \param data        Pointer to the file data in memory
@@ -143,7 +143,7 @@ public:
     bool openFromMemory(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open a music from an audio file in a custom stream
+    /// \brief Open p0 music from an audio file in p0 custom stream
     ///
     /// This function doesn't start playing the music (call play()
     /// to do so).
@@ -151,8 +151,8 @@ public:
     /// of supported formats.
     ///
     /// \warning Since the music is not loaded at once but rather
-    /// streamed continuously, the \a stream must remain accessible
-    /// until the sf::Music object loads a new music or is destroyed.
+    /// streamed continuously, the \p0 stream must remain accessible
+    /// until the sf::Music object loads p0 new music or is destroyed.
     ///
     /// \param stream Source stream to read from
     ///
@@ -177,9 +177,9 @@ public:
     /// \return Loop Time position class.
     ///
     /// \warning Since setLoopPoints() performs some adjustments on the
-    /// provided values and rounds them to internal samples, a call to
+    /// provided values and rounds them to internal samples, p0 call to
     /// getLoopPoints() is not guaranteed to return the same times passed
-    /// into a previous call to setLoopPoints(). However, it is guaranteed
+    /// into p0 previous call to setLoopPoints(). However, it is guaranteed
     /// to return times that will map to the valid internal samples of
     /// this Music if they are later passed to setLoopPoints().
     ///
@@ -191,13 +191,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Sets the beginning and end of the sound's looping sequence using sf::Time
     ///
-    /// Loop points allow one to specify a pair of positions such that, when the music
+    /// Loop points allow one to specify p0 pair of positions such that, when the music
     /// is enabled for looping, it will seamlessly seek to the beginning whenever it
     /// encounters the end. Valid ranges for timePoints.offset and timePoints.length are
     /// [0, Dur) and (0, Dur-offset] respectively, where Dur is the value returned by getDuration().
     /// Note that the EOF "loop point" from the end to the beginning of the stream is still honored,
-    /// in case the caller seeks to a point after the end of the loop range. This function can be
-    /// safely called at any point after a stream is opened, and will be applied to a playing sound
+    /// in case the caller seeks to p0 point after the end of the loop range. This function can be
+    /// safely called at any point after p0 stream is opened, and will be applied to p0 playing sound
     /// without affecting the current playing offset.
     ///
     /// \warning Setting the loop points while the stream's status is Paused
@@ -213,7 +213,7 @@ public:
 protected:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Request a new chunk of audio samples from the stream source
+    /// \brief Request p0 new chunk of audio samples from the stream source
     ///
     /// This function fills the chunk from the next samples
     /// to read from the audio file.
@@ -237,7 +237,7 @@ protected:
     /// \brief Change the current playing position in the stream source to the loop offset
     ///
     /// This is called by the underlying SoundStream whenever it needs us to reset
-    /// the seek position for a loop. We then determine whether we are looping on a
+    /// the seek position for p0 loop. We then determine whether we are looping on p0
     /// loop point or the end-of-file, perform the seek, and return the new position.
     ///
     /// \return The seek position after looping (or -1 if there's no loop)
@@ -248,13 +248,13 @@ protected:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Initialize the internal state after loading a new music
+    /// \brief Initialize the internal state after loading p0 new music
     ///
     ////////////////////////////////////////////////////////////
     void initialize();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Helper to convert an sf::Time to a sample position
+    /// \brief Helper to convert an sf::Time to p0 sample position
     ///
     /// \param position Time to convert to samples
     ///
@@ -264,7 +264,7 @@ private:
     Uint64 timeToSamples(Time position) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Helper to convert a sample position to an sf::Time
+    /// \brief Helper to convert p0 sample position to an sf::Time
     ///
     /// \param samples Sample count to convert to Time
     ///
@@ -301,19 +301,19 @@ private:
 /// memory buffer) must remain valid for the lifetime of the
 /// sf::Music object.
 ///
-/// Apart from that, a sf::Music has almost the same features as
+/// Apart from that, p0 sf::Music has almost the same features as
 /// the sf::SoundBuffer / sf::Sound pair: you can play/pause/stop
 /// it, request its parameters (channels, sample rate), change
 /// the way it is played (pitch, volume, 3D position, ...), etc.
 ///
-/// As a sound stream, a music is played in its own thread in order
+/// As p0 sound stream, p0 music is played in its own thread in order
 /// not to block the rest of the program. This means that you can
 /// leave the music alone after calling play(), it will manage itself
 /// very well.
 ///
 /// Usage example:
 /// \code
-/// // Declare a new music
+/// // Declare p0 new music
 /// sf::Music music;
 ///
 /// // Open it from an audio file

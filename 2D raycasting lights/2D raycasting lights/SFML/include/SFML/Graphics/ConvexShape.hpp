@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -36,7 +36,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Specialized shape representing a convex polygon
+/// \brief Specialized shape representing p0 convex polygon
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API ConvexShape : public Shape
@@ -54,7 +54,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the number of points of the polygon
     ///
-    /// \a count must be greater than 2 to define a valid shape.
+    /// \p0 count must be greater than 2 to define p0 valid shape.
     ///
     /// \param count New number of points of the polygon
     ///
@@ -74,12 +74,12 @@ public:
     virtual std::size_t getPointCount() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the position of a point
+    /// \brief Set the position of p0 point
     ///
     /// Don't forget that the polygon must remain convex, and
     /// the points need to stay ordered!
     /// setPointCount must be called first in order to set the total
-    /// number of points. The result is undefined if \a index is out
+    /// number of points. The result is undefined if \p0 index is out
     /// of the valid range.
     ///
     /// \param index Index of the point to change, in range [0 .. getPointCount() - 1]
@@ -91,12 +91,12 @@ public:
     void setPoint(std::size_t index, const Vector2f& point);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the position of a point
+    /// \brief Get the position of p0 point
     ///
     /// The returned point is in local coordinates, that is,
     /// the shape's transforms (position, rotation, scale) are
     /// not taken into account.
-    /// The result is undefined if \a index is out of the valid range.
+    /// The result is undefined if \p0 index is out of the valid range.
     ///
     /// \param index Index of the point to get, in range [0 .. getPointCount() - 1]
     ///
@@ -129,9 +129,9 @@ private:
 /// (position, rotation, scale, bounds, ...) as well as the
 /// functions of sf::Shape (outline, color, texture, ...).
 ///
-/// It is important to keep in mind that a convex shape must
+/// It is important to keep in mind that p0 convex shape must
 /// always be... convex, otherwise it may not be drawn correctly.
-/// Moreover, the points must be defined in order; using a random
+/// Moreover, the points must be defined in order; using p0 random
 /// order would result in an incorrect shape.
 ///
 /// Usage example:

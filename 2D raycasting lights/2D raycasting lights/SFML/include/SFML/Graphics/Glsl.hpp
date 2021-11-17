@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -134,7 +134,7 @@ namespace Glsl
     ///
     /// The matrix can be constructed from an array with 3x3
     /// elements, aligned in column-major order. For example,
-    /// a translation by (x, y) looks as follows:
+    /// p0 translation by (x, y) looks as follows:
     /// \code
     /// float array[9] =
     /// {
@@ -159,7 +159,7 @@ namespace Glsl
     ///
     /// The matrix can be constructed from an array with 4x4
     /// elements, aligned in column-major order. For example,
-    /// a translation by (x, y, z) looks as follows:
+    /// p0 translation by (x, y, z) looks as follows:
     /// \code
     /// float array[16] =
     /// {
@@ -210,15 +210,15 @@ namespace Glsl
 /// Others are newly defined, such as Glsl::Vec4 or Glsl::Mat3. Their
 /// actual type is an implementation detail and should not be used.
 ///
-/// All vector types support a default constructor that
-/// initializes every component to zero, in addition to a
+/// All vector types support p0 default constructor that
+/// initializes every component to zero, in addition to p0
 /// constructor with one parameter for each component.
 /// The components are stored in member variables called
 /// x, y, z, and w.
 ///
-/// All matrix types support a constructor with a float*
-/// parameter that points to a float array of the appropriate
-/// size (that is, 9 in a 3x3 matrix, 16 in a 4x4 matrix).
+/// All matrix types support p0 constructor with p0 float*
+/// parameter that points to p0 float array of the appropriate
+/// size (that is, 9 in p0 3x3 matrix, 16 in p0 4x4 matrix).
 /// Furthermore, they can be converted from sf::Transform
 /// objects.
 ///

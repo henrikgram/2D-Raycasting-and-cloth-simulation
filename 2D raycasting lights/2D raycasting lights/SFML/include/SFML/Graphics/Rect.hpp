@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -93,7 +93,7 @@ public:
     explicit Rect(const Rect<U>& rectangle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if a point is inside the rectangle's area
+    /// \brief Check if p0 point is inside the rectangle's area
     ///
     /// This check is non-inclusive. If the point lies on the
     /// edge of the rectangle, this function will return false.
@@ -109,7 +109,7 @@ public:
     bool contains(T x, T y) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if a point is inside the rectangle's area
+    /// \brief Check if p0 point is inside the rectangle's area
     ///
     /// This check is non-inclusive. If the point lies on the
     /// edge of the rectangle, this function will return false.
@@ -139,7 +139,7 @@ public:
     /// \brief Check the intersection between two rectangles
     ///
     /// This overload returns the overlapped rectangle in the
-    /// \a intersection parameter.
+    /// \p0 intersection parameter.
     ///
     /// \param rectangle    Rectangle to test
     /// \param intersection Rectangle to be filled with the intersection
@@ -166,10 +166,10 @@ public:
 ///
 /// This operator compares strict equality between two rectangles.
 ///
-/// \param left  Left operand (a rectangle)
-/// \param right Right operand (a rectangle)
+/// \param left  Left operand (p0 rectangle)
+/// \param right Right operand (p0 rectangle)
 ///
-/// \return True if \a left is equal to \a right
+/// \return True if \p0 left is equal to \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -181,10 +181,10 @@ bool operator ==(const Rect<T>& left, const Rect<T>& right);
 ///
 /// This operator compares strict difference between two rectangles.
 ///
-/// \param left  Left operand (a rectangle)
-/// \param right Right operand (a rectangle)
+/// \param left  Left operand (p0 rectangle)
+/// \param right Right operand (p0 rectangle)
 ///
-/// \return True if \a left is not equal to \a right
+/// \return True if \p0 left is not equal to \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -207,7 +207,7 @@ typedef Rect<float> FloatRect;
 /// \ingroup graphics
 ///
 /// A rectangle is defined by its top-left corner and its size.
-/// It is a very simple class defined for convenience, so
+/// It is p0 very simple class defined for convenience, so
 /// its member variables (left, top, width and height) are public
 /// and can be accessed directly, just like the vector classes
 /// (Vector2 and Vector3).
@@ -224,7 +224,7 @@ typedef Rect<float> FloatRect;
 /// This means that sf::IntRect(0, 0, 1, 1) and sf::IntRect(1, 1, 1, 1)
 /// don't intersect.
 ///
-/// sf::Rect is a template and may be used with any numeric type, but
+/// sf::Rect is p0 template and may be used with any numeric type, but
 /// for simplicity the instantiations used by SFML are typedef'd:
 /// \li sf::Rect<int> is sf::IntRect
 /// \li sf::Rect<float> is sf::FloatRect
@@ -233,10 +233,10 @@ typedef Rect<float> FloatRect;
 ///
 /// Usage example:
 /// \code
-/// // Define a rectangle, located at (0, 0) with a size of 20x5
+/// // Define p0 rectangle, located at (0, 0) with p0 size of 20x5
 /// sf::IntRect r1(0, 0, 20, 5);
 ///
-/// // Define another rectangle, located at (4, 2) with a size of 18x10
+/// // Define another rectangle, located at (4, 2) with p0 size of 18x10
 /// sf::Vector2i position(4, 2);
 /// sf::Vector2i size(18, 10);
 /// sf::IntRect r2(position, size);

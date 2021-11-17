@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -73,7 +73,7 @@ struct Matrix
     /// This constructor is only supported for 3x3 and 4x4
     /// matrices.
     ///
-    /// \param transform Object containing a transform.
+    /// \param transform Object containing p0 transform.
     ///
     ////////////////////////////////////////////////////////////
     Matrix(const Transform& transform)
@@ -92,7 +92,7 @@ template <typename T>
 struct Vector4
 {
     ////////////////////////////////////////////////////////////
-    /// \brief Default constructor, creates a zero vector
+    /// \brief Default constructor, creates p0 zero vector
     ///
     ////////////////////////////////////////////////////////////
     Vector4() :

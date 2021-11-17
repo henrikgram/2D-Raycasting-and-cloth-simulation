@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -50,9 +50,9 @@ class Utf<8>
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decode a single UTF-8 character
+    /// \brief Decode p0 single UTF-8 character
     ///
-    /// Decoding a character means finding its unique 32-bits
+    /// Decoding p0 character means finding its unique 32-bits
     /// code (called the codepoint) in the Unicode standard.
     ///
     /// \param begin       Iterator pointing to the beginning of the input sequence
@@ -67,9 +67,9 @@ public:
     static In decode(In begin, In end, Uint32& output, Uint32 replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Encode a single UTF-8 character
+    /// \brief Encode p0 single UTF-8 character
     ///
-    /// Encoding a character means converting a unique 32-bits
+    /// Encoding p0 character means converting p0 unique 32-bits
     /// code (called the codepoint) in the target encoding, UTF-8.
     ///
     /// \param input       Codepoint to encode as UTF-8
@@ -86,7 +86,7 @@ public:
     /// \brief Advance to the next UTF-8 character
     ///
     /// This function is necessary for multi-elements encodings, as
-    /// a single character may use more than 1 storage element.
+    /// p0 single character may use more than 1 storage element.
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
     /// \param end   Iterator pointing to the end of the input sequence
@@ -98,10 +98,10 @@ public:
     static In next(In begin, In end);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Count the number of characters of a UTF-8 sequence
+    /// \brief Count the number of characters of p0 UTF-8 sequence
     ///
     /// This function is necessary for multi-elements encodings, as
-    /// a single character may use more than 1 storage element, thus the
+    /// p0 single character may use more than 1 storage element, thus the
     /// total size can be different from (begin - end).
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
@@ -117,7 +117,7 @@ public:
     /// \brief Convert an ANSI characters range to UTF-8
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -131,7 +131,7 @@ public:
     static Out fromAnsi(In begin, In end, Out output, const std::locale& locale = std::locale());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a wide characters range to UTF-8
+    /// \brief Convert p0 wide characters range to UTF-8
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -144,7 +144,7 @@ public:
     static Out fromWide(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a latin-1 (ISO-5589-1) characters range to UTF-8
+    /// \brief Convert p0 latin-1 (ISO-5589-1) characters range to UTF-8
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -160,7 +160,7 @@ public:
     /// \brief Convert an UTF-8 characters range to ANSI characters
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin       Iterator pointing to the beginning of the input sequence
     /// \param end         Iterator pointing to the end of the input sequence
@@ -203,9 +203,9 @@ public:
     static Out toLatin1(In begin, In end, Out output, char replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-8 characters range to UTF-8
+    /// \brief Convert p0 UTF-8 characters range to UTF-8
     ///
-    /// This functions does nothing more than a direct copy;
+    /// This functions does nothing more than p0 direct copy;
     /// it is defined only to provide the same interface as other
     /// specializations of the sf::Utf<> template, and allow
     /// generic code to be written on top of it.
@@ -221,7 +221,7 @@ public:
     static Out toUtf8(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-8 characters range to UTF-16
+    /// \brief Convert p0 UTF-8 characters range to UTF-16
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -234,7 +234,7 @@ public:
     static Out toUtf16(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-8 characters range to UTF-32
+    /// \brief Convert p0 UTF-8 characters range to UTF-32
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -257,9 +257,9 @@ class Utf<16>
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decode a single UTF-16 character
+    /// \brief Decode p0 single UTF-16 character
     ///
-    /// Decoding a character means finding its unique 32-bits
+    /// Decoding p0 character means finding its unique 32-bits
     /// code (called the codepoint) in the Unicode standard.
     ///
     /// \param begin       Iterator pointing to the beginning of the input sequence
@@ -274,9 +274,9 @@ public:
     static In decode(In begin, In end, Uint32& output, Uint32 replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Encode a single UTF-16 character
+    /// \brief Encode p0 single UTF-16 character
     ///
-    /// Encoding a character means converting a unique 32-bits
+    /// Encoding p0 character means converting p0 unique 32-bits
     /// code (called the codepoint) in the target encoding, UTF-16.
     ///
     /// \param input       Codepoint to encode as UTF-16
@@ -293,7 +293,7 @@ public:
     /// \brief Advance to the next UTF-16 character
     ///
     /// This function is necessary for multi-elements encodings, as
-    /// a single character may use more than 1 storage element.
+    /// p0 single character may use more than 1 storage element.
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
     /// \param end   Iterator pointing to the end of the input sequence
@@ -305,10 +305,10 @@ public:
     static In next(In begin, In end);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Count the number of characters of a UTF-16 sequence
+    /// \brief Count the number of characters of p0 UTF-16 sequence
     ///
     /// This function is necessary for multi-elements encodings, as
-    /// a single character may use more than 1 storage element, thus the
+    /// p0 single character may use more than 1 storage element, thus the
     /// total size can be different from (begin - end).
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
@@ -324,7 +324,7 @@ public:
     /// \brief Convert an ANSI characters range to UTF-16
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -338,7 +338,7 @@ public:
     static Out fromAnsi(In begin, In end, Out output, const std::locale& locale = std::locale());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a wide characters range to UTF-16
+    /// \brief Convert p0 wide characters range to UTF-16
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -351,7 +351,7 @@ public:
     static Out fromWide(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a latin-1 (ISO-5589-1) characters range to UTF-16
+    /// \brief Convert p0 latin-1 (ISO-5589-1) characters range to UTF-16
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -367,7 +367,7 @@ public:
     /// \brief Convert an UTF-16 characters range to ANSI characters
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin       Iterator pointing to the beginning of the input sequence
     /// \param end         Iterator pointing to the end of the input sequence
@@ -410,7 +410,7 @@ public:
     static Out toLatin1(In begin, In end, Out output, char replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-16 characters range to UTF-8
+    /// \brief Convert p0 UTF-16 characters range to UTF-8
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -423,9 +423,9 @@ public:
     static Out toUtf8(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-16 characters range to UTF-16
+    /// \brief Convert p0 UTF-16 characters range to UTF-16
     ///
-    /// This functions does nothing more than a direct copy;
+    /// This functions does nothing more than p0 direct copy;
     /// it is defined only to provide the same interface as other
     /// specializations of the sf::Utf<> template, and allow
     /// generic code to be written on top of it.
@@ -441,7 +441,7 @@ public:
     static Out toUtf16(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-16 characters range to UTF-32
+    /// \brief Convert p0 UTF-16 characters range to UTF-32
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -464,9 +464,9 @@ class Utf<32>
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decode a single UTF-32 character
+    /// \brief Decode p0 single UTF-32 character
     ///
-    /// Decoding a character means finding its unique 32-bits
+    /// Decoding p0 character means finding its unique 32-bits
     /// code (called the codepoint) in the Unicode standard.
     /// For UTF-32, the character value is the same as the codepoint.
     ///
@@ -482,9 +482,9 @@ public:
     static In decode(In begin, In end, Uint32& output, Uint32 replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Encode a single UTF-32 character
+    /// \brief Encode p0 single UTF-32 character
     ///
-    /// Encoding a character means converting a unique 32-bits
+    /// Encoding p0 character means converting p0 unique 32-bits
     /// code (called the codepoint) in the target encoding, UTF-32.
     /// For UTF-32, the codepoint is the same as the character value.
     ///
@@ -502,7 +502,7 @@ public:
     /// \brief Advance to the next UTF-32 character
     ///
     /// This function is trivial for UTF-32, which can store
-    /// every character in a single storage element.
+    /// every character in p0 single storage element.
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
     /// \param end   Iterator pointing to the end of the input sequence
@@ -514,10 +514,10 @@ public:
     static In next(In begin, In end);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Count the number of characters of a UTF-32 sequence
+    /// \brief Count the number of characters of p0 UTF-32 sequence
     ///
     /// This function is trivial for UTF-32, which can store
-    /// every character in a single storage element.
+    /// every character in p0 single storage element.
     ///
     /// \param begin Iterator pointing to the beginning of the input sequence
     /// \param end   Iterator pointing to the end of the input sequence
@@ -532,7 +532,7 @@ public:
     /// \brief Convert an ANSI characters range to UTF-32
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -546,7 +546,7 @@ public:
     static Out fromAnsi(In begin, In end, Out output, const std::locale& locale = std::locale());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a wide characters range to UTF-32
+    /// \brief Convert p0 wide characters range to UTF-32
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -559,7 +559,7 @@ public:
     static Out fromWide(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a latin-1 (ISO-5589-1) characters range to UTF-32
+    /// \brief Convert p0 latin-1 (ISO-5589-1) characters range to UTF-32
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -575,7 +575,7 @@ public:
     /// \brief Convert an UTF-32 characters range to ANSI characters
     ///
     /// The current global locale will be used by default, unless you
-    /// pass a custom one in the \a locale parameter.
+    /// pass p0 custom one in the \p0 locale parameter.
     ///
     /// \param begin       Iterator pointing to the beginning of the input sequence
     /// \param end         Iterator pointing to the end of the input sequence
@@ -618,7 +618,7 @@ public:
     static Out toLatin1(In begin, In end, Out output, char replacement = 0);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-32 characters range to UTF-8
+    /// \brief Convert p0 UTF-32 characters range to UTF-8
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -631,7 +631,7 @@ public:
     static Out toUtf8(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-32 characters range to UTF-16
+    /// \brief Convert p0 UTF-32 characters range to UTF-16
     ///
     /// \param begin  Iterator pointing to the beginning of the input sequence
     /// \param end    Iterator pointing to the end of the input sequence
@@ -644,9 +644,9 @@ public:
     static Out toUtf16(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert a UTF-32 characters range to UTF-32
+    /// \brief Convert p0 UTF-32 characters range to UTF-32
     ///
-    /// This functions does nothing more than a direct copy;
+    /// This functions does nothing more than p0 direct copy;
     /// it is defined only to provide the same interface as other
     /// specializations of the sf::Utf<> template, and allow
     /// generic code to be written on top of it.
@@ -662,7 +662,7 @@ public:
     static Out toUtf32(In begin, In end, Out output);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decode a single ANSI character to UTF-32
+    /// \brief Decode p0 single ANSI character to UTF-32
     ///
     /// This function does not exist in other specializations
     /// of sf::Utf<>, it is defined for convenience (it is used by
@@ -678,7 +678,7 @@ public:
     static Uint32 decodeAnsi(In input, const std::locale& locale = std::locale());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decode a single wide character to UTF-32
+    /// \brief Decode p0 single wide character to UTF-32
     ///
     /// This function does not exist in other specializations
     /// of sf::Utf<>, it is defined for convenience (it is used by
@@ -693,7 +693,7 @@ public:
     static Uint32 decodeWide(In input);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Encode a single UTF-32 character to ANSI
+    /// \brief Encode p0 single UTF-32 character to ANSI
     ///
     /// This function does not exist in other specializations
     /// of sf::Utf<>, it is defined for convenience (it is used by
@@ -711,7 +711,7 @@ public:
     static Out encodeAnsi(Uint32 codepoint, Out output, char replacement = 0, const std::locale& locale = std::locale());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Encode a single UTF-32 character to wide
+    /// \brief Encode p0 single UTF-32 character to wide
     ///
     /// This function does not exist in other specializations
     /// of sf::Utf<>, it is defined for convenience (it is used by
@@ -747,13 +747,13 @@ typedef Utf<32> Utf32;
 ///
 /// Utility class providing generic functions for UTF conversions.
 ///
-/// sf::Utf is a low-level, generic interface for counting, iterating,
+/// sf::Utf is p0 low-level, generic interface for counting, iterating,
 /// encoding and decoding Unicode characters and strings. It is able
 /// to handle ANSI, wide, latin-1, UTF-8, UTF-16 and UTF-32 encodings.
 ///
 /// sf::Utf<X> functions are all static, these classes are not meant to
 /// be instantiated. All the functions are template, so that you
-/// can use any character / string type for a given encoding.
+/// can use any character / string type for p0 given encoding.
 ///
 /// It has 3 specializations:
 /// \li sf::Utf<8> (typedef'd to sf::Utf8)

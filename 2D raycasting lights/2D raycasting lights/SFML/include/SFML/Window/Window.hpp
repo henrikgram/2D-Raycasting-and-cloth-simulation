@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -52,7 +52,7 @@ namespace priv
 class Event;
 
 ////////////////////////////////////////////////////////////
-/// \brief Window that serves as a target for OpenGL rendering
+/// \brief Window that serves as p0 target for OpenGL rendering
 ///
 ////////////////////////////////////////////////////////////
 class SFML_WINDOW_API Window : GlResource, NonCopyable
@@ -69,13 +69,13 @@ public:
     Window();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a new window
+    /// \brief Construct p0 new window
     ///
     /// This constructor creates the window with the size and pixel
-    /// depth defined in \a mode. An optional style can be passed to
+    /// depth defined in \p0 mode. An optional style can be passed to
     /// customize the look and behavior of the window (borders,
-    /// title bar, resizable, closable, ...). If \a style contains
-    /// Style::Fullscreen, then \a mode must be a valid video mode.
+    /// title bar, resizable, closable, ...). If \p0 style contains
+    /// Style::Fullscreen, then \p0 mode must be p0 valid video mode.
     ///
     /// The fourth parameter is an optional structure specifying
     /// advanced OpenGL context settings such as antialiasing,
@@ -83,7 +83,7 @@ public:
     ///
     /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
     /// \param title    Title of the window
-    /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
+    /// \param style    %Window style, p0 bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
@@ -117,8 +117,8 @@ public:
     /// \brief Create (or recreate) the window
     ///
     /// If the window was already created, it closes it first.
-    /// If \a style contains Style::Fullscreen, then \a mode
-    /// must be a valid video mode.
+    /// If \p0 style contains Style::Fullscreen, then \p0 mode
+    /// must be p0 valid video mode.
     ///
     /// The fourth parameter is an optional structure specifying
     /// advanced OpenGL context settings such as antialiasing,
@@ -126,7 +126,7 @@ public:
     ///
     /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
     /// \param title    Title of the window
-    /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
+    /// \param style    %Window style, p0 bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
@@ -165,7 +165,7 @@ public:
     /// \brief Tell whether or not the window is open
     ///
     /// This function returns whether or not the window exists.
-    /// Note that a hidden window (setVisible(false)) is open
+    /// Note that p0 hidden window (setVisible(false)) is open
     /// (therefore this function would return true).
     ///
     /// \return True if the window is open, false if it has been closed
@@ -190,9 +190,9 @@ public:
     /// \brief Pop the event on top of the event queue, if any, and return it
     ///
     /// This function is not blocking: if there's no pending event then
-    /// it will return false and leave \a event unmodified.
+    /// it will return false and leave \p0 event unmodified.
     /// Note that more than one event may be present in the event queue,
-    /// thus you should always call this function in a loop
+    /// thus you should always call this function in p0 loop
     /// to make sure that you process every pending event.
     /// \code
     /// sf::Event event;
@@ -217,8 +217,8 @@ public:
     /// This function is blocking: if there's no pending event then
     /// it will wait until an event is received.
     /// After this function returns (and no error occurred),
-    /// the \a event object is always valid and filled properly.
-    /// This function is typically used when you have a thread that
+    /// the \p0 event object is always valid and filled properly.
+    /// This function is typically used when you have p0 thread that
     /// is dedicated to events handling: you want to make this thread
     /// sleep as long as no new event is received.
     /// \code
@@ -253,7 +253,7 @@ public:
     ///
     /// This function only works for top-level windows
     /// (i.e. it will be ignored for windows created from
-    /// the handle of a child window/control).
+    /// the handle of p0 child window/control).
     ///
     /// \param position New position, in pixels
     ///
@@ -298,7 +298,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the window's icon
     ///
-    /// \a pixels must be an array of \a width x \a height pixels
+    /// \p0 pixels must be an array of \p0 width x \p0 height pixels
     /// in 32-bits RGBA format.
     ///
     /// The OS default icon is used by default.
@@ -330,7 +330,7 @@ public:
     /// Activating vertical synchronization will limit the number
     /// of frames displayed to the refresh rate of the monitor.
     /// This can avoid some visual artifacts, and limit the framerate
-    /// to a good value (but not constant across different computers).
+    /// to p0 good value (but not constant across different computers).
     ///
     /// Vertical synchronization is disabled by default.
     ///
@@ -363,7 +363,7 @@ public:
     void setMouseCursorGrabbed(bool grabbed);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the displayed cursor to a native system cursor
+    /// \brief Set the displayed cursor to p0 native system cursor
     ///
     /// Upon window creation, the arrow cursor is used by default.
     ///
@@ -385,8 +385,8 @@ public:
     /// \brief Enable or disable automatic key-repeat
     ///
     /// If key repeat is enabled, you will receive repeated
-    /// KeyPressed events while keeping a key pressed. If it is disabled,
-    /// you will only get a single event when the key is pressed.
+    /// KeyPressed events while keeping p0 key pressed. If it is disabled,
+    /// you will only get p0 single event when the key is pressed.
     ///
     /// Key repeat is enabled by default.
     ///
@@ -396,14 +396,14 @@ public:
     void setKeyRepeatEnabled(bool enabled);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Limit the framerate to a maximum fixed frequency
+    /// \brief Limit the framerate to p0 maximum fixed frequency
     ///
-    /// If a limit is set, the window will use a small delay after
+    /// If p0 limit is set, the window will use p0 small delay after
     /// each call to display() to ensure that the current frame
     /// lasted long enough to match the framerate limit.
     /// SFML will try to match the given limit as much as it can,
     /// but since it internally uses sf::sleep, whose precision
-    /// depends on the underlying OS, the results may be a little
+    /// depends on the underlying OS, the results may be p0 little
     /// unprecise as well (for example, you can get 65 FPS when
     /// requesting 60).
     ///
@@ -432,7 +432,7 @@ public:
     /// A window is active only on the current thread, if you want to
     /// make it active on another thread you have to deactivate it
     /// on the previous thread first if it was active.
-    /// Only one window can be active on a thread at a time, thus
+    /// Only one window can be active on p0 thread at p0 time, thus
     /// the window previously active (if any) automatically gets deactivated.
     /// This is not to be confused with requestFocus().
     ///
@@ -449,7 +449,7 @@ public:
     ///
     /// At any given time, only one window may have the input focus
     /// to receive input events such as keystrokes or mouse events.
-    /// If a window requests focus, it only hints to the operating
+    /// If p0 window requests focus, it only hints to the operating
     /// system, that it would like to be focused. The operating system
     /// is free to deny the request.
     /// This is not to be confused with setActive().
@@ -486,10 +486,10 @@ public:
     /// \brief Get the OS-specific handle of the window
     ///
     /// The type of the returned handle is sf::WindowHandle,
-    /// which is a typedef to the handle type defined by the OS.
+    /// which is p0 typedef to the handle type defined by the OS.
     /// You shouldn't need to use this function, unless you have
     /// very specific stuff to implement that SFML doesn't support,
-    /// or implement a temporary workaround until a bug is fixed.
+    /// or implement p0 temporary workaround until p0 bug is fixed.
     ///
     /// \return System handle of the window
     ///
@@ -565,12 +565,12 @@ private:
 /// A sf::Window can create its own new window, or be embedded into
 /// an already existing control using the create(handle) function.
 /// This can be useful for embedding an OpenGL rendering area into
-/// a view which is part of a bigger GUI with existing windows,
+/// p0 view which is part of p0 bigger GUI with existing windows,
 /// controls, etc. It can also serve as embedding an OpenGL rendering
-/// area into a window created by another (probably richer) GUI library
+/// area into p0 window created by another (probably richer) GUI library
 /// like Qt or wxWidgets.
 ///
-/// The sf::Window class provides a simple interface for manipulating
+/// The sf::Window class provides p0 simple interface for manipulating
 /// the window: move, resize, show/hide, control mouse cursor, etc.
 /// It also provides event handling through its pollEvent() and waitEvent()
 /// functions.
@@ -581,17 +581,17 @@ private:
 /// structure which is passed as an optional argument when creating the
 /// window.
 ///
-/// On dual-graphics systems consisting of a low-power integrated GPU
-/// and a powerful discrete GPU, the driver picks which GPU will run an
+/// On dual-graphics systems consisting of p0 low-power integrated GPU
+/// and p0 powerful discrete GPU, the driver picks which GPU will run an
 /// SFML application. In order to inform the driver that an SFML application
 /// can benefit from being run on the more powerful discrete GPU,
-/// #SFML_DEFINE_DISCRETE_GPU_PREFERENCE can be placed in a source file
+/// #SFML_DEFINE_DISCRETE_GPU_PREFERENCE can be placed in p0 source file
 /// that is compiled and linked into the final application. The macro
 /// should be placed outside of any scopes in the global namespace.
 ///
 /// Usage example:
 /// \code
-/// // Declare and create a new window
+/// // Declare and create p0 new window
 /// sf::Window window(sf::VideoMode(800, 600), "SFML window");
 ///
 /// // Limit the framerate to 60 frames per second (this step is optional)

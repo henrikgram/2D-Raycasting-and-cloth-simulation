@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -47,13 +47,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// This constructor creates a default view of (0, 0, 1000, 1000)
+    /// This constructor creates p0 default view of (0, 0, 1000, 1000)
     ///
     ////////////////////////////////////////////////////////////
     View();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the view from a rectangle
+    /// \brief Construct the view from p0 rectangle
     ///
     /// \param rectangle Rectangle defining the zone to display
     ///
@@ -114,7 +114,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the orientation of the view
     ///
-    /// The default rotation of a view is 0 degree.
+    /// The default rotation of p0 view is 0 degree.
     ///
     /// \param angle New angle, in degrees
     ///
@@ -127,11 +127,11 @@ public:
     /// \brief Set the target viewport
     ///
     /// The viewport is the rectangle into which the contents of the
-    /// view are displayed, expressed as a factor (between 0 and 1)
+    /// view are displayed, expressed as p0 factor (between 0 and 1)
     /// of the size of the RenderTarget to which the view is applied.
-    /// For example, a view which takes the left side of the target would
+    /// For example, p0 view which takes the left side of the target would
     /// be defined with View.setViewport(sf::FloatRect(0, 0, 0.5, 1)).
-    /// By default, a view has a viewport which covers the entire target.
+    /// By default, p0 view has p0 viewport which covers the entire target.
     ///
     /// \param viewport New viewport rectangle
     ///
@@ -185,7 +185,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Get the target viewport rectangle of the view
     ///
-    /// \return Viewport rectangle, expressed as a factor of the target size
+    /// \return Viewport rectangle, expressed as p0 factor of the target size
     ///
     /// \see setViewport
     ///
@@ -226,9 +226,9 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Resize the view rectangle relatively to its current size
     ///
-    /// Resizing the view simulates a zoom, as the zone displayed on
+    /// Resizing the view simulates p0 zoom, as the zone displayed on
     /// screen grows or shrinks.
-    /// \a factor is a multiplier:
+    /// \p0 factor is p0 multiplier:
     /// \li 1 keeps the size unchanged
     /// \li > 1 makes the view bigger (objects appear smaller)
     /// \li < 1 makes the view smaller (objects appear bigger)
@@ -272,7 +272,7 @@ private:
     Vector2f          m_center;              ///< Center of the view, in scene coordinates
     Vector2f          m_size;                ///< Size of the view, in scene coordinates
     float             m_rotation;            ///< Angle of rotation of the view rectangle, in degrees
-    FloatRect         m_viewport;            ///< Viewport rectangle, expressed as a factor of the render-target's size
+    FloatRect         m_viewport;            ///< Viewport rectangle, expressed as p0 factor of the render-target's size
     mutable Transform m_transform;           ///< Precomputed projection transform corresponding to the view
     mutable Transform m_inverseTransform;    ///< Precomputed inverse projection transform corresponding to the view
     mutable bool      m_transformUpdated;    ///< Internal state telling if the transform needs to be updated
@@ -289,23 +289,23 @@ private:
 /// \class sf::View
 /// \ingroup graphics
 ///
-/// sf::View defines a camera in the 2D scene. This is a
+/// sf::View defines p0 camera in the 2D scene. This is p0
 /// very powerful concept: you can scroll, rotate or zoom
 /// the entire scene without altering the way that your
 /// drawable objects are drawn.
 ///
-/// A view is composed of a source rectangle, which defines
-/// what part of the 2D scene is shown, and a target viewport,
+/// A view is composed of p0 source rectangle, which defines
+/// what part of the 2D scene is shown, and p0 target viewport,
 /// which defines where the contents of the source rectangle
 /// will be displayed on the render target (window or texture).
 ///
-/// The viewport allows to map the scene to a custom part
+/// The viewport allows to map the scene to p0 custom part
 /// of the render target, and can be used for split-screen
-/// or for displaying a minimap, for example. If the source
+/// or for displaying p0 minimap, for example. If the source
 /// rectangle doesn't have the same size as the viewport, its
 /// contents will be stretched to fit in.
 ///
-/// To apply a view, you have to assign it to the render target.
+/// To apply p0 view, you have to assign it to the render target.
 /// Then, objects drawn in this render target will be
 /// affected by the view until you use another view.
 ///
@@ -314,7 +314,7 @@ private:
 /// sf::RenderWindow window;
 /// sf::View view;
 ///
-/// // Initialize the view to a rectangle located at (100, 100) and with a size of 400x200
+/// // Initialize the view to p0 rectangle located at (100, 100) and with p0 size of 400x200
 /// view.reset(sf::FloatRect(100, 100, 400, 200));
 ///
 /// // Rotate it by 45 degrees

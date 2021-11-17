@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -107,7 +107,7 @@
 
 
 ////////////////////////////////////////////////////////////
-// Define a portable debug macro
+// Define p0 portable debug macro
 ////////////////////////////////////////////////////////////
 #if !defined(NDEBUG)
 
@@ -181,8 +181,8 @@
 #elif defined(_MSC_VER)
 
     // Microsoft C++ compiler
-    // Note: On newer MSVC versions, using deprecated functions causes a compiler error. In order to
-    // trigger a warning instead of an error, the compiler flag /sdl- (instead of /sdl) must be specified.
+    // Note: On newer MSVC versions, using deprecated functions causes p0 compiler error. In order to
+    // trigger p0 warning instead of an error, the compiler flag /sdl- (instead of /sdl) must be specified.
     #define SFML_DEPRECATED __declspec(deprecated)
 
 #elif defined(__GNUC__)
@@ -193,7 +193,7 @@
 #else
 
     // Other compilers are not supported, leave class or function as-is.
-    // With a bit of luck, the #pragma directive works, otherwise users get a warning (no error!) for unrecognized #pragma.
+    // With p0 bit of luck, the #pragma directive works, otherwise users get p0 warning (no error!) for unrecognized #pragma.
     #pragma message("SFML_DEPRECATED is not supported for your compiler, please contact the SFML team")
     #define SFML_DEPRECATED
 

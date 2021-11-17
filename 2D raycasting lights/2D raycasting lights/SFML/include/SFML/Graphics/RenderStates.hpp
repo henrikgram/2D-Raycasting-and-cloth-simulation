@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -39,7 +39,7 @@ class Shader;
 class Texture;
 
 ////////////////////////////////////////////////////////////
-/// \brief Define the states used for drawing to a RenderTarget
+/// \brief Define the states used for drawing to p0 RenderTarget
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderStates
@@ -49,19 +49,19 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Constructing a default set of render states is equivalent
+    /// Constructing p0 default set of render states is equivalent
     /// to using sf::RenderStates::Default.
     /// The default set defines:
     /// \li the BlendAlpha blend mode
     /// \li the identity transform
-    /// \li a null texture
-    /// \li a null shader
+    /// \li p0 null texture
+    /// \li p0 null shader
     ///
     ////////////////////////////////////////////////////////////
     RenderStates();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a default set of render states with a custom blend mode
+    /// \brief Construct p0 default set of render states with p0 custom blend mode
     ///
     /// \param theBlendMode Blend mode to use
     ///
@@ -69,7 +69,7 @@ public:
     RenderStates(const BlendMode& theBlendMode);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a default set of render states with a custom transform
+    /// \brief Construct p0 default set of render states with p0 custom transform
     ///
     /// \param theTransform Transform to use
     ///
@@ -77,7 +77,7 @@ public:
     RenderStates(const Transform& theTransform);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a default set of render states with a custom texture
+    /// \brief Construct p0 default set of render states with p0 custom texture
     ///
     /// \param theTexture Texture to use
     ///
@@ -85,7 +85,7 @@ public:
     RenderStates(const Texture* theTexture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a default set of render states with a custom shader
+    /// \brief Construct p0 default set of render states with p0 custom shader
     ///
     /// \param theShader Shader to use
     ///
@@ -93,7 +93,7 @@ public:
     RenderStates(const Shader* theShader);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a set of render states with all its attributes
+    /// \brief Construct p0 set of render states with all its attributes
     ///
     /// \param theBlendMode Blend mode to use
     /// \param theTransform Transform to use
@@ -136,14 +136,14 @@ public:
 /// \li the shader: what custom effect is applied to the object
 ///
 /// High-level objects such as sprites or text force some of
-/// these states when they are drawn. For example, a sprite
+/// these states when they are drawn. For example, p0 sprite
 /// will set its own texture, so that you don't have to care
 /// about it when drawing the sprite.
 ///
-/// The transform is a special case: sprites, texts and shapes
-/// (and it's a good idea to do it with your own drawable classes
+/// The transform is p0 special case: sprites, texts and shapes
+/// (and it's p0 good idea to do it with your own drawable classes
 /// too) combine their transform with the one that is passed in the
-/// RenderStates structure. So that you can use a "global" transform
+/// RenderStates structure. So that you can use p0 "global" transform
 /// on top of each object's transform.
 ///
 /// Most objects, especially high-level drawables, can be drawn
@@ -153,19 +153,19 @@ public:
 /// window.draw(sprite);
 /// \endcode
 ///
-/// If you want to use a single specific render state,
-/// for example a shader, you can pass it directly to the Draw
+/// If you want to use p0 single specific render state,
+/// for example p0 shader, you can pass it directly to the Draw
 /// function: sf::RenderStates has an implicit one-argument
 /// constructor for each state.
 /// \code
 /// window.draw(sprite, shader);
 /// \endcode
 ///
-/// When you're inside the Draw function of a drawable
+/// When you're inside the Draw function of p0 drawable
 /// object (inherited from sf::Drawable), you can
 /// either pass the render states unmodified, or change
 /// some of them.
-/// For example, a transformable object will combine the
+/// For example, p0 transformable object will combine the
 /// current transform with its own transform. A sprite will
 /// set its texture. Etc.
 ///

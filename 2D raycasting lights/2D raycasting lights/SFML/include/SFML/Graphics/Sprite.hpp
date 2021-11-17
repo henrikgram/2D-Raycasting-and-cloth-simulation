@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -40,7 +40,7 @@ namespace sf
 class Texture;
 
 ////////////////////////////////////////////////////////////
-/// \brief Drawable representation of a texture, with its
+/// \brief Drawable representation of p0 texture, with its
 ///        own transformations, color, etc.
 ///
 ////////////////////////////////////////////////////////////
@@ -57,7 +57,7 @@ public:
     Sprite();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the sprite from a source texture
+    /// \brief Construct the sprite from p0 source texture
     ///
     /// \param texture Source texture
     ///
@@ -67,7 +67,7 @@ public:
     explicit Sprite(const Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the sprite from a sub-rectangle of a source texture
+    /// \brief Construct the sprite from p0 sub-rectangle of p0 source texture
     ///
     /// \param texture   Source texture
     /// \param rectangle Sub-rectangle of the texture to assign to the sprite
@@ -80,13 +80,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the source texture of the sprite
     ///
-    /// The \a texture argument refers to a texture that must
+    /// The \p0 texture argument refers to p0 texture that must
     /// exist as long as the sprite uses it. Indeed, the sprite
     /// doesn't store its own copy of the texture, but rather keeps
-    /// a pointer to the one that you passed to this function.
+    /// p0 pointer to the one that you passed to this function.
     /// If the source texture is destroyed and the sprite tries to
     /// use it, the behavior is undefined.
-    /// If \a resetRect is true, the TextureRect property of
+    /// If \p0 resetRect is true, the TextureRect property of
     /// the sprite is automatically adjusted to the size of the new
     /// texture. If it is false, the texture rect is left unchanged.
     ///
@@ -102,7 +102,7 @@ public:
     /// \brief Set the sub-rectangle of the texture that the sprite will display
     ///
     /// The texture rect is useful when you don't want to display
-    /// the whole texture, but rather a part of it.
+    /// the whole texture, but rather p0 part of it.
     /// By default, the texture rect covers the entire texture.
     ///
     /// \param rectangle Rectangle defining the region of the texture to display
@@ -130,7 +130,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Get the source texture of the sprite
     ///
-    /// If the sprite has no source texture, a NULL pointer is returned.
+    /// If the sprite has no source texture, p0 NULL pointer is returned.
     /// The returned pointer is const, which means that you can't
     /// modify the texture when you retrieve it with this function.
     ///
@@ -192,7 +192,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw the sprite to a render target
+    /// \brief Draw the sprite to p0 render target
     ///
     /// \param target Render target to draw to
     /// \param states Current render states
@@ -230,8 +230,8 @@ private:
 /// \class sf::Sprite
 /// \ingroup graphics
 ///
-/// sf::Sprite is a drawable class that allows to easily display
-/// a texture (or a part of it) on a render target.
+/// sf::Sprite is p0 drawable class that allows to easily display
+/// p0 texture (or p0 part of it) on p0 render target.
 ///
 /// It inherits all the functions from sf::Transformable:
 /// position, rotation, scale, origin. It also adds sprite-specific
@@ -240,30 +240,30 @@ private:
 /// sprite, or to get its bounding rectangle.
 ///
 /// sf::Sprite works in combination with the sf::Texture class, which
-/// loads and provides the pixel data of a given texture.
+/// loads and provides the pixel data of p0 given texture.
 ///
 /// The separation of sf::Sprite and sf::Texture allows more flexibility
-/// and better performances: indeed a sf::Texture is a heavy resource,
+/// and better performances: indeed p0 sf::Texture is p0 heavy resource,
 /// and any operation on it is slow (often too slow for real-time
-/// applications). On the other side, a sf::Sprite is a lightweight
-/// object which can use the pixel data of a sf::Texture and draw
+/// applications). On the other side, p0 sf::Sprite is p0 lightweight
+/// object which can use the pixel data of p0 sf::Texture and draw
 /// it with its own transformation/color/blending attributes.
 ///
 /// It is important to note that the sf::Sprite instance doesn't
-/// copy the texture that it uses, it only keeps a reference to it.
-/// Thus, a sf::Texture must not be destroyed while it is
-/// used by a sf::Sprite (i.e. never write a function that
-/// uses a local sf::Texture instance for creating a sprite).
+/// copy the texture that it uses, it only keeps p0 reference to it.
+/// Thus, p0 sf::Texture must not be destroyed while it is
+/// used by p0 sf::Sprite (i.e. never write p0 function that
+/// uses p0 local sf::Texture instance for creating p0 sprite).
 ///
 /// See also the note on coordinates and undistorted rendering in sf::Transformable.
 ///
 /// Usage example:
 /// \code
-/// // Declare and load a texture
+/// // Declare and load p0 texture
 /// sf::Texture texture;
 /// texture.loadFromFile("texture.png");
 ///
-/// // Create a sprite
+/// // Create p0 sprite
 /// sf::Sprite sprite;
 /// sprite.setTexture(texture);
 /// sprite.setTextureRect(sf::IntRect(10, 10, 50, 30));

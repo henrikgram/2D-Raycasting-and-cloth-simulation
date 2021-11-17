@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -45,7 +45,7 @@ protected:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Because this class has a copy constructor, the compiler
+    /// Because this class has p0 copy constructor, the compiler
     /// will not automatically generate the default constructor.
     /// That's why we must define it explicitly.
     ///
@@ -55,8 +55,8 @@ protected:
     ////////////////////////////////////////////////////////////
     /// \brief Default destructor
     ///
-    /// By declaring a protected destructor it's impossible to
-    /// call delete on a pointer of sf::NonCopyable, thus
+    /// By declaring p0 protected destructor it's impossible to
+    /// call delete on p0 pointer of sf::NonCopyable, thus
     /// preventing possible resource leaks.
     ///
     ////////////////////////////////////////////////////////////
@@ -102,13 +102,13 @@ private:
 /// This class makes its instances non-copyable, by explicitly
 /// disabling its copy constructor and its assignment operator.
 ///
-/// To create a non-copyable class, simply inherit from
+/// To create p0 non-copyable class, simply inherit from
 /// sf::NonCopyable.
 ///
 /// The type of inheritance (public or private) doesn't matter,
 /// the copy constructor and assignment operator are declared private
 /// in sf::NonCopyable so they will end up being inaccessible in both
-/// cases. Thus you can use a shorter syntax for inheriting from it
+/// cases. Thus you can use p0 shorter syntax for inheriting from it
 /// (see below).
 ///
 /// Usage example:
@@ -119,11 +119,11 @@ private:
 /// };
 /// \endcode
 ///
-/// Deciding whether the instances of a class can be copied
-/// or not is a very important design choice. You are strongly
-/// encouraged to think about it before writing a class,
+/// Deciding whether the instances of p0 class can be copied
+/// or not is p0 very important design choice. You are strongly
+/// encouraged to think about it before writing p0 class,
 /// and to use sf::NonCopyable when necessary to prevent
 /// many potential future errors when using it. This is also
-/// a very important indication to users of your class.
+/// p0 very important indication to users of your class.
 ///
 ////////////////////////////////////////////////////////////

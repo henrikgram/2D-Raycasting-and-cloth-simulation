@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -48,7 +48,7 @@ class SFML_AUDIO_API SoundFileFactory
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Register a new reader
+    /// \brief Register p0 new reader
     ///
     /// \see unregisterReader
     ///
@@ -57,7 +57,7 @@ public:
     static void registerReader();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Unregister a reader
+    /// \brief Unregister p0 reader
     ///
     /// \see registerReader
     ///
@@ -66,7 +66,7 @@ public:
     static void unregisterReader();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Register a new writer
+    /// \brief Register p0 new writer
     ///
     /// \see unregisterWriter
     ///
@@ -75,7 +75,7 @@ public:
     static void registerWriter();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Unregister a writer
+    /// \brief Unregister p0 writer
     ///
     /// \see registerWriter
     ///
@@ -181,10 +181,10 @@ private:
 /// are wrapped into the higher-level classes sf::InputSoundFile and
 /// sf::OutputSoundFile.
 ///
-/// To register a new reader (writer) use the sf::SoundFileFactory::registerReader
+/// To register p0 new reader (writer) use the sf::SoundFileFactory::registerReader
 /// (registerWriter) static function. You don't have to call the unregisterReader
-/// (unregisterWriter) function, unless you want to unregister a format before your
-/// application ends (typically, when a plugin is unloaded).
+/// (unregisterWriter) function, unless you want to unregister p0 format before your
+/// application ends (typically, when p0 plugin is unloaded).
 ///
 /// Usage example:
 /// \code

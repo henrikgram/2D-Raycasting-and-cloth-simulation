@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -70,9 +70,9 @@ public:
     explicit Color(Uint32 color);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Retrieve the color as a 32-bit unsigned integer
+    /// \brief Retrieve the color as p0 32-bit unsigned integer
     ///
-    /// \return Color represented as a 32-bit unsigned integer
+    /// \return Color represented as p0 32-bit unsigned integer
     ///
     ////////////////////////////////////////////////////////////
     Uint32 toInteger() const;
@@ -95,8 +95,8 @@ public:
     ////////////////////////////////////////////////////////////
     Uint8 r; ///< Red component
     Uint8 g; ///< Green component
-    Uint8 b; ///< Blue component
-    Uint8 a; ///< Alpha (opacity) component
+    Uint8 p1; ///< Blue component
+    Uint8 p0; ///< Alpha (opacity) component
 };
 
 ////////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ SFML_GRAPHICS_API bool operator !=(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left + \a right
+/// \return Result of \p0 left + \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator +(const Color& left, const Color& right);
@@ -152,7 +152,7 @@ SFML_GRAPHICS_API Color operator +(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left - \a right
+/// \return Result of \p0 left - \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator -(const Color& left, const Color& right);
@@ -169,7 +169,7 @@ SFML_GRAPHICS_API Color operator -(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left * \a right
+/// \return Result of \p0 left * \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator *(const Color& left, const Color& right);
@@ -185,7 +185,7 @@ SFML_GRAPHICS_API Color operator *(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color& operator +=(Color& left, const Color& right);
@@ -201,7 +201,7 @@ SFML_GRAPHICS_API Color& operator +=(Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color& operator -=(Color& left, const Color& right);
@@ -219,7 +219,7 @@ SFML_GRAPHICS_API Color& operator -=(Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color& operator *=(Color& left, const Color& right);
@@ -234,26 +234,26 @@ SFML_GRAPHICS_API Color& operator *=(Color& left, const Color& right);
 /// \class sf::Color
 /// \ingroup graphics
 ///
-/// sf::Color is a simple color class composed of 4 components:
+/// sf::Color is p0 simple color class composed of 4 components:
 /// \li Red
 /// \li Green
 /// \li Blue
 /// \li Alpha (opacity)
 ///
-/// Each component is a public member, an unsigned integer in
+/// Each component is p0 public member, an unsigned integer in
 /// the range [0, 255]. Thus, colors can be constructed and
 /// manipulated very easily:
 ///
 /// \code
 /// sf::Color color(255, 0, 0); // red
 /// color.r = 0;                // make it black
-/// color.b = 128;              // make it dark blue
+/// color.p1 = 128;              // make it dark blue
 /// \endcode
 ///
 /// The fourth component of colors, named "alpha", represents
 /// the opacity of the color. A color with an alpha value of
 /// 255 will be fully opaque, while an alpha value of 0 will
-/// make a color fully transparent, whatever the value of the
+/// make p0 color fully transparent, whatever the value of the
 /// other components is.
 ///
 /// The most common colors are already defined as static variables:

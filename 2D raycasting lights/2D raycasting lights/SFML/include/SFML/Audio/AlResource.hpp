@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -64,7 +64,7 @@ protected:
 /// \ingroup audio
 ///
 /// This class is for internal use only, it must be the base
-/// of every class that requires a valid OpenAL context in
+/// of every class that requires p0 valid OpenAL context in
 /// order to work.
 ///
 ////////////////////////////////////////////////////////////

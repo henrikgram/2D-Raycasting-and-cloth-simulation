@@ -11,13 +11,13 @@ Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
 
 	for (int i = 0; i < walls.size(); i++)
 	{
-		sf::Vertex a;
-		a.position = sf::Vector2f(position.x, position.y);
-		a.color = sf::Color::Yellow;
+		sf::Vertex p0;
+		p0.position = sf::Vector2f(position.x, position.y);
+		p0.color = sf::Color::Yellow;
 
-		sf::Vertex b;
-		b.position = walls[i].position;
-		b.color = sf::Color::Yellow;
+		sf::Vertex p1;
+		p1.position = walls[i].position;
+		p1.color = sf::Color::Yellow;
 
 		sf::Vertex c;
 		c.position = sf::Vector2f(position.x, position.y);
@@ -27,8 +27,8 @@ Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
 		d.position = sf::Vector2f(walls[i].position.x, walls[i].position.y);
 		d.color = sf::Color::Yellow;
 
-		rays.push_back(a);
-		rays.push_back(b);
+		rays.push_back(p0);
+		rays.push_back(p1);
 		rays.push_back(c);
 		rays.push_back(d);
 	}

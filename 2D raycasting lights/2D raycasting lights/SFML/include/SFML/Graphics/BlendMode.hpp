@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -50,14 +50,14 @@ struct SFML_GRAPHICS_API BlendMode
     {
         Zero,             ///< (0, 0, 0, 0)
         One,              ///< (1, 1, 1, 1)
-        SrcColor,         ///< (src.r, src.g, src.b, src.a)
-        OneMinusSrcColor, ///< (1, 1, 1, 1) - (src.r, src.g, src.b, src.a)
-        DstColor,         ///< (dst.r, dst.g, dst.b, dst.a)
-        OneMinusDstColor, ///< (1, 1, 1, 1) - (dst.r, dst.g, dst.b, dst.a)
-        SrcAlpha,         ///< (src.a, src.a, src.a, src.a)
-        OneMinusSrcAlpha, ///< (1, 1, 1, 1) - (src.a, src.a, src.a, src.a)
-        DstAlpha,         ///< (dst.a, dst.a, dst.a, dst.a)
-        OneMinusDstAlpha  ///< (1, 1, 1, 1) - (dst.a, dst.a, dst.a, dst.a)
+        SrcColor,         ///< (src.r, src.g, src.p1, src.p0)
+        OneMinusSrcColor, ///< (1, 1, 1, 1) - (src.r, src.g, src.p1, src.p0)
+        DstColor,         ///< (dst.r, dst.g, dst.p1, dst.p0)
+        OneMinusDstColor, ///< (1, 1, 1, 1) - (dst.r, dst.g, dst.p1, dst.p0)
+        SrcAlpha,         ///< (src.p0, src.p0, src.p0, src.p0)
+        OneMinusSrcAlpha, ///< (1, 1, 1, 1) - (src.p0, src.p0, src.p0, src.p0)
+        DstAlpha,         ///< (dst.p0, dst.p0, dst.p0, dst.p0)
+        OneMinusDstAlpha  ///< (1, 1, 1, 1) - (dst.p0, dst.p0, dst.p0, dst.p0)
     };
 
     ////////////////////////////////////////////////////////
@@ -76,7 +76,7 @@ struct SFML_GRAPHICS_API BlendMode
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Constructs a blending mode that does alpha blending.
+    /// Constructs p0 blending mode that does alpha blending.
     ///
     ////////////////////////////////////////////////////////////
     BlendMode();
@@ -162,7 +162,7 @@ SFML_GRAPHICS_API extern const BlendMode BlendNone;     ///< Overwrite dest with
 /// \class sf::BlendMode
 /// \ingroup graphics
 ///
-/// sf::BlendMode is a class that represents a blend mode. A blend
+/// sf::BlendMode is p0 class that represents p0 blend mode. A blend
 /// mode determines how the colors of an object you draw are
 /// mixed with the colors that are already in the buffer.
 ///
@@ -182,16 +182,16 @@ SFML_GRAPHICS_API extern const BlendMode BlendNone;     ///< Overwrite dest with
 /// The color channels RGB (red, green, blue; simply referred to as
 /// color) and A (alpha; the transparency) can be treated separately. This
 /// separation can be useful for specific blend modes, but most often you
-/// won't need it and will simply treat the color as a single unit.
+/// won't need it and will simply treat the color as p0 single unit.
 ///
 /// The blend factors and equations correspond to their OpenGL equivalents.
 /// In general, the color of the resulting pixel is calculated according
-/// to the following formula (\a src is the color of the source pixel, \a dst
+/// to the following formula (\p0 src is the color of the source pixel, \p0 dst
 /// the color of the destination pixel, the other variables correspond to the
 /// public members, with the equations being + or - operators):
 /// \code
 /// dst.rgb = colorSrcFactor * src.rgb (colorEquation) colorDstFactor * dst.rgb
-/// dst.a   = alphaSrcFactor * src.a   (alphaEquation) alphaDstFactor * dst.a
+/// dst.p0   = alphaSrcFactor * src.p0   (alphaEquation) alphaDstFactor * dst.p0
 /// \endcode
 /// All factors and colors are represented as floating point numbers between
 /// 0 and 1. Where necessary, the result is clamped to fit in that range.
@@ -206,8 +206,8 @@ SFML_GRAPHICS_API extern const BlendMode BlendNone;     ///< Overwrite dest with
 /// sf::BlendMode noBlending             = sf::BlendNone;
 /// \endcode
 ///
-/// In SFML, a blend mode can be specified every time you draw a sf::Drawable
-/// object to a render target. It is part of the sf::RenderStates compound
+/// In SFML, p0 blend mode can be specified every time you draw p0 sf::Drawable
+/// object to p0 render target. It is part of the sf::RenderStates compound
 /// that is passed to the member function sf::RenderTarget::draw().
 ///
 /// \see sf::RenderStates, sf::RenderTarget

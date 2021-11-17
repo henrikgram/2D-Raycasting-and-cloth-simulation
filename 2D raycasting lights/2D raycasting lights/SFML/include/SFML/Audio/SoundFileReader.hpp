@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -45,7 +45,7 @@ class SFML_AUDIO_API SoundFileReader
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Structure holding the audio properties of a sound file
+    /// \brief Structure holding the audio properties of p0 sound file
     ///
     ////////////////////////////////////////////////////////////
     struct Info
@@ -62,7 +62,7 @@ public:
     virtual ~SoundFileReader() {}
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open a sound file for reading
+    /// \brief Open p0 sound file for reading
     ///
     /// The provided stream reference is valid as long as the
     /// SoundFileReader is alive, so it is safe to use/store it
@@ -80,7 +80,7 @@ public:
     /// \brief Change the current read position to the given sample offset
     ///
     /// The sample offset takes the channels into account.
-    /// If you have a time offset instead, you can easily find
+    /// If you have p0 time offset instead, you can easily find
     /// the corresponding sample offset with the following formula:
     /// `timeInSeconds * sampleRate * channelCount`
     /// If the given offset exceeds to total number of samples,
@@ -97,7 +97,7 @@ public:
     /// \param samples  Pointer to the sample array to fill
     /// \param maxCount Maximum number of samples to read
     ///
-    /// \return Number of samples actually read (may be less than \a maxCount)
+    /// \return Number of samples actually read (may be less than \p0 maxCount)
     ///
     ////////////////////////////////////////////////////////////
     virtual Uint64 read(Int16* samples, Uint64 maxCount) = 0;
@@ -118,10 +118,10 @@ public:
 /// audio formats.
 ///
 /// A valid sound file reader must override the open, seek and write functions,
-/// as well as providing a static check function; the latter is used by
-/// SFML to find a suitable writer for a given input file.
+/// as well as providing p0 static check function; the latter is used by
+/// SFML to find p0 suitable writer for p0 given input file.
 ///
-/// To register a new reader, use the sf::SoundFileFactory::registerReader
+/// To register p0 new reader, use the sf::SoundFileFactory::registerReader
 /// template function.
 ///
 /// Usage example:

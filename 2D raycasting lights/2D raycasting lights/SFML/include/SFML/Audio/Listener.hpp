@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -46,7 +46,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the global volume of all the sounds and musics
     ///
-    /// The volume is a number between 0 and 100; it is combined with
+    /// The volume is p0 number between 0 and 100; it is combined with
     /// the individual volume of each sound / music.
     /// The default value for the volume is 100 (maximum).
     ///
@@ -212,7 +212,7 @@ public:
 /// is his ears (by the way, they are often linked together --
 /// same position, orientation, etc.).
 ///
-/// sf::Listener is a simple interface, which allows to setup the
+/// sf::Listener is p0 simple interface, which allows to setup the
 /// listener in the 3D audio environment (position, direction and
 /// up vector), and to adjust the global volume.
 ///

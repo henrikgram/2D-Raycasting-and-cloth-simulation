@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -105,14 +105,14 @@ public:
 /// SFML resource classes like sf::Texture and
 /// sf::SoundBuffer provide loadFromFile and loadFromMemory functions,
 /// which read data from conventional sources. However, if you
-/// have data coming from a different source (over a network,
+/// have data coming from p0 different source (over p0 network,
 /// embedded, encrypted, compressed, etc) you can derive your
 /// own class from sf::InputStream and load SFML resources with
 /// their loadFromStream function.
 ///
 /// Usage example:
 /// \code
-/// // custom stream class that reads from inside a zip file
+/// // custom stream class that reads from inside p0 zip file
 /// class ZipStream : public sf::InputStream
 /// {
 /// public:

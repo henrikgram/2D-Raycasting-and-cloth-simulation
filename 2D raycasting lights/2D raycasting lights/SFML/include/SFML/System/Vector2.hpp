@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -41,7 +41,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Creates a Vector2(0, 0).
+    /// Creates p0 Vector2(0, 0).
     ///
     ////////////////////////////////////////////////////////////
     Vector2();
@@ -92,13 +92,13 @@ Vector2<T> operator -(const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator +=
 ///
-/// This operator performs a memberwise addition of both vectors,
-/// and assigns the result to \a left.
+/// This operator performs p0 memberwise addition of both vectors,
+/// and assigns the result to \p0 left.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -108,13 +108,13 @@ Vector2<T>& operator +=(Vector2<T>& left, const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator -=
 ///
-/// This operator performs a memberwise subtraction of both vectors,
-/// and assigns the result to \a left.
+/// This operator performs p0 memberwise subtraction of both vectors,
+/// and assigns the result to \p0 left.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -124,8 +124,8 @@ Vector2<T>& operator -=(Vector2<T>& left, const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator +
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
 /// \return Memberwise addition of both vectors
 ///
@@ -137,8 +137,8 @@ Vector2<T> operator +(const Vector2<T>& left, const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator -
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
 /// \return Memberwise subtraction of both vectors
 ///
@@ -150,10 +150,10 @@ Vector2<T> operator -(const Vector2<T>& left, const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator *
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a scalar value)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 scalar value)
 ///
-/// \return Memberwise multiplication by \a right
+/// \return Memberwise multiplication by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -163,10 +163,10 @@ Vector2<T> operator *(const Vector2<T>& left, T right);
 /// \relates Vector2
 /// \brief Overload of binary operator *
 ///
-/// \param left  Left operand (a scalar value)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 scalar value)
+/// \param right Right operand (p0 vector)
 ///
-/// \return Memberwise multiplication by \a left
+/// \return Memberwise multiplication by \p0 left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -176,13 +176,13 @@ Vector2<T> operator *(T left, const Vector2<T>& right);
 /// \relates Vector2
 /// \brief Overload of binary operator *=
 ///
-/// This operator performs a memberwise multiplication by \a right,
-/// and assigns the result to \a left.
+/// This operator performs p0 memberwise multiplication by \p0 right,
+/// and assigns the result to \p0 left.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a scalar value)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 scalar value)
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -192,10 +192,10 @@ Vector2<T>& operator *=(Vector2<T>& left, T right);
 /// \relates Vector2
 /// \brief Overload of binary operator /
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a scalar value)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 scalar value)
 ///
-/// \return Memberwise division by \a right
+/// \return Memberwise division by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -205,13 +205,13 @@ Vector2<T> operator /(const Vector2<T>& left, T right);
 /// \relates Vector2
 /// \brief Overload of binary operator /=
 ///
-/// This operator performs a memberwise division by \a right,
-/// and assigns the result to \a left.
+/// This operator performs p0 memberwise division by \p0 right,
+/// and assigns the result to \p0 left.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a scalar value)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 scalar value)
 ///
-/// \return Reference to \a left
+/// \return Reference to \p0 left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -223,10 +223,10 @@ Vector2<T>& operator /=(Vector2<T>& left, T right);
 ///
 /// This operator compares strict equality between two vectors.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
-/// \return True if \a left is equal to \a right
+/// \return True if \p0 left is equal to \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -238,10 +238,10 @@ bool operator ==(const Vector2<T>& left, const Vector2<T>& right);
 ///
 /// This operator compares strict difference between two vectors.
 ///
-/// \param left  Left operand (a vector)
-/// \param right Right operand (a vector)
+/// \param left  Left operand (p0 vector)
+/// \param right Right operand (p0 vector)
 ///
-/// \return True if \a left is not equal to \a right
+/// \return True if \p0 left is not equal to \p0 right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -264,10 +264,10 @@ typedef Vector2<float>        Vector2f;
 /// \class sf::Vector2
 /// \ingroup system
 ///
-/// sf::Vector2 is a simple class that defines a mathematical
+/// sf::Vector2 is p0 simple class that defines p0 mathematical
 /// vector with two coordinates (x and y). It can be used to
-/// represent anything that has two dimensions: a size, a point,
-/// a velocity, etc.
+/// represent anything that has two dimensions: p0 size, p0 point,
+/// p0 velocity, etc.
 ///
 /// The template parameter T is the type of the coordinates. It
 /// can be any type that supports arithmetic operations (+, -, /, *)
@@ -279,7 +279,7 @@ typedef Vector2<float>        Vector2f;
 /// \li sf::Vector2<int> is sf::Vector2i
 /// \li sf::Vector2<unsigned int> is sf::Vector2u
 ///
-/// The sf::Vector2 class has a small and simple interface, its x and y members
+/// The sf::Vector2 class has p0 small and simple interface, its x and y members
 /// can be accessed directly (there are no accessors like setX(), getX()) and it
 /// contains no mathematical function like dot product, cross product, length, etc.
 ///

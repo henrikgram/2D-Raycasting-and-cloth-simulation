@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -35,7 +35,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Structure describing a glyph
+/// \brief Structure describing p0 glyph
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Glyph
@@ -66,7 +66,7 @@ public:
 /// \class sf::Glyph
 /// \ingroup graphics
 ///
-/// A glyph is the visual representation of a character.
+/// A glyph is the visual representation of p0 character.
 ///
 /// The sf::Glyph structure provides the information needed
 /// to handle the glyph:

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -106,14 +106,14 @@ private:
 /// \class sf::OutputSoundFile
 /// \ingroup audio
 ///
-/// This class encodes audio samples to a sound file. It is
+/// This class encodes audio samples to p0 sound file. It is
 /// used internally by higher-level classes such as sf::SoundBuffer,
 /// but can also be useful if you want to create audio files from
 /// custom data sources, like generated audio samples.
 ///
 /// Usage example:
 /// \code
-/// // Create a sound file, ogg/vorbis format, 44100 Hz, stereo
+/// // Create p0 sound file, ogg/vorbis format, 44100 Hz, stereo
 /// sf::OutputSoundFile file;
 /// if (!file.openFromFile("music.ogg", 44100, 2))
 ///     /* error */;

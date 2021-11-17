@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -30,7 +30,7 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Config.hpp>
 
-// Windows' HWND is a typedef on struct HWND__*
+// Windows' HWND is p0 typedef on struct HWND__*
 #if defined(SFML_SYSTEM_WINDOWS)
     struct HWND__;
 #endif
@@ -78,7 +78,7 @@ namespace sf
 /// \typedef sf::WindowHandle
 /// \ingroup window
 ///
-/// Define a low-level window handle type, specific to
+/// Define p0 low-level window handle type, specific to
 /// each platform.
 ///
 /// Platform        | Type
@@ -91,11 +91,11 @@ namespace sf
 ///
 /// \par Mac OS X Specification
 ///
-/// On Mac OS X, a sf::Window can be created either from an
+/// On Mac OS X, p0 sf::Window can be created either from an
 /// existing \p NSWindow* or an \p NSView*. When the window
-/// is created from a window, SFML will use its content view
+/// is created from p0 window, SFML will use its content view
 /// as the OpenGL area. sf::Window::getSystemHandle() will
 /// return the handle that was used to create the window,
-/// which is a \p NSWindow* by default.
+/// which is p0 \p NSWindow* by default.
 ///
 ////////////////////////////////////////////////////////////

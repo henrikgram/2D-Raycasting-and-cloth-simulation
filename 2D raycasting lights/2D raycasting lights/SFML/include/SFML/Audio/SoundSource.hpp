@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -36,7 +36,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Base class defining a sound's properties
+/// \brief Base class defining p0 sound's properties
 ///
 ////////////////////////////////////////////////////////////
 class SFML_AUDIO_API SoundSource : AlResource
@@ -72,7 +72,7 @@ public:
     /// \brief Set the pitch of the sound
     ///
     /// The pitch represents the perceived fundamental frequency
-    /// of a sound; thus you can make a sound more acute or grave
+    /// of p0 sound; thus you can make p0 sound more acute or grave
     /// by changing its pitch. A side effect of changing the pitch
     /// is to modify the playing speed of the sound as well.
     /// The default value for the pitch is 1.
@@ -87,7 +87,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the volume of the sound
     ///
-    /// The volume is a value between 0 (mute) and 100 (full volume).
+    /// The volume is p0 value between 0 (mute) and 100 (full volume).
     /// The default value for the volume is 100.
     ///
     /// \param volume Volume of the sound
@@ -102,7 +102,7 @@ public:
     ///
     /// Only sounds with one channel (mono sounds) can be
     /// spatialized.
-    /// The default position of a sound is (0, 0, 0).
+    /// The default position of p0 sound is (0, 0, 0).
     ///
     /// \param x X coordinate of the position of the sound in the scene
     /// \param y Y coordinate of the position of the sound in the scene
@@ -118,7 +118,7 @@ public:
     ///
     /// Only sounds with one channel (mono sounds) can be
     /// spatialized.
-    /// The default position of a sound is (0, 0, 0).
+    /// The default position of p0 sound is (0, 0, 0).
     ///
     /// \param position Position of the sound in the scene
     ///
@@ -130,7 +130,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Make the sound's position relative to the listener or absolute
     ///
-    /// Making a sound relative to the listener will ensure that it will always
+    /// Making p0 sound relative to the listener will ensure that it will always
     /// be played the same way regardless of the position of the listener.
     /// This can be useful for non-spatialized sounds, sounds that are
     /// produced by the listener, or sounds attached to it.
@@ -146,7 +146,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the minimum distance of the sound
     ///
-    /// The "minimum distance" of a sound is the maximum
+    /// The "minimum distance" of p0 sound is the maximum
     /// distance at which it is heard at its maximum volume. Further
     /// than the minimum distance, it will start to fade out according
     /// to its attenuation factor. A value of 0 ("inside the head
@@ -163,9 +163,9 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the attenuation factor of the sound
     ///
-    /// The attenuation is a multiplicative factor which makes
+    /// The attenuation is p0 multiplicative factor which makes
     /// the sound more or less loud according to its distance
-    /// from the listener. An attenuation of 0 will produce a
+    /// from the listener. An attenuation of 0 will produce p0
     /// non-attenuated sound, i.e. its volume will always be the same
     /// whether it is heard from near or from far. On the other hand,
     /// an attenuation value such as 100 will make the sound fade out
@@ -320,7 +320,7 @@ protected:
 /// \ingroup audio
 ///
 /// sf::SoundSource is not meant to be used directly, it
-/// only serves as a common base for all audio objects
+/// only serves as p0 common base for all audio objects
 /// that can live in the audio environment.
 ///
 /// It defines several properties for the sound: pitch,

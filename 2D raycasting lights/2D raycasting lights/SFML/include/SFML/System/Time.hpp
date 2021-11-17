@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -34,7 +34,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Represents a time value
+/// \brief Represents p0 time value
 ///
 ////////////////////////////////////////////////////////////
 class SFML_SYSTEM_API Time
@@ -50,7 +50,7 @@ public:
     Time();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of seconds
+    /// \brief Return the time value as p0 number of seconds
     ///
     /// \return Time in seconds
     ///
@@ -60,7 +60,7 @@ public:
     float asSeconds() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of milliseconds
+    /// \brief Return the time value as p0 number of milliseconds
     ///
     /// \return Time in milliseconds
     ///
@@ -70,7 +70,7 @@ public:
     Int32 asMilliseconds() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of microseconds
+    /// \brief Return the time value as p0 number of microseconds
     ///
     /// \return Time in microseconds
     ///
@@ -91,7 +91,7 @@ private:
     friend SFML_SYSTEM_API Time microseconds(Int64);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct from a number of microseconds
+    /// \brief Construct from p0 number of microseconds
     ///
     /// This function is internal. To construct time values,
     /// use sf::seconds, sf::milliseconds or sf::microseconds instead.
@@ -111,7 +111,7 @@ private:
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Construct a time value from a number of seconds
+/// \brief Construct p0 time value from p0 number of seconds
 ///
 /// \param amount Number of seconds
 ///
@@ -124,7 +124,7 @@ SFML_SYSTEM_API Time seconds(float amount);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Construct a time value from a number of milliseconds
+/// \brief Construct p0 time value from p0 number of milliseconds
 ///
 /// \param amount Number of milliseconds
 ///
@@ -137,7 +137,7 @@ SFML_SYSTEM_API Time milliseconds(Int32 amount);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Construct a time value from a number of microseconds
+/// \brief Construct p0 time value from p0 number of microseconds
 ///
 /// \param amount Number of microseconds
 ///
@@ -152,8 +152,8 @@ SFML_SYSTEM_API Time microseconds(Int64 amount);
 /// \relates Time
 /// \brief Overload of == operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return True if both time values are equal
 ///
@@ -164,8 +164,8 @@ SFML_SYSTEM_API bool operator ==(Time left, Time right);
 /// \relates Time
 /// \brief Overload of != operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return True if both time values are different
 ///
@@ -176,10 +176,10 @@ SFML_SYSTEM_API bool operator !=(Time left, Time right);
 /// \relates Time
 /// \brief Overload of < operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return True if \a left is lesser than \a right
+/// \return True if \p0 left is lesser than \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API bool operator <(Time left, Time right);
@@ -188,10 +188,10 @@ SFML_SYSTEM_API bool operator <(Time left, Time right);
 /// \relates Time
 /// \brief Overload of > operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return True if \a left is greater than \a right
+/// \return True if \p0 left is greater than \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API bool operator >(Time left, Time right);
@@ -200,10 +200,10 @@ SFML_SYSTEM_API bool operator >(Time left, Time right);
 /// \relates Time
 /// \brief Overload of <= operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return True if \a left is lesser or equal than \a right
+/// \return True if \p0 left is lesser or equal than \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API bool operator <=(Time left, Time right);
@@ -212,19 +212,19 @@ SFML_SYSTEM_API bool operator <=(Time left, Time right);
 /// \relates Time
 /// \brief Overload of >= operator to compare two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return True if \a left is greater or equal than \a right
+/// \return True if \p0 left is greater or equal than \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API bool operator >=(Time left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of unary - operator to negate a time value
+/// \brief Overload of unary - operator to negate p0 time value
 ///
-/// \param right Right operand (a time)
+/// \param right Right operand (p0 time)
 ///
 /// \return Opposite of the time value
 ///
@@ -235,8 +235,8 @@ SFML_SYSTEM_API Time operator -(Time right);
 /// \relates Time
 /// \brief Overload of binary + operator to add two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return Sum of the two times values
 ///
@@ -247,8 +247,8 @@ SFML_SYSTEM_API Time operator +(Time left, Time right);
 /// \relates Time
 /// \brief Overload of binary += operator to add/assign two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return Sum of the two times values
 ///
@@ -259,8 +259,8 @@ SFML_SYSTEM_API Time& operator +=(Time& left, Time right);
 /// \relates Time
 /// \brief Overload of binary - operator to subtract two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return Difference of the two times values
 ///
@@ -271,8 +271,8 @@ SFML_SYSTEM_API Time operator -(Time left, Time right);
 /// \relates Time
 /// \brief Overload of binary -= operator to subtract/assign two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
 /// \return Difference of the two times values
 ///
@@ -281,120 +281,120 @@ SFML_SYSTEM_API Time& operator -=(Time& left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary * operator to scale a time value
+/// \brief Overload of binary * operator to scale p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator *(Time left, float right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary * operator to scale a time value
+/// \brief Overload of binary * operator to scale p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator *(Time left, Int64 right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary * operator to scale a time value
+/// \brief Overload of binary * operator to scale p0 time value
 ///
-/// \param left  Left operand (a number)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 number)
+/// \param right Right operand (p0 time)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator *(float left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary * operator to scale a time value
+/// \brief Overload of binary * operator to scale p0 time value
 ///
-/// \param left  Left operand (a number)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 number)
+/// \param right Right operand (p0 time)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator *(Int64 left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary *= operator to scale/assign a time value
+/// \brief Overload of binary *= operator to scale/assign p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time& operator *=(Time& left, float right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary *= operator to scale/assign a time value
+/// \brief Overload of binary *= operator to scale/assign p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left multiplied by \a right
+/// \return \p0 left multiplied by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time& operator *=(Time& left, Int64 right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary / operator to scale a time value
+/// \brief Overload of binary / operator to scale p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left divided by \a right
+/// \return \p0 left divided by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator /(Time left, float right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary / operator to scale a time value
+/// \brief Overload of binary / operator to scale p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left divided by \a right
+/// \return \p0 left divided by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator /(Time left, Int64 right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary /= operator to scale/assign a time value
+/// \brief Overload of binary /= operator to scale/assign p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left divided by \a right
+/// \return \p0 left divided by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time& operator /=(Time& left, float right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary /= operator to scale/assign a time value
+/// \brief Overload of binary /= operator to scale/assign p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a number)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 number)
 ///
-/// \return \a left divided by \a right
+/// \return \p0 left divided by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time& operator /=(Time& left, Int64 right);
@@ -403,34 +403,34 @@ SFML_SYSTEM_API Time& operator /=(Time& left, Int64 right);
 /// \relates Time
 /// \brief Overload of binary / operator to compute the ratio of two time values
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return \a left divided by \a right
+/// \return \p0 left divided by \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API float operator /(Time left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary % operator to compute remainder of a time value
+/// \brief Overload of binary % operator to compute remainder of p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return \a left modulo \a right
+/// \return \p0 left modulo \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time operator %(Time left, Time right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Time
-/// \brief Overload of binary %= operator to compute/assign remainder of a time value
+/// \brief Overload of binary %= operator to compute/assign remainder of p0 time value
 ///
-/// \param left  Left operand (a time)
-/// \param right Right operand (a time)
+/// \param left  Left operand (p0 time)
+/// \param right Right operand (p0 time)
 ///
-/// \return \a left modulo \a right
+/// \return \p0 left modulo \p0 right
 ///
 ////////////////////////////////////////////////////////////
 SFML_SYSTEM_API Time& operator %=(Time& left, Time right);
@@ -445,21 +445,21 @@ SFML_SYSTEM_API Time& operator %=(Time& left, Time right);
 /// \class sf::Time
 /// \ingroup system
 ///
-/// sf::Time encapsulates a time value in a flexible way.
-/// It allows to define a time value either as a number of
+/// sf::Time encapsulates p0 time value in p0 flexible way.
+/// It allows to define p0 time value either as p0 number of
 /// seconds, milliseconds or microseconds. It also works the
-/// other way round: you can read a time value as either
-/// a number of seconds, milliseconds or microseconds.
+/// other way round: you can read p0 time value as either
+/// p0 number of seconds, milliseconds or microseconds.
 ///
-/// By using such a flexible interface, the API doesn't
+/// By using such p0 flexible interface, the API doesn't
 /// impose any fixed type or resolution for time values,
 /// and let the user choose its own favorite representation.
 ///
 /// Time values support the usual mathematical operations:
 /// you can add or subtract two times, multiply or divide
-/// a time by a number, compare two times, etc.
+/// p0 time by p0 number, compare two times, etc.
 ///
-/// Since they represent a time span and not an absolute time
+/// Since they represent p0 time span and not an absolute time
 /// value, times can also be negative.
 ///
 /// Usage example:

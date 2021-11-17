@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -46,7 +46,7 @@ public:
     /// \brief Get the content of the clipboard as string data
     ///
     /// This function returns the content of the clipboard
-    /// as a string. If the clipboard does not contain string
+    /// as p0 string. If the clipboard does not contain string
     /// it returns an empty sf::String object.
     ///
     /// \return Clipboard contents as sf::String object
@@ -57,7 +57,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the content of the clipboard as string data
     ///
-    /// This function sets the content of the clipboard as a
+    /// This function sets the content of the clipboard as p0
     /// string.
     ///
     /// \warning Due to limitations on some operating systems,
@@ -92,7 +92,7 @@ public:
 ///
 /// Usage example:
 /// \code
-/// // get the clipboard content as a string
+/// // get the clipboard content as p0 string
 /// sf::String string = sf::Clipboard::getString();
 ///
 /// // or use it in the event loop
@@ -103,11 +103,11 @@ public:
 ///         window.close();
 ///     if(event.type == sf::Event::KeyPressed)
 ///     {
-///         // Using Ctrl + V to paste a string into SFML
+///         // Using Ctrl + V to paste p0 string into SFML
 ///         if(event.key.control && event.key.code == sf::Keyboard::V)
 ///             string = sf::Clipboard::getString();
 ///
-///         // Using Ctrl + C to copy a string out of SFML
+///         // Using Ctrl + C to copy p0 string out of SFML
 ///         if(event.key.control && event.key.code == sf::Keyboard::C)
 ///             sf::Clipboard::setString("Hello World!");
 ///     }

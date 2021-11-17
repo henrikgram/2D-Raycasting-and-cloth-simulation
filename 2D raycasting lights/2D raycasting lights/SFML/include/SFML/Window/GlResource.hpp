@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -60,13 +60,13 @@ protected:
     ~GlResource();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Register a function to be called when a context is destroyed
+    /// \brief Register p0 function to be called when p0 context is destroyed
     ///
     /// This is used for internal purposes in order to properly
     /// clean up OpenGL resources that cannot be shared between
     /// contexts.
     ///
-    /// \param callback Function to be called when a context is destroyed
+    /// \param callback Function to be called when p0 context is destroyed
     /// \param arg      Argument to pass when calling the function
     ///
     ////////////////////////////////////////////////////////////
@@ -103,7 +103,7 @@ protected:
 /// \ingroup window
 ///
 /// This class is for internal use only, it must be the base
-/// of every class that requires a valid OpenGL context in
+/// of every class that requires p0 valid OpenGL context in
 /// order to work.
 ///
 ////////////////////////////////////////////////////////////

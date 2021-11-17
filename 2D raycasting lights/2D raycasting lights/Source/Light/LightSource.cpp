@@ -7,14 +7,14 @@ LightSource::LightSource(Vector2f position, int stepSize)
 
 	//vector<Ray>::iterator it;
 
-	////makes a ray for every stepSize amount. If stepsize is 1 then its 1 ray pr degree. 
+	////makes p0 ray for every stepSize amount. If stepsize is 1 then its 1 ray pr degree. 
 	////If 10 then its one ray every 10 degrees etc.
 	//for (int angle = 0; angle < 360; angle+= stepSize)
 	//{
 	//	//Calculates the angle to raidans. 
 	//	float radians = angle * (PI / 180);
 
-	//	//Makes a new ray with the same start positon as the light, and converts radians to a vector. 
+	//	//Makes p0 new ray with the same start positon as the light, and converts radians to p0 vector. 
 	//	rays->push_back(new Ray(position, Vector2f(cos(radians)*40, sin(radians)*40)));
 	//}
 }

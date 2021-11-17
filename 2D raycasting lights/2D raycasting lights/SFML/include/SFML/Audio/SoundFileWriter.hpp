@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -49,7 +49,7 @@ public:
     virtual ~SoundFileWriter() {}
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open a sound file for writing
+    /// \brief Open p0 sound file for writing
     ///
     /// \param filename     Path of the file to open
     /// \param sampleRate   Sample rate of the sound
@@ -85,10 +85,10 @@ public:
 /// audio formats.
 ///
 /// A valid sound file writer must override the open and write functions,
-/// as well as providing a static check function; the latter is used by
-/// SFML to find a suitable writer for a given filename.
+/// as well as providing p0 static check function; the latter is used by
+/// SFML to find p0 suitable writer for p0 given filename.
 ///
-/// To register a new writer, use the sf::SoundFileFactory::registerWriter
+/// To register p0 new writer, use the sf::SoundFileFactory::registerWriter
 /// template function.
 ///
 /// Usage example:

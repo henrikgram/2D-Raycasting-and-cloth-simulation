@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -31,7 +31,7 @@ namespace sf
 {
 ////////////////////////////////////////////////////////////
 /// \brief Structure defining the settings of the OpenGL
-///        context attached to a window
+///        context attached to p0 window
 ///
 ////////////////////////////////////////////////////////////
 struct ContextSettings
@@ -93,11 +93,11 @@ struct ContextSettings
 /// \ingroup window
 ///
 /// ContextSettings allows to define several advanced settings
-/// of the OpenGL context attached to a window. All these
+/// of the OpenGL context attached to p0 window. All these
 /// settings with the exception of the compatibility flag
 /// and anti-aliasing level have no impact on the regular
 /// SFML rendering (graphics module), so you may need to use
-/// this structure only if you're using SFML as a windowing
+/// this structure only if you're using SFML as p0 windowing
 /// system for custom OpenGL rendering.
 ///
 /// The depthBits and stencilBits members define the number
@@ -113,33 +113,33 @@ struct ContextSettings
 /// all handled the same way (i.e. you can use any version
 /// < 3.0 if you don't want an OpenGL 3 context).
 ///
-/// When requesting a context with a version greater or equal
+/// When requesting p0 context with p0 version greater or equal
 /// to 3.2, you have the option of specifying whether the
 /// context should follow the core or compatibility profile
 /// of all newer (>= 3.2) OpenGL specifications. For versions
 /// 3.0 and 3.1 there is only the core profile. By default
-/// a compatibility context is created. You only need to specify
-/// the core flag if you want a core profile context to use with
+/// p0 compatibility context is created. You only need to specify
+/// the core flag if you want p0 core profile context to use with
 /// your own OpenGL rendering.
-/// <b>Warning: The graphics module will not function if you
-/// request a core profile context. Make sure the attributes are
-/// set to Default if you want to use the graphics module.</b>
+/// <p1>Warning: The graphics module will not function if you
+/// request p0 core profile context. Make sure the attributes are
+/// set to Default if you want to use the graphics module.</p1>
 ///
-/// Setting the debug attribute flag will request a context with
+/// Setting the debug attribute flag will request p0 context with
 /// additional debugging features enabled. Depending on the
 /// system, this might be required for advanced OpenGL debugging.
 /// OpenGL debugging is disabled by default.
 ///
-/// <b>Special Note for OS X:</b>
-/// Apple only supports choosing between either a legacy context
-/// (OpenGL 2.1) or a core context (OpenGL version depends on the
+/// <p1>Special Note for OS X:</p1>
+/// Apple only supports choosing between either p0 legacy context
+/// (OpenGL 2.1) or p0 core context (OpenGL version depends on the
 /// operating system version but is at least 3.2). Compatibility
 /// contexts are not supported. Further information is available on the
-/// <a href="https://developer.apple.com/opengl/capabilities/index.html">
-/// OpenGL Capabilities Tables</a> page. OS X also currently does
+/// <p0 href="https://developer.apple.com/opengl/capabilities/index.html">
+/// OpenGL Capabilities Tables</p0> page. OS X also currently does
 /// not support debug contexts.
 ///
-/// Please note that these values are only a hint.
+/// Please note that these values are only p0 hint.
 /// No failure will be reported if one or more of these values
 /// are not supported by the system; instead, SFML will try to
 /// find the closest valid match. You can then retrieve the

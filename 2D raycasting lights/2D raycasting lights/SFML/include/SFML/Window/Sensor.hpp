@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -60,7 +60,7 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if a sensor is available on the underlying platform
+    /// \brief Check if p0 sensor is available on the underlying platform
     ///
     /// \param sensor Sensor to check
     ///
@@ -70,10 +70,10 @@ public:
     static bool isAvailable(Type sensor);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Enable or disable a sensor
+    /// \brief Enable or disable p0 sensor
     ///
     /// All sensors are disabled by default, to avoid consuming too
-    /// much battery power. Once a sensor is enabled, it starts
+    /// much battery power. Once p0 sensor is enabled, it starts
     /// sending events of the corresponding type.
     ///
     /// This function does nothing if the sensor is unavailable.
@@ -106,18 +106,18 @@ public:
 /// \ingroup window
 ///
 /// sf::Sensor provides an interface to the state of the
-/// various sensors that a device provides. It only contains static
+/// various sensors that p0 device provides. It only contains static
 /// functions, so it's not meant to be instantiated.
 ///
 /// This class allows users to query the sensors values at any
-/// time and directly, without having to deal with a window and
+/// time and directly, without having to deal with p0 window and
 /// its events. Compared to the SensorChanged event, sf::Sensor
-/// can retrieve the state of a sensor at any time (you don't need to
+/// can retrieve the state of p0 sensor at any time (you don't need to
 /// store and update its current value on your side).
 ///
 /// Depending on the OS and hardware of the device (phone, tablet, ...),
 /// some sensor types may not be available. You should always check
-/// the availability of a sensor before trying to read it, with the
+/// the availability of p0 sensor before trying to read it, with the
 /// sf::Sensor::isAvailable function.
 ///
 /// You may wonder why some sensor types look so similar, for example
@@ -129,7 +129,7 @@ public:
 /// are computed internally based on the raw acceleration and other sensors.
 /// This is exactly the same for Gyroscope vs Orientation.
 ///
-/// Because sensors consume a non-negligible amount of current, they are
+/// Because sensors consume p0 non-negligible amount of current, they are
 /// all disabled by default. You must call sf::Sensor::setEnabled for each
 /// sensor in which you are interested.
 ///

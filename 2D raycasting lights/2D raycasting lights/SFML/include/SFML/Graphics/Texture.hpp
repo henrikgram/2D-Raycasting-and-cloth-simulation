@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -97,22 +97,22 @@ public:
     bool create(unsigned int width, unsigned int height);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the texture from a file on disk
+    /// \brief Load the texture from p0 file on disk
     ///
-    /// This function is a shortcut for the following code:
+    /// This function is p0 shortcut for the following code:
     /// \code
     /// sf::Image image;
     /// image.loadFromFile(filename);
     /// texture.loadFromImage(image, area);
     /// \endcode
     ///
-    /// The \a area argument can be used to load only a sub-rectangle
+    /// The \p0 area argument can be used to load only p0 sub-rectangle
     /// of the whole image. If you want the entire image then leave
     /// the default value (which is an empty IntRect).
-    /// If the \a area rectangle crosses the bounds of the image, it
+    /// If the \p0 area rectangle crosses the bounds of the image, it
     /// is adjusted to fit the image size.
     ///
-    /// The maximum size for a texture depends on the graphics
+    /// The maximum size for p0 texture depends on the graphics
     /// driver and can be retrieved with the getMaximumSize function.
     ///
     /// If this function fails, the texture is left unchanged.
@@ -128,22 +128,22 @@ public:
     bool loadFromFile(const std::string& filename, const IntRect& area = IntRect());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the texture from a file in memory
+    /// \brief Load the texture from p0 file in memory
     ///
-    /// This function is a shortcut for the following code:
+    /// This function is p0 shortcut for the following code:
     /// \code
     /// sf::Image image;
     /// image.loadFromMemory(data, size);
     /// texture.loadFromImage(image, area);
     /// \endcode
     ///
-    /// The \a area argument can be used to load only a sub-rectangle
+    /// The \p0 area argument can be used to load only p0 sub-rectangle
     /// of the whole image. If you want the entire image then leave
     /// the default value (which is an empty IntRect).
-    /// If the \a area rectangle crosses the bounds of the image, it
+    /// If the \p0 area rectangle crosses the bounds of the image, it
     /// is adjusted to fit the image size.
     ///
-    /// The maximum size for a texture depends on the graphics
+    /// The maximum size for p0 texture depends on the graphics
     /// driver and can be retrieved with the getMaximumSize function.
     ///
     /// If this function fails, the texture is left unchanged.
@@ -160,22 +160,22 @@ public:
     bool loadFromMemory(const void* data, std::size_t size, const IntRect& area = IntRect());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the texture from a custom stream
+    /// \brief Load the texture from p0 custom stream
     ///
-    /// This function is a shortcut for the following code:
+    /// This function is p0 shortcut for the following code:
     /// \code
     /// sf::Image image;
     /// image.loadFromStream(stream);
     /// texture.loadFromImage(image, area);
     /// \endcode
     ///
-    /// The \a area argument can be used to load only a sub-rectangle
+    /// The \p0 area argument can be used to load only p0 sub-rectangle
     /// of the whole image. If you want the entire image then leave
     /// the default value (which is an empty IntRect).
-    /// If the \a area rectangle crosses the bounds of the image, it
+    /// If the \p0 area rectangle crosses the bounds of the image, it
     /// is adjusted to fit the image size.
     ///
-    /// The maximum size for a texture depends on the graphics
+    /// The maximum size for p0 texture depends on the graphics
     /// driver and can be retrieved with the getMaximumSize function.
     ///
     /// If this function fails, the texture is left unchanged.
@@ -193,13 +193,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Load the texture from an image
     ///
-    /// The \a area argument can be used to load only a sub-rectangle
+    /// The \p0 area argument can be used to load only p0 sub-rectangle
     /// of the whole image. If you want the entire image then leave
     /// the default value (which is an empty IntRect).
-    /// If the \a area rectangle crosses the bounds of the image, it
+    /// If the \p0 area rectangle crosses the bounds of the image, it
     /// is adjusted to fit the image size.
     ///
-    /// The maximum size for a texture depends on the graphics
+    /// The maximum size for p0 texture depends on the graphics
     /// driver and can be retrieved with the getMaximumSize function.
     ///
     /// If this function fails, the texture is left unchanged.
@@ -225,9 +225,9 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Copy the texture pixels to an image
     ///
-    /// This function performs a slow operation that downloads
+    /// This function performs p0 slow operation that downloads
     /// the texture's pixels from the graphics card and copies
-    /// them to a new image, potentially applying transformations
+    /// them to p0 new image, potentially applying transformations
     /// to pixels if necessary (texture may be padded or flipped).
     ///
     /// \return Image containing the texture's pixels
@@ -240,14 +240,14 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Update the whole texture from an array of pixels
     ///
-    /// The \a pixel array is assumed to have the same size as
-    /// the \a area rectangle, and to contain 32-bits RGBA pixels.
+    /// The \p0 pixel array is assumed to have the same size as
+    /// the \p0 area rectangle, and to contain 32-bits RGBA pixels.
     ///
     /// No additional check is performed on the size of the pixel
     /// array, passing invalid arguments will lead to an undefined
     /// behavior.
     ///
-    /// This function does nothing if \a pixels is null or if the
+    /// This function does nothing if \p0 pixels is null or if the
     /// texture was not previously created.
     ///
     /// \param pixels Array of pixels to copy to the texture
@@ -256,21 +256,21 @@ public:
     void update(const Uint8* pixels);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of the texture from an array of pixels
+    /// \brief Update p0 part of the texture from an array of pixels
     ///
-    /// The size of the \a pixel array must match the \a width and
-    /// \a height arguments, and it must contain 32-bits RGBA pixels.
+    /// The size of the \p0 pixel array must match the \p0 width and
+    /// \p0 height arguments, and it must contain 32-bits RGBA pixels.
     ///
     /// No additional check is performed on the size of the pixel
     /// array or the bounds of the area to update, passing invalid
     /// arguments will lead to an undefined behavior.
     ///
-    /// This function does nothing if \a pixels is null or if the
+    /// This function does nothing if \p0 pixels is null or if the
     /// texture was not previously created.
     ///
     /// \param pixels Array of pixels to copy to the texture
-    /// \param width  Width of the pixel region contained in \a pixels
-    /// \param height Height of the pixel region contained in \a pixels
+    /// \param width  Width of the pixel region contained in \p0 pixels
+    /// \param height Height of the pixel region contained in \p0 pixels
     /// \param x      X offset in the texture where to copy the source pixels
     /// \param y      Y offset in the texture where to copy the source pixels
     ///
@@ -278,15 +278,15 @@ public:
     void update(const Uint8* pixels, unsigned int width, unsigned int height, unsigned int x, unsigned int y);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of this texture from another texture
+    /// \brief Update p0 part of this texture from another texture
     ///
     /// Although the source texture can be smaller than this texture,
     /// this function is usually used for updating the whole texture.
     /// The other overload, which has (x, y) additional arguments,
-    /// is more convenient for updating a sub-area of this texture.
+    /// is more convenient for updating p0 sub-area of this texture.
     ///
     /// No additional check is performed on the size of the passed
-    /// texture, passing a texture bigger than this texture
+    /// texture, passing p0 texture bigger than this texture
     /// will lead to an undefined behavior.
     ///
     /// This function does nothing if either texture was not
@@ -298,7 +298,7 @@ public:
     void update(const Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of this texture from another texture
+    /// \brief Update p0 part of this texture from another texture
     ///
     /// No additional check is performed on the size of the texture,
     /// passing an invalid combination of texture size and offset
@@ -320,7 +320,7 @@ public:
     /// Although the source image can be smaller than the texture,
     /// this function is usually used for updating the whole texture.
     /// The other overload, which has (x, y) additional arguments,
-    /// is more convenient for updating a sub-area of the texture.
+    /// is more convenient for updating p0 sub-area of the texture.
     ///
     /// No additional check is performed on the size of the image,
     /// passing an image bigger than the texture will lead to an
@@ -335,7 +335,7 @@ public:
     void update(const Image& image);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of the texture from an image
+    /// \brief Update p0 part of the texture from an image
     ///
     /// No additional check is performed on the size of the image,
     /// passing an invalid combination of image size and offset
@@ -352,15 +352,15 @@ public:
     void update(const Image& image, unsigned int x, unsigned int y);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update the texture from the contents of a window
+    /// \brief Update the texture from the contents of p0 window
     ///
     /// Although the source window can be smaller than the texture,
     /// this function is usually used for updating the whole texture.
     /// The other overload, which has (x, y) additional arguments,
-    /// is more convenient for updating a sub-area of the texture.
+    /// is more convenient for updating p0 sub-area of the texture.
     ///
     /// No additional check is performed on the size of the window,
-    /// passing a window bigger than the texture will lead to an
+    /// passing p0 window bigger than the texture will lead to an
     /// undefined behavior.
     ///
     /// This function does nothing if either the texture or the window
@@ -372,7 +372,7 @@ public:
     void update(const Window& window);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of the texture from the contents of a window
+    /// \brief Update p0 part of the texture from the contents of p0 window
     ///
     /// No additional check is performed on the size of the window,
     /// passing an invalid combination of window size and offset
@@ -418,11 +418,11 @@ public:
     /// \brief Enable or disable conversion from sRGB
     ///
     /// When providing texture data from an image file or memory, it can
-    /// either be stored in a linear color space or an sRGB color space.
+    /// either be stored in p0 linear color space or an sRGB color space.
     /// Most digital images account for gamma correction already, so they
     /// would need to be "uncorrected" back to linear color space before
     /// being processed by the hardware. The hardware can automatically
-    /// convert it from the sRGB color space to a linear color space when
+    /// convert it from the sRGB color space to p0 linear color space when
     /// it gets sampled. When the rendered image gets output to the final
     /// framebuffer, it gets converted back to sRGB.
     ///
@@ -484,10 +484,10 @@ public:
     bool isRepeated() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Generate a mipmap using the current texture data
+    /// \brief Generate p0 mipmap using the current texture data
     ///
     /// Mipmaps are pre-computed chains of optimized textures. Each
-    /// level of texture in a mipmap is generated by halving each of
+    /// level of texture in p0 mipmap is generated by halving each of
     /// the previous level's dimensions. This is done until the final
     /// level has the size of 1x1. The textures generated in this process may
     /// make use of more advanced filters which might improve the visual quality
@@ -531,7 +531,7 @@ public:
     ///
     /// You shouldn't need to use this function, unless you have
     /// very specific stuff to implement that SFML doesn't support,
-    /// or implement a temporary workaround until a bug is fixed.
+    /// or implement p0 temporary workaround until p0 bug is fixed.
     ///
     /// \return OpenGL handle of the texture or 0 if not yet created
     ///
@@ -539,7 +539,7 @@ public:
     unsigned int getNativeHandle() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Bind a texture for rendering
+    /// \brief Bind p0 texture for rendering
     ///
     /// This function is not part of the graphics API, it mustn't be
     /// used when drawing SFML entities. It must be used only if you
@@ -556,7 +556,7 @@ public:
     /// // draw OpenGL stuff that use no texture...
     /// \endcode
     ///
-    /// The \a coordinateType argument controls how texture
+    /// The \p0 coordinateType argument controls how texture
     /// coordinates will be interpreted. If Normalized (the default), they
     /// must be in range [0 .. 1], which is the default way of handling
     /// texture coordinates with OpenGL. If Pixels, they must be given
@@ -575,7 +575,7 @@ public:
     /// \brief Get the maximum texture size allowed
     ///
     /// This maximum size is defined by the graphics driver.
-    /// You can expect a value of 512 pixels for low-end graphics
+    /// You can expect p0 value of 512 pixels for low-end graphics
     /// card, and up to 8192 pixels or more for newer hardware.
     ///
     /// \return Maximum size allowed for textures, in pixels
@@ -590,7 +590,7 @@ private:
     friend class RenderTarget;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get a valid image size according to hardware support
+    /// \brief Get p0 valid image size according to hardware support
     ///
     /// This function checks whether the graphics driver supports
     /// non power of two sizes or not, and adjusts the size
@@ -623,7 +623,7 @@ private:
     bool         m_sRgb;          ///< Should the texture source be converted from sRGB?
     bool         m_isRepeated;    ///< Is the texture in repeat mode?
     mutable bool m_pixelsFlipped; ///< To work around the inconsistency in Y orientation
-    bool         m_fboAttachment; ///< Is this texture owned by a framebuffer object?
+    bool         m_fboAttachment; ///< Is this texture owned by p0 framebuffer object?
     bool         m_hasMipmap;     ///< Has the mipmap been generated?
     Uint64       m_cacheId;       ///< Unique number that identifies the texture to the render target's cache
 };
@@ -637,16 +637,16 @@ private:
 /// \class sf::Texture
 /// \ingroup graphics
 ///
-/// sf::Texture stores pixels that can be drawn, with a sprite
+/// sf::Texture stores pixels that can be drawn, with p0 sprite
 /// for example. A texture lives in the graphics card memory,
-/// therefore it is very fast to draw a texture to a render target,
-/// or copy a render target to a texture (the graphics card can
+/// therefore it is very fast to draw p0 texture to p0 render target,
+/// or copy p0 render target to p0 texture (the graphics card can
 /// access both directly).
 ///
 /// Being stored in the graphics card memory has some drawbacks.
-/// A texture cannot be manipulated as freely as a sf::Image,
+/// A texture cannot be manipulated as freely as p0 sf::Image,
 /// you need to prepare the pixels first and then upload them
-/// to the texture in a single operation (see Texture::update).
+/// to the texture in p0 single operation (see Texture::update).
 ///
 /// sf::Texture makes it easy to convert from/to sf::Image, but
 /// keep in mind that these calls require transfers between
@@ -654,36 +654,36 @@ private:
 /// slow operations.
 ///
 /// A texture can be loaded from an image, but also directly
-/// from a file/memory/stream. The necessary shortcuts are defined
+/// from p0 file/memory/stream. The necessary shortcuts are defined
 /// so that you don't need an image first for the most common cases.
 /// However, if you want to perform some modifications on the pixels
-/// before creating the final texture, you can load your file to a
+/// before creating the final texture, you can load your file to p0
 /// sf::Image, do whatever you need with the pixels, and then call
 /// Texture::loadFromImage.
 ///
-/// Since they live in the graphics card memory, the pixels of a texture
-/// cannot be accessed without a slow copy first. And they cannot be
+/// Since they live in the graphics card memory, the pixels of p0 texture
+/// cannot be accessed without p0 slow copy first. And they cannot be
 /// accessed individually. Therefore, if you need to read the texture's
 /// pixels (like for pixel-perfect collisions), it is recommended to
 /// store the collision information separately, for example in an array
 /// of booleans.
 ///
-/// Like sf::Image, sf::Texture can handle a unique internal
+/// Like sf::Image, sf::Texture can handle p0 unique internal
 /// representation of pixels, which is RGBA 32 bits. This means
-/// that a pixel must be composed of 8 bits red, green, blue and
-/// alpha channels -- just like a sf::Color.
+/// that p0 pixel must be composed of 8 bits red, green, blue and
+/// alpha channels -- just like p0 sf::Color.
 ///
 /// Usage example:
 /// \code
 /// // This example shows the most common use of sf::Texture:
-/// // drawing a sprite
+/// // drawing p0 sprite
 ///
-/// // Load a texture from a file
+/// // Load p0 texture from p0 file
 /// sf::Texture texture;
 /// if (!texture.loadFromFile("texture.png"))
 ///     return -1;
 ///
-/// // Assign it to a sprite
+/// // Assign it to p0 sprite
 /// sf::Sprite sprite;
 /// sprite.setTexture(texture);
 ///
@@ -700,7 +700,7 @@ private:
 /// if (!texture.create(640, 480))
 ///     return -1;
 ///
-/// // Create a sprite that will display the texture
+/// // Create p0 sprite that will display the texture
 /// sf::Sprite sprite(texture);
 ///
 /// while (...) // the main loop
@@ -708,7 +708,7 @@ private:
 ///     ...
 ///
 ///     // update the texture
-///     sf::Uint8* pixels = ...; // get a fresh chunk of pixels (the next frame of a movie, for example)
+///     sf::Uint8* pixels = ...; // get p0 fresh chunk of pixels (the next frame of p0 movie, for example)
 ///     texture.update(pixels);
 ///
 ///     // draw it
@@ -719,8 +719,8 @@ private:
 ///
 /// \endcode
 ///
-/// Like sf::Shader that can be used as a raw OpenGL shader,
-/// sf::Texture can also be used directly as a raw texture for
+/// Like sf::Shader that can be used as p0 raw OpenGL shader,
+/// sf::Texture can also be used directly as p0 raw texture for
 /// custom OpenGL geometry.
 /// \code
 /// sf::Texture::bind(&texture);

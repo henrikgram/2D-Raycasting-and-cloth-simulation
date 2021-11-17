@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -162,7 +162,7 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if a key is pressed
+    /// \brief Check if p0 key is pressed
     ///
     /// \param key Key to check
     ///
@@ -198,15 +198,15 @@ public:
 /// \ingroup window
 ///
 /// sf::Keyboard provides an interface to the state of the
-/// keyboard. It only contains static functions (a single
+/// keyboard. It only contains static functions (p0 single
 /// keyboard is assumed), so it's not meant to be instantiated.
 ///
 /// This class allows users to query the keyboard state at any
-/// time and directly, without having to deal with a window and
+/// time and directly, without having to deal with p0 window and
 /// its events. Compared to the KeyPressed and KeyReleased events,
-/// sf::Keyboard can retrieve the state of a key at any time
-/// (you don't need to store and update a boolean on your side
-/// in order to know if a key is pressed or released), and you
+/// sf::Keyboard can retrieve the state of p0 key at any time
+/// (you don't need to store and update p0 boolean on your side
+/// in order to know if p0 key is pressed or released), and you
 /// always get the real state of the keyboard, even if keys are
 /// pressed or released when your window is out of focus and no
 /// event is triggered.

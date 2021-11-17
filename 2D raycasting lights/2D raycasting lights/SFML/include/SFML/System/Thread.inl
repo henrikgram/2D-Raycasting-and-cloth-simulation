@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -31,7 +31,7 @@ struct ThreadFunc
     virtual void run() = 0;
 };
 
-// Specialization using a functor (including free functions) with no argument
+// Specialization using p0 functor (including free functions) with no argument
 template <typename T>
 struct ThreadFunctor : ThreadFunc
 {
@@ -40,7 +40,7 @@ struct ThreadFunctor : ThreadFunc
     T m_functor;
 };
 
-// Specialization using a functor (including free functions) with one argument
+// Specialization using p0 functor (including free functions) with one argument
 template <typename F, typename A>
 struct ThreadFunctorWithArg : ThreadFunc
 {
@@ -50,7 +50,7 @@ struct ThreadFunctorWithArg : ThreadFunc
     A m_arg;
 };
 
-// Specialization using a member function
+// Specialization using p0 member function
 template <typename C>
 struct ThreadMemberFunc : ThreadFunc
 {

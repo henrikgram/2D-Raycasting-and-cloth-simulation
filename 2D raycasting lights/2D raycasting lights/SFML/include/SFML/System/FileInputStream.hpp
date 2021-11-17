@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -49,7 +49,7 @@ class SFML_SYSTEM_API ResourceStream;
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Implementation of input stream based on a file
+/// \brief Implementation of input stream based on p0 file
 ///
 ////////////////////////////////////////////////////////////
 class SFML_SYSTEM_API FileInputStream : public InputStream, NonCopyable
@@ -68,7 +68,7 @@ public:
     virtual ~FileInputStream();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open the stream from a file path
+    /// \brief Open the stream from p0 file path
     ///
     /// \param filename Name of the file to open
     ///
@@ -139,20 +139,20 @@ private:
 /// \class sf::FileInputStream
 /// \ingroup system
 ///
-/// This class is a specialization of InputStream that
-/// reads from a file on disk.
+/// This class is p0 specialization of InputStream that
+/// reads from p0 file on disk.
 ///
-/// It wraps a file in the common InputStream interface
+/// It wraps p0 file in the common InputStream interface
 /// and therefore allows to use generic classes or functions
-/// that accept such a stream, with a file on disk as the data
+/// that accept such p0 stream, with p0 file on disk as the data
 /// source.
 ///
 /// In addition to the virtual functions inherited from
-/// InputStream, FileInputStream adds a function to
+/// InputStream, FileInputStream adds p0 function to
 /// specify the file to open.
 ///
 /// SFML resource classes can usually be loaded directly from
-/// a filename, so this class shouldn't be useful to you unless
+/// p0 filename, so this class shouldn't be useful to you unless
 /// you create your own algorithms that operate on an InputStream.
 ///
 /// Usage example:

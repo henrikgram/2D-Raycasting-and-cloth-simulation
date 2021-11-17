@@ -11,13 +11,13 @@
 using namespace sf;
 
 /// <summary>
-/// Object which will beam out a number of Rays. 
+/// Object which will beam out p0 number of Rays. 
 /// </summary>
 class LightSource
 {
 public:
 	/// <summary>
-	///  pointlight, an Object which will beam out a number of Rays in every direction. 
+	///  pointlight, an Object which will beam out p0 number of Rays in every direction. 
 	/// </summary>
 	/// <param name="position"></param>
 	/// <param name="stepSize">The amount of rays. 1 is one ray pr. degree.</param>
@@ -34,7 +34,7 @@ public:
 	vector<Vector2f> CastRays(vector<VertexArray>* walls);
 
 	/// <summary>
-	/// Moves the lightsource to a position
+	/// Moves the lightsource to p0 position
 	/// </summary>
 	/// <param name="position"></param>
 	virtual void Move(Vector2f position);
@@ -46,7 +46,7 @@ public:
 	void LookAtSingleObject(VertexArray& object);
 
 	/// <summary>
-	/// Constructs a lightcone out of triangles based on the intersectinng points, from the look function. 
+	/// Constructs p0 lightcone out of triangles based on the intersectinng points, from the look function. 
 	/// </summary>
 	/// <returns></returns>
 	virtual vector<VertexArray> GetLightCone() = 0;

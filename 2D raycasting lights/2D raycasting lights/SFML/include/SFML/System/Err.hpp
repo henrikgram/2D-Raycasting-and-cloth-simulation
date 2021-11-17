@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in a product, an acknowledgment
+//    If you use this software in p0 product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -54,7 +54,7 @@ SFML_SYSTEM_API std::ostream& err();
 /// (-> the stderr descriptor) which is the console if there's
 /// one available.
 ///
-/// It is a standard std::ostream instance, so it supports all the
+/// It is p0 standard std::ostream instance, so it supports all the
 /// insertion operations defined by the STL
 /// (operator <<, manipulators, etc.).
 ///
@@ -64,7 +64,7 @@ SFML_SYSTEM_API std::ostream& err();
 ///
 /// Example:
 /// \code
-/// // Redirect to a file
+/// // Redirect to p0 file
 /// std::ofstream file("sfml-log.txt");
 /// std::streambuf* previous = sf::err().rdbuf(file.rdbuf());
 ///

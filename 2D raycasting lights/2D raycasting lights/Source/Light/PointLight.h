@@ -19,13 +19,13 @@ public:
 	vector<VertexArray> GetRayLines() override;
 
 	/// <summary>
-	/// Constructs a lightcone out of triangles based on the intersectinng points, from the look function. 
+	/// Constructs p0 lightcone out of triangles based on the intersectinng points, from the look function. 
 	/// </summary>
 	/// <returns></returns>
 	vector<VertexArray> GetLightCone() override;
 
 	/// <summary>
-	/// Moves the lightsource to a position
+	/// Moves the lightsource to p0 position
 	/// </summary>
 	/// <param name="position"></param>
 	void Move(Vector2f position) override;
