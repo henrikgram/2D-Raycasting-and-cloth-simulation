@@ -9,8 +9,10 @@ private:
 	float gravity;
 	float friction;
 
+	
+
 public:
-	Point(float posX, float posY);
+	Point(float posX, float posY, bool isLocked = false);
 	~Point();
 
 	void Update();
@@ -20,7 +22,8 @@ public:
 	float posX;
 	float posY;
 
-
+	bool isLocked;
+	bool isSelected = false;
 
 };
 

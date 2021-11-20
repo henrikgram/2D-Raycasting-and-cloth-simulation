@@ -47,11 +47,18 @@ void Stick::Update()
 	float offsetX = dstX * percent;
 	float offsetY = dsty * percent;
 
-	p0->posX -= offsetX;
-	p0->posY -= offsetY;
+	if (!p0->isLocked)
+	{
+		p0->posX -= offsetX;
+		p0->posY -= offsetY;
+	}
 
-	p1->posX += offsetX;
-	p1->posY += offsetY;
+	if (!p1->isLocked)
+	{
+		p1->posX += offsetX;
+		p1->posY += offsetY;
+
+	}
 
 
 }

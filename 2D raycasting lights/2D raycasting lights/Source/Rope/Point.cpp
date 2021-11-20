@@ -2,13 +2,14 @@
 #include <random>
 #include <time.h>
 
-Point::Point(float posX, float posY)
+Point::Point(float posX, float posY, bool isLocked)
 {
 	this->posX = posX;
 	this->posY = posY;
+	this->isLocked = isLocked;
 
-	prevX = posX - 5; //+rand() % 20 - 10;
-	prevY = posY - 5;// +rand() % 20 - 10;
+	prevX = posX + rand() % 20 - 10;
+	prevY = posY  +rand() % 20 - 10;
 
 	 bounce = 0.9f;
 	 gravity = 0.5f;
@@ -22,17 +23,26 @@ Point::~Point()
 void Point::Update()
 {
 	//Verlet integration
-	float velX = (posX - prevX) * friction;
-	float velY = (posY - prevY) * friction;
+	if (isSelected)
+	{
+		isLocked = true;
+	}
+	if (!isLocked)
+	{
+		float velX = (posX - prevX) * friction;
+		float velY = (posY - prevY) * friction;
 
-	prevX = posX;
-	prevY = posY;
+		prevX = posX;
+		prevY = posY;
 
-	posX += velX;
-	posY += velY;
+		posX += velX;
+		posY += velY;
 
-	//add gravity
-	posY += gravity;
+		//add gravity
+		posY += gravity;
+	}
+
+	
 
 }
 
