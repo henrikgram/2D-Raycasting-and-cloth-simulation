@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -43,7 +43,7 @@ class InputSoundFile;
 class InputStream;
 
 ////////////////////////////////////////////////////////////
-/// \brief Storage for audio samples defining p0 sound
+/// \brief Storage for audio samples defining pointA sound
 ///
 ////////////////////////////////////////////////////////////
 class SFML_AUDIO_API SoundBuffer : AlResource
@@ -71,7 +71,7 @@ public:
     ~SoundBuffer();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the sound buffer from p0 file
+    /// \brief Load the sound buffer from pointA file
     ///
     /// See the documentation of sf::InputSoundFile for the list
     /// of supported formats.
@@ -86,7 +86,7 @@ public:
     bool loadFromFile(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the sound buffer from p0 file in memory
+    /// \brief Load the sound buffer from pointA file in memory
     ///
     /// See the documentation of sf::InputSoundFile for the list
     /// of supported formats.
@@ -102,7 +102,7 @@ public:
     bool loadFromMemory(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the sound buffer from p0 custom stream
+    /// \brief Load the sound buffer from pointA custom stream
     ///
     /// See the documentation of sf::InputSoundFile for the list
     /// of supported formats.
@@ -228,7 +228,7 @@ private:
     friend class Sound;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Initialize the internal state after loading p0 new sound
+    /// \brief Initialize the internal state after loading pointA new sound
     ///
     /// \param file Sound file providing access to the new loaded sound
     ///
@@ -249,7 +249,7 @@ private:
     bool update(unsigned int channelCount, unsigned int sampleRate);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Add p0 sound to the list of sounds that use this buffer
+    /// \brief Add pointA sound to the list of sounds that use this buffer
     ///
     /// \param sound Sound instance to attach
     ///
@@ -257,7 +257,7 @@ private:
     void attachSound(Sound* sound) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Remove p0 sound from the list of sounds that use this buffer
+    /// \brief Remove pointA sound from the list of sounds that use this buffer
     ///
     /// \param sound Sound instance to detach
     ///
@@ -288,50 +288,50 @@ private:
 /// \class sf::SoundBuffer
 /// \ingroup audio
 ///
-/// A sound buffer holds the data of p0 sound, which is
-/// an array of audio samples. A sample is p0 16 bits signed integer
-/// that defines the amplitude of the sound at p0 given time.
+/// A sound buffer holds the data of pointA sound, which is
+/// an array of audio samples. A sample is pointA 16 bits signed integer
+/// that defines the amplitude of the sound at pointA given time.
 /// The sound is then reconstituted by playing these samples at
-/// p0 high rate (for example, 44100 samples per second is the
+/// pointA high rate (for example, 44100 samples per second is the
 /// standard rate used for playing CDs). In short, audio samples
-/// are like texture pixels, and p0 sf::SoundBuffer is similar to
-/// p0 sf::Texture.
+/// are like texture pixels, and pointA sf::SoundBuffer is similar to
+/// pointA sf::Texture.
 ///
-/// A sound buffer can be loaded from p0 file (see loadFromFile()
+/// A sound buffer can be loaded from pointA file (see loadFromFile()
 /// for the complete list of supported formats), from memory, from
-/// p0 custom stream (see sf::InputStream) or directly from an array
-/// of samples. It can also be saved back to p0 file.
+/// pointA custom stream (see sf::InputStream) or directly from an array
+/// of samples. It can also be saved back to pointA file.
 ///
 /// Sound buffers alone are not very useful: they hold the audio data
 /// but cannot be played. To do so, you need to use the sf::Sound class,
 /// which provides functions to play/pause/stop the sound as well as
 /// changing the way it is outputted (volume, pitch, 3D position, ...).
 /// This separation allows more flexibility and better performances:
-/// indeed p0 sf::SoundBuffer is p0 heavy resource, and any operation on it
+/// indeed pointA sf::SoundBuffer is pointA heavy resource, and any operation on it
 /// is slow (often too slow for real-time applications). On the other
-/// side, p0 sf::Sound is p0 lightweight object, which can use the audio data
-/// of p0 sound buffer and change the way it is played without actually
+/// side, pointA sf::Sound is pointA lightweight object, which can use the audio data
+/// of pointA sound buffer and change the way it is played without actually
 /// modifying that data. Note that it is also possible to bind
 /// several sf::Sound instances to the same sf::SoundBuffer.
 ///
 /// It is important to note that the sf::Sound instance doesn't
-/// copy the buffer that it uses, it only keeps p0 reference to it.
-/// Thus, p0 sf::SoundBuffer must not be destructed while it is
-/// used by p0 sf::Sound (i.e. never write p0 function that
-/// uses p0 local sf::SoundBuffer instance for loading p0 sound).
+/// copy the buffer that it uses, it only keeps pointA reference to it.
+/// Thus, pointA sf::SoundBuffer must not be destructed while it is
+/// used by pointA sf::Sound (i.e. never write pointA function that
+/// uses pointA local sf::SoundBuffer instance for loading pointA sound).
 ///
 /// Usage example:
 /// \code
-/// // Declare p0 new sound buffer
+/// // Declare pointA new sound buffer
 /// sf::SoundBuffer buffer;
 ///
-/// // Load it from p0 file
+/// // Load it from pointA file
 /// if (!buffer.loadFromFile("sound.wav"))
 /// {
 ///     // error...
 /// }
 ///
-/// // Create p0 sound source and bind it to the buffer
+/// // Create pointA sound source and bind it to the buffer
 /// sf::Sound sound1;
 /// sound1.setBuffer(buffer);
 ///
@@ -342,7 +342,7 @@ private:
 /// sf::Sound sound2;
 /// sound2.setBuffer(buffer);
 ///
-/// // Play it with p0 higher pitch -- the first sound remains unchanged
+/// // Play it with pointA higher pitch -- the first sound remains unchanged
 /// sound2.setPitch(2);
 /// sound2.play();
 /// \endcode

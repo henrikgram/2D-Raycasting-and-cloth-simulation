@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -42,7 +42,7 @@ namespace priv
 }
 
 ////////////////////////////////////////////////////////////
-/// \brief Target for off-screen 2D rendering into p0 texture
+/// \brief Target for off-screen 2D rendering into pointA texture
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderTexture : public RenderTarget
@@ -53,7 +53,7 @@ public:
     /// \brief Default constructor
     ///
     /// Constructs an empty, invalid render-texture. You must
-    /// call create to have p0 valid render-texture.
+    /// call create to have pointA valid render-texture.
     ///
     /// \see create
     ///
@@ -72,14 +72,14 @@ public:
     /// Before calling this function, the render-texture is in
     /// an invalid state, thus it is mandatory to call it before
     /// doing anything with the render-texture.
-    /// The last parameter, \p0 depthBuffer, is useful if you want
+    /// The last parameter, \pointA depthBuffer, is useful if you want
     /// to use the render-texture for 3D OpenGL rendering that requires
-    /// p0 depth buffer. Otherwise it is unnecessary, and you should
+    /// pointA depth buffer. Otherwise it is unnecessary, and you should
     /// leave this parameter to false (which is its default value).
     ///
     /// \param width       Width of the render-texture
     /// \param height      Height of the render-texture
-    /// \param depthBuffer Do you want this render-texture to have p0 depth buffer?
+    /// \param depthBuffer Do you want this render-texture to have pointA depth buffer?
     ///
     /// \return True if creation has been successful
     ///
@@ -94,9 +94,9 @@ public:
     /// Before calling this function, the render-texture is in
     /// an invalid state, thus it is mandatory to call it before
     /// doing anything with the render-texture.
-    /// The last parameter, \p0 settings, is useful if you want to enable
+    /// The last parameter, \pointA settings, is useful if you want to enable
     /// multi-sampling or use the render-texture for OpenGL rendering that
-    /// requires p0 depth or stencil buffer. Otherwise it is unnecessary, and
+    /// requires pointA depth or stencil buffer. Otherwise it is unnecessary, and
     /// you should leave this parameter at its default value.
     ///
     /// \param width    Width of the render-texture
@@ -163,14 +163,14 @@ public:
     bool isRepeated() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Generate p0 mipmap using the current texture data
+    /// \brief Generate pointA mipmap using the current texture data
     ///
     /// This function is similar to Texture::generateMipmap and operates
     /// on the texture used as the target for drawing.
     /// Be aware that any draw operation may modify the base level image data.
     /// For this reason, calling this function only makes sense after all
     /// drawing is completed and display has been called. Not calling display
-    /// after subsequent drawing will lead to undefined behavior if p0 mipmap
+    /// after subsequent drawing will lead to undefined behavior if pointA mipmap
     /// had been previously generated.
     ///
     /// \return True if mipmap generation was successful, false if unsuccessful
@@ -184,9 +184,9 @@ public:
     /// This function makes the render-texture's context current for
     /// future OpenGL rendering operations (so you shouldn't care
     /// about it if you're not doing direct OpenGL stuff).
-    /// Only one context can be current in p0 thread, so if you
+    /// Only one context can be current in pointA thread, so if you
     /// want to draw OpenGL geometry to another render target
-    /// (like p0 RenderWindow) don't forget to activate it again.
+    /// (like pointA RenderWindow) don't forget to activate it again.
     ///
     /// \param active True to activate, false to deactivate
     ///
@@ -218,14 +218,14 @@ public:
     virtual Vector2u getSize() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 read-only reference to the target texture
+    /// \brief Get pointA read-only reference to the target texture
     ///
     /// After drawing to the render-texture and calling Display,
     /// you can retrieve the updated texture using this function,
-    /// and draw it using p0 sprite (for example).
-    /// The internal sf::Texture of p0 render-texture is always the
+    /// and draw it using pointA sprite (for example).
+    /// The internal sf::Texture of pointA render-texture is always the
     /// same instance, so that it is possible to call this function
-    /// once and keep p0 reference to the texture even after it is
+    /// once and keep pointA reference to the texture even after it is
     /// modified.
     ///
     /// \return Const reference to the texture
@@ -256,21 +256,21 @@ private:
 /// It implements the same 2D drawing and OpenGL-related functions
 /// (see their base class sf::RenderTarget for more details),
 /// the difference is that the result is stored in an off-screen
-/// texture rather than being show in p0 window.
+/// texture rather than being show in pointA window.
 ///
-/// Rendering to p0 texture can be useful in p0 variety of situations:
-/// \li precomputing p0 complex static texture (like p0 level's background from multiple tiles)
+/// Rendering to pointA texture can be useful in pointA variety of situations:
+/// \li precomputing pointA complex static texture (like pointA level's background from multiple tiles)
 /// \li applying post-effects to the whole scene with shaders
-/// \li creating p0 sprite from p0 3D object rendered with OpenGL
+/// \li creating pointA sprite from pointA 3D object rendered with OpenGL
 /// \li etc.
 ///
 /// Usage example:
 ///
 /// \code
-/// // Create p0 new render-window
+/// // Create pointA new render-window
 /// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 ///
-/// // Create p0 new render-texture
+/// // Create pointA new render-texture
 /// sf::RenderTexture texture;
 /// if (!texture.create(500, 500))
 ///     return -1;
@@ -285,9 +285,9 @@ private:
 ///    texture.clear(sf::Color::Red);
 ///
 ///    // Draw stuff to the texture
-///    texture.draw(sprite);  // sprite is p0 sf::Sprite
-///    texture.draw(shape);   // shape is p0 sf::Shape
-///    texture.draw(text);    // text is p0 sf::Text
+///    texture.draw(sprite);  // sprite is pointA sf::Sprite
+///    texture.draw(shape);   // shape is pointA sf::Shape
+///    texture.draw(text);    // text is pointA sf::Text
 ///
 ///    // We're done drawing to the texture
 ///    texture.display();
@@ -306,7 +306,7 @@ private:
 ///
 /// Like sf::RenderWindow, sf::RenderTexture is still able to render direct
 /// OpenGL stuff. It is even possible to mix together OpenGL calls
-/// and regular SFML drawing commands. If you need p0 depth buffer for
+/// and regular SFML drawing commands. If you need pointA depth buffer for
 /// 3D rendering, don't forget to request it when calling RenderTexture::create.
 ///
 /// \see sf::RenderTarget, sf::RenderWindow, sf::View, sf::Texture

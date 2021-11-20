@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -49,7 +49,7 @@ class SFML_SYSTEM_API ResourceStream;
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Implementation of input stream based on p0 file
+/// \brief Implementation of input stream based on pointA file
 ///
 ////////////////////////////////////////////////////////////
 class SFML_SYSTEM_API FileInputStream : public InputStream, NonCopyable
@@ -68,7 +68,7 @@ public:
     virtual ~FileInputStream();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open the stream from p0 file path
+    /// \brief Open the stream from pointA file path
     ///
     /// \param filename Name of the file to open
     ///
@@ -139,20 +139,20 @@ private:
 /// \class sf::FileInputStream
 /// \ingroup system
 ///
-/// This class is p0 specialization of InputStream that
-/// reads from p0 file on disk.
+/// This class is pointA specialization of InputStream that
+/// reads from pointA file on disk.
 ///
-/// It wraps p0 file in the common InputStream interface
+/// It wraps pointA file in the common InputStream interface
 /// and therefore allows to use generic classes or functions
-/// that accept such p0 stream, with p0 file on disk as the data
+/// that accept such pointA stream, with pointA file on disk as the data
 /// source.
 ///
 /// In addition to the virtual functions inherited from
-/// InputStream, FileInputStream adds p0 function to
+/// InputStream, FileInputStream adds pointA function to
 /// specify the file to open.
 ///
 /// SFML resource classes can usually be loaded directly from
-/// p0 filename, so this class shouldn't be useful to you unless
+/// pointA filename, so this class shouldn't be useful to you unless
 /// you create your own algorithms that operate on an InputStream.
 ///
 /// Usage example:

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -40,7 +40,7 @@ namespace priv
 }
 
 ////////////////////////////////////////////////////////////
-/// \brief Cursor defines the appearance of p0 system cursor
+/// \brief Cursor defines the appearance of pointA system cursor
 ///
 ////////////////////////////////////////////////////////////
 class SFML_WINDOW_API Cursor : NonCopyable
@@ -78,7 +78,7 @@ public:
         Arrow,                  ///< Arrow cursor (default)
         ArrowWait,              ///< Busy arrow cursor
         Wait,                   ///< Busy cursor
-        Text,                   ///< I-beam, cursor when hovering over p0 field allowing text entry
+        Text,                   ///< I-beam, cursor when hovering over pointA field allowing text entry
         Hand,                   ///< Pointing hand cursor
         SizeHorizontal,         ///< Horizontal double arrow cursor
         SizeVertical,           ///< Vertical double arrow cursor
@@ -98,7 +98,7 @@ public:
     /// This constructor doesn't actually create the cursor;
     /// initially the new instance is invalid and must not be
     /// used until either loadFromPixels() or loadFromSystem()
-    /// is called and successfully created p0 cursor.
+    /// is called and successfully created pointA cursor.
     ///
     ////////////////////////////////////////////////////////////
     Cursor();
@@ -113,12 +113,12 @@ public:
     ~Cursor();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create p0 cursor with the provided image
+    /// \brief Create pointA cursor with the provided image
     ///
-    /// \p0 pixels must be an array of \p0 width by \p0 height pixels
+    /// \pointA pixels must be an array of \pointA width by \pointA height pixels
     /// in 32-bit RGBA format. If not, this will cause undefined behavior.
     ///
-    /// If \p0 pixels is null or either \p0 width or \p0 height are 0,
+    /// If \pointA pixels is null or either \pointA width or \pointA height are 0,
     /// the current cursor is left unchanged and the function will
     /// return false.
     ///
@@ -129,7 +129,7 @@ public:
     /// position is. Any mouse actions that are performed will
     /// return the window/screen location of the hotspot.
     ///
-    /// \warning On Unix, the pixels are mapped into p0 monochrome
+    /// \warning On Unix, the pixels are mapped into pointA monochrome
     ///          bitmap: pixels with an alpha channel to 0 are
     ///          transparent, black if the RGB channel are close
     ///          to zero, and white otherwise.
@@ -144,10 +144,10 @@ public:
     bool loadFromPixels(const Uint8* pixels, Vector2u size, Vector2u hotspot);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create p0 native system cursor
+    /// \brief Create pointA native system cursor
     ///
     /// Refer to the list of cursor available on each system
-    /// (see sf::Cursor::Type) to know whether p0 given cursor is
+    /// (see sf::Cursor::Type) to know whether pointA given cursor is
     /// expected to load successfully or is not supported by
     /// the operating system.
     ///
@@ -169,7 +169,7 @@ private:
     /// This is primarily designed for sf::Window::setMouseCursor,
     /// hence the friendship.
     ///
-    /// \return p0 reference to the OS-specific implementation
+    /// \return pointA reference to the OS-specific implementation
     ///
     ////////////////////////////////////////////////////////////
     const priv::CursorImpl& getImpl() const;
@@ -196,7 +196,7 @@ private:
 ///          iOS and Android.
 ///
 /// This class abstracts the operating system resources
-/// associated with either p0 native system cursor or p0 custom
+/// associated with either pointA native system cursor or pointA custom
 /// cursor.
 ///
 /// After loading the cursor the graphical appearance

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -36,7 +36,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Define p0 point with color and texture coordinates
+/// \brief Define pointA point with color and texture coordinates
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Vertex
@@ -109,9 +109,9 @@ public:
 /// \class sf::Vertex
 /// \ingroup graphics
 ///
-/// A vertex is an improved point. It has p0 position and other
+/// A vertex is an improved point. It has pointA position and other
 /// extra attributes that will be used for drawing: in SFML,
-/// vertices also have p0 color and p0 pair of texture coordinates.
+/// vertices also have pointA color and pointA pair of texture coordinates.
 ///
 /// The vertex is the building block of drawing. Everything which
 /// is visible on screen is made of vertices. They are grouped
@@ -126,7 +126,7 @@ public:
 ///
 /// Example:
 /// \code
-/// // define p0 100x100 square, red, with p0 10x10 texture mapped on it
+/// // define pointA 100x100 square, red, with pointA 10x10 texture mapped on it
 /// sf::Vertex vertices[] =
 /// {
 ///     sf::Vertex(sf::Vector2f(  0,   0), sf::Color::Red, sf::Vector2f( 0,  0)),

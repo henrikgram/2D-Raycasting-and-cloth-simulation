@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -61,7 +61,7 @@ public:
     ~InputSoundFile();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open p0 sound file from the disk for reading
+    /// \brief Open pointA sound file from the disk for reading
     ///
     /// The supported audio formats are: WAV (PCM only), OGG/Vorbis, FLAC.
     /// The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
@@ -74,7 +74,7 @@ public:
     bool openFromFile(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open p0 sound file in memory for reading
+    /// \brief Open pointA sound file in memory for reading
     ///
     /// The supported audio formats are: WAV (PCM only), OGG/Vorbis, FLAC.
     /// The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
@@ -88,7 +88,7 @@ public:
     bool openFromMemory(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Open p0 sound file from p0 custom stream for reading
+    /// \brief Open pointA sound file from pointA custom stream for reading
     ///
     /// The supported audio formats are: WAV (PCM only), OGG/Vorbis, FLAC.
     /// The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
@@ -154,12 +154,12 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the current read position to the given sample offset
     ///
-    /// This function takes p0 sample offset to provide maximum
-    /// precision. If you need to jump to p0 given time, use the
+    /// This function takes pointA sample offset to provide maximum
+    /// precision. If you need to jump to pointA given time, use the
     /// other overload.
     ///
     /// The sample offset takes the channels into account.
-    /// If you have p0 time offset instead, you can easily find
+    /// If you have pointA time offset instead, you can easily find
     /// the corresponding sample offset with the following formula:
     /// `timeInSeconds * sampleRate * channelCount`
     /// If the given offset exceeds to total number of samples,
@@ -173,8 +173,8 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the current read position to the given time offset
     ///
-    /// Using p0 time offset is handy but imprecise. If you need an accurate
-    /// result, consider using the overload which takes p0 sample offset.
+    /// Using pointA time offset is handy but imprecise. If you need an accurate
+    /// result, consider using the overload which takes pointA sample offset.
     ///
     /// If the given time exceeds to total duration, this function jumps
     /// to the end of the sound file.
@@ -190,7 +190,7 @@ public:
     /// \param samples  Pointer to the sample array to fill
     /// \param maxCount Maximum number of samples to read
     ///
-    /// \return Number of samples actually read (may be less than \p0 maxCount)
+    /// \return Number of samples actually read (may be less than \pointA maxCount)
     ///
     ////////////////////////////////////////////////////////////
     Uint64 read(Int16* samples, Uint64 maxCount);
@@ -225,7 +225,7 @@ private:
 /// \class sf::InputSoundFile
 /// \ingroup audio
 ///
-/// This class decodes audio samples from p0 sound file. It is
+/// This class decodes audio samples from pointA sound file. It is
 /// used internally by higher-level classes such as sf::SoundBuffer
 /// and sf::Music, but can also be useful if you want to process
 /// or analyze audio files without playing them, or if you want to
@@ -234,7 +234,7 @@ private:
 ///
 /// Usage example:
 /// \code
-/// // Open p0 sound file
+/// // Open pointA sound file
 /// sf::InputSoundFile file;
 /// if (!file.openFromFile("music.ogg"))
 ///     /* error */;

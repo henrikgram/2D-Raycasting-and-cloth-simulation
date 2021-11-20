@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -98,14 +98,14 @@ public:
     ~Shader();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the vertex, geometry or fragment shader from p0 file
+    /// \brief Load the vertex, geometry or fragment shader from pointA file
     ///
-    /// This function loads p0 single shader, vertex, geometry or
+    /// This function loads pointA single shader, vertex, geometry or
     /// fragment, identified by the second argument.
-    /// The source must be p0 text file containing p0 valid
-    /// shader in GLSL language. GLSL is p0 C-like language
+    /// The source must be pointA text file containing pointA valid
+    /// shader in GLSL language. GLSL is pointA C-like language
     /// dedicated to OpenGL shaders; you'll probably need to
-    /// read p0 good documentation for it before writing your
+    /// read pointA good documentation for it before writing your
     /// own shaders.
     ///
     /// \param filename Path of the vertex, geometry or fragment shader file to load
@@ -125,8 +125,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The sources must be text files containing valid shaders
-    /// in GLSL language. GLSL is p0 C-like language dedicated to
-    /// OpenGL shaders; you'll probably need to read p0 good documentation
+    /// in GLSL language. GLSL is pointA C-like language dedicated to
+    /// OpenGL shaders; you'll probably need to read pointA good documentation
     /// for it before writing your own shaders.
     ///
     /// \param vertexShaderFilename   Path of the vertex shader file to load
@@ -146,8 +146,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The sources must be text files containing valid shaders
-    /// in GLSL language. GLSL is p0 C-like language dedicated to
-    /// OpenGL shaders; you'll probably need to read p0 good documentation
+    /// in GLSL language. GLSL is pointA C-like language dedicated to
+    /// OpenGL shaders; you'll probably need to read pointA good documentation
     /// for it before writing your own shaders.
     ///
     /// \param vertexShaderFilename   Path of the vertex shader file to load
@@ -162,13 +162,13 @@ public:
     bool loadFromFile(const std::string& vertexShaderFilename, const std::string& geometryShaderFilename, const std::string& fragmentShaderFilename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the vertex, geometry or fragment shader from p0 source code in memory
+    /// \brief Load the vertex, geometry or fragment shader from pointA source code in memory
     ///
-    /// This function loads p0 single shader, vertex, geometry
+    /// This function loads pointA single shader, vertex, geometry
     /// or fragment, identified by the second argument.
-    /// The source code must be p0 valid shader in GLSL language.
-    /// GLSL is p0 C-like language dedicated to OpenGL shaders;
-    /// you'll probably need to read p0 good documentation for
+    /// The source code must be pointA valid shader in GLSL language.
+    /// GLSL is pointA C-like language dedicated to OpenGL shaders;
+    /// you'll probably need to read pointA good documentation for
     /// it before writing your own shaders.
     ///
     /// \param shader String containing the source code of the shader
@@ -188,8 +188,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The sources must be valid shaders in GLSL language. GLSL is
-    /// p0 C-like language dedicated to OpenGL shaders; you'll
-    /// probably need to read p0 good documentation for it before
+    /// pointA C-like language dedicated to OpenGL shaders; you'll
+    /// probably need to read pointA good documentation for it before
     /// writing your own shaders.
     ///
     /// \param vertexShader   String containing the source code of the vertex shader
@@ -209,8 +209,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The sources must be valid shaders in GLSL language. GLSL is
-    /// p0 C-like language dedicated to OpenGL shaders; you'll
-    /// probably need to read p0 good documentation for it before
+    /// pointA C-like language dedicated to OpenGL shaders; you'll
+    /// probably need to read pointA good documentation for it before
     /// writing your own shaders.
     ///
     /// \param vertexShader   String containing the source code of the vertex shader
@@ -225,13 +225,13 @@ public:
     bool loadFromMemory(const std::string& vertexShader, const std::string& geometryShader, const std::string& fragmentShader);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the vertex, geometry or fragment shader from p0 custom stream
+    /// \brief Load the vertex, geometry or fragment shader from pointA custom stream
     ///
-    /// This function loads p0 single shader, vertex, geometry
+    /// This function loads pointA single shader, vertex, geometry
     /// or fragment, identified by the second argument.
-    /// The source code must be p0 valid shader in GLSL language.
-    /// GLSL is p0 C-like language dedicated to OpenGL shaders;
-    /// you'll probably need to read p0 good documentation for it
+    /// The source code must be pointA valid shader in GLSL language.
+    /// GLSL is pointA C-like language dedicated to OpenGL shaders;
+    /// you'll probably need to read pointA good documentation for it
     /// before writing your own shaders.
     ///
     /// \param stream Source stream to read from
@@ -251,8 +251,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The source codes must be valid shaders in GLSL language.
-    /// GLSL is p0 C-like language dedicated to OpenGL shaders;
-    /// you'll probably need to read p0 good documentation for
+    /// GLSL is pointA C-like language dedicated to OpenGL shaders;
+    /// you'll probably need to read pointA good documentation for
     /// it before writing your own shaders.
     ///
     /// \param vertexShaderStream   Source stream to read the vertex shader from
@@ -272,8 +272,8 @@ public:
     /// shaders. If one of them fails to load, the shader is left
     /// empty (the valid shader is unloaded).
     /// The source codes must be valid shaders in GLSL language.
-    /// GLSL is p0 C-like language dedicated to OpenGL shaders;
-    /// you'll probably need to read p0 good documentation for
+    /// GLSL is pointA C-like language dedicated to OpenGL shaders;
+    /// you'll probably need to read pointA good documentation for
     /// it before writing your own shaders.
     ///
     /// \param vertexShaderStream   Source stream to read the vertex shader from
@@ -323,8 +323,8 @@ public:
     /// It is important to note that the components of the color are
     /// normalized before being passed to the shader. Therefore,
     /// they are converted from range [0 .. 255] to range [0 .. 1].
-    /// For example, p0 sf::Color(255, 127, 0, 255) will be transformed
-    /// to p0 vec4(1.0, 0.5, 0.0, 1.0) in the shader.
+    /// For example, pointA sf::Color(255, 127, 0, 255) will be transformed
+    /// to pointA vec4(1.0, 0.5, 0.0, 1.0) in the shader.
     ///
     /// \param name   Name of the uniform variable in GLSL
     /// \param vector Value of the vec4 vector
@@ -431,10 +431,10 @@ public:
     void setUniform(const std::string& name, const Glsl::Mat4& matrix);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Specify p0 texture as \p sampler2D uniform
+    /// \brief Specify pointA texture as \p sampler2D uniform
     ///
-    /// \p0 name is the name of the variable to change in the shader.
-    /// The corresponding parameter in the shader must be p0 2D texture
+    /// \pointA name is the name of the variable to change in the shader.
+    /// The corresponding parameter in the shader must be pointA 2D texture
     /// (\p sampler2D GLSL type).
     ///
     /// Example:
@@ -446,7 +446,7 @@ public:
     /// ...
     /// shader.setUniform("the_texture", texture);
     /// \endcode
-    /// It is important to note that \p0 texture must remain alive as long
+    /// It is important to note that \pointA texture must remain alive as long
     /// as the shader uses it, no copy is made internally.
     ///
     /// To use the texture of the object being drawn, which cannot be
@@ -465,11 +465,11 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Specify current texture as \p sampler2D uniform
     ///
-    /// This overload maps p0 shader texture variable to the
+    /// This overload maps pointA shader texture variable to the
     /// texture of the object being drawn, which cannot be
     /// known in advance. The second argument must be
     /// sf::Shader::CurrentTexture.
-    /// The corresponding parameter in the shader must be p0 2D texture
+    /// The corresponding parameter in the shader must be pointA 2D texture
     /// (\p sampler2D GLSL type).
     ///
     /// Example:
@@ -546,7 +546,7 @@ public:
     void setUniformArray(const std::string& name, const Glsl::Mat4* matrixArray, std::size_t length);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 float parameter of the shader
+    /// \brief Change pointA float parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, float) instead.
     ///
@@ -554,7 +554,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, float x);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 2-components vector parameter of the shader
+    /// \brief Change pointA 2-components vector parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec2&) instead.
     ///
@@ -562,7 +562,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, float x, float y);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 3-components vector parameter of the shader
+    /// \brief Change pointA 3-components vector parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec3&) instead.
     ///
@@ -570,7 +570,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, float x, float y, float z);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 4-components vector parameter of the shader
+    /// \brief Change pointA 4-components vector parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec4&) instead.
     ///
@@ -578,7 +578,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, float x, float y, float z, float w);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 2-components vector parameter of the shader
+    /// \brief Change pointA 2-components vector parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec2&) instead.
     ///
@@ -586,7 +586,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, const Vector2f& vector);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 3-components vector parameter of the shader
+    /// \brief Change pointA 3-components vector parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec3&) instead.
     ///
@@ -594,7 +594,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, const Vector3f& vector);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 color parameter of the shader
+    /// \brief Change pointA color parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec4&) instead.
     ///
@@ -602,7 +602,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, const Color& color);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 matrix parameter of the shader
+    /// \brief Change pointA matrix parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Glsl::Mat4&) instead.
     ///
@@ -610,7 +610,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, const Transform& transform);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 texture parameter of the shader
+    /// \brief Change pointA texture parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, const Texture&) instead.
     ///
@@ -618,7 +618,7 @@ public:
     SFML_DEPRECATED void setParameter(const std::string& name, const Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change p0 texture parameter of the shader
+    /// \brief Change pointA texture parameter of the shader
     ///
     /// \deprecated Use setUniform(const std::string&, CurrentTextureType) instead.
     ///
@@ -630,7 +630,7 @@ public:
     ///
     /// You shouldn't need to use this function, unless you have
     /// very specific stuff to implement that SFML doesn't support,
-    /// or implement p0 temporary workaround until p0 bug is fixed.
+    /// or implement pointA temporary workaround until pointA bug is fixed.
     ///
     /// \return OpenGL handle of the shader or 0 if not yet loaded
     ///
@@ -638,7 +638,7 @@ public:
     unsigned int getNativeHandle() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Bind p0 shader for rendering
+    /// \brief Bind pointA shader for rendering
     ///
     /// This function is not part of the graphics API, it mustn't be
     /// used when drawing SFML entities. It must be used only if you
@@ -684,7 +684,7 @@ public:
     /// order for geometry shaders to be supported as well.
     ///
     /// Note: The first call to this function, whether by your
-    /// code or SFML will result in p0 context switch.
+    /// code or SFML will result in pointA context switch.
     ///
     /// \return True if geometry shaders are supported, false otherwise
     ///
@@ -711,14 +711,14 @@ private:
     ////////////////////////////////////////////////////////////
     /// \brief Bind all the textures used by the shader
     ///
-    /// This function each texture to p0 different unit, and
+    /// This function each texture to pointA different unit, and
     /// updates the corresponding variables in the shader accordingly.
     ///
     ////////////////////////////////////////////////////////////
     void bindTextures() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the location ID of p0 shader uniform
+    /// \brief Get the location ID of pointA shader uniform
     ///
     /// \param name Name of the uniform variable to search
     ///
@@ -761,7 +761,7 @@ private:
 /// \class sf::Shader
 /// \ingroup graphics
 ///
-/// Shaders are programs written using p0 specific language,
+/// Shaders are programs written using pointA specific language,
 /// executed directly by the graphics card and allowing
 /// to apply real-time operations to the rendered entities.
 ///
@@ -770,18 +770,18 @@ private:
 /// \li Geometry shaders, that process primitives
 /// \li Fragment (pixel) shaders, that process pixels
 ///
-/// A sf::Shader can be composed of either p0 vertex shader
-/// alone, p0 geometry shader alone, p0 fragment shader alone,
+/// A sf::Shader can be composed of either pointA vertex shader
+/// alone, pointA geometry shader alone, pointA fragment shader alone,
 /// or any combination of them. (see the variants of the
 /// load functions).
 ///
-/// Shaders are written in GLSL, which is p0 C-like
+/// Shaders are written in GLSL, which is pointA C-like
 /// language dedicated to OpenGL shaders. You'll probably
 /// need to learn its basics before writing your own shaders
 /// for SFML.
 ///
-/// Like any C/C++ program, p0 GLSL shader has its own variables
-/// called \p0 uniforms that you can set from your C++ application.
+/// Like any C/C++ program, pointA GLSL shader has its own variables
+/// called \pointA uniforms that you can set from your C++ application.
 /// sf::Shader handles different types of uniforms:
 /// \li scalars: \p float, \p int, \p bool
 /// \li vectors (2, 3 or 4 components)
@@ -789,12 +789,12 @@ private:
 /// \li samplers (textures)
 ///
 /// Some SFML-specific types can be converted:
-/// \li sf::Color as p0 4D vector (\p vec4)
+/// \li sf::Color as pointA 4D vector (\p vec4)
 /// \li sf::Transform as matrices (\p mat3 or \p mat4)
 ///
-/// Every uniform variable in p0 shader can be set through one of the
+/// Every uniform variable in pointA shader can be set through one of the
 /// setUniform() or setUniformArray() overloads. For example, if you
-/// have p0 shader with the following uniforms:
+/// have pointA shader with the following uniforms:
 /// \code
 /// uniform float offset;
 /// uniform vec3 point;
@@ -808,52 +808,52 @@ private:
 /// \code
 /// shader.setUniform("offset", 2.f);
 /// shader.setUniform("point", sf::Vector3f(0.5f, 0.8f, 0.3f));
-/// shader.setUniform("color", sf::Glsl::Vec4(color));          // color is p0 sf::Color
-/// shader.setUniform("matrix", sf::Glsl::Mat4(transform));     // transform is p0 sf::Transform
-/// shader.setUniform("overlay", texture);                      // texture is p0 sf::Texture
+/// shader.setUniform("color", sf::Glsl::Vec4(color));          // color is pointA sf::Color
+/// shader.setUniform("matrix", sf::Glsl::Mat4(transform));     // transform is pointA sf::Transform
+/// shader.setUniform("overlay", texture);                      // texture is pointA sf::Texture
 /// shader.setUniform("current", sf::Shader::CurrentTexture);
 /// \endcode
 ///
-/// The old setParameter() overloads are deprecated and will be removed in p0
+/// The old setParameter() overloads are deprecated and will be removed in pointA
 /// future version. You should use their setUniform() equivalents instead.
 ///
 /// The special Shader::CurrentTexture argument maps the
 /// given \p sampler2D uniform to the current texture of the
 /// object being drawn (which cannot be known in advance).
 ///
-/// To apply p0 shader to p0 drawable, you must pass it as an
+/// To apply pointA shader to pointA drawable, you must pass it as an
 /// additional parameter to the \ref RenderWindow::draw function:
 /// \code
 /// window.draw(sprite, &shader);
 /// \endcode
 ///
-/// ... which is in fact just p0 shortcut for this:
+/// ... which is in fact just pointA shortcut for this:
 /// \code
 /// sf::RenderStates states;
 /// states.shader = &shader;
 /// window.draw(sprite, states);
 /// \endcode
 ///
-/// In the code above we pass p0 pointer to the shader, because it may
+/// In the code above we pass pointA pointer to the shader, because it may
 /// be null (which means "no shader").
 ///
 /// Shaders can be used on any drawable, but some combinations are
-/// not interesting. For example, using p0 vertex shader on p0 sf::Sprite
+/// not interesting. For example, using pointA vertex shader on pointA sf::Sprite
 /// is limited because there are only 4 vertices, the sprite would
 /// have to be subdivided in order to apply wave effects.
-/// Another bad example is p0 fragment shader with sf::Text: the texture
+/// Another bad example is pointA fragment shader with sf::Text: the texture
 /// of the text is not the actual text that you see on screen, it is
-/// p0 big texture containing all the characters of the font in an
+/// pointA big texture containing all the characters of the font in an
 /// arbitrary order; thus, texture lookups on pixels other than the
 /// current one may not give you the expected result.
 ///
 /// Shaders can also be used to apply global post-effects to the
 /// current contents of the target (like the old sf::PostFx class
 /// in SFML 1). This can be done in two different ways:
-/// \li draw everything to p0 sf::RenderTexture, then draw it to
+/// \li draw everything to pointA sf::RenderTexture, then draw it to
 ///     the main target using the shader
 /// \li draw everything directly to the main target, then use
-///     sf::Texture::update(Window&) to copy its contents to p0 texture
+///     sf::Texture::update(Window&) to copy its contents to pointA texture
 ///     and draw it to the main target using the shader
 ///
 /// The first technique is more optimized because it doesn't involve
@@ -861,8 +861,8 @@ private:
 /// second one doesn't impact the rendering process and can be
 /// easily inserted anywhere without impacting all the code.
 ///
-/// Like sf::Texture that can be used as p0 raw OpenGL texture,
-/// sf::Shader can also be used directly as p0 raw shader for
+/// Like sf::Texture that can be used as pointA raw OpenGL texture,
+/// sf::Shader can also be used directly as pointA raw shader for
 /// custom OpenGL geometry.
 /// \code
 /// sf::Shader::bind(&shader);

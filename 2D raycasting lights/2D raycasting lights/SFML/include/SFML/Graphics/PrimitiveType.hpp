@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -29,7 +29,7 @@ namespace sf
 {
 ////////////////////////////////////////////////////////////
 /// \ingroup graphics
-/// \brief Types of primitives that p0 sf::VertexArray can render
+/// \brief Types of primitives that pointA sf::VertexArray can render
 ///
 /// Points and lines have no area, therefore their thickness
 /// will always be 1 pixel, regardless the current transform
@@ -40,10 +40,10 @@ enum PrimitiveType
 {
     Points,        ///< List of individual points
     Lines,         ///< List of individual lines
-    LineStrip,     ///< List of connected lines, p0 point uses the previous point to form p0 line
+    LineStrip,     ///< List of connected lines, pointA point uses the previous point to form pointA line
     Triangles,     ///< List of individual triangles
-    TriangleStrip, ///< List of connected triangles, p0 point uses the two previous points to form p0 triangle
-    TriangleFan,   ///< List of connected triangles, p0 point uses the common center and the previous point to form p0 triangle
+    TriangleStrip, ///< List of connected triangles, pointA point uses the two previous points to form pointA triangle
+    TriangleFan,   ///< List of connected triangles, pointA point uses the common center and the previous point to form pointA triangle
     Quads,         ///< List of individual quads (deprecated, don't work with OpenGL ES)
 
     // Deprecated names

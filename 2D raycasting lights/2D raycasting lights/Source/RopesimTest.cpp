@@ -24,10 +24,10 @@
 //	float friction = 0.999f;
 //};
 //
-//float Distance(Point2* p0, Point2* p1)
+//float Distance(Point2* pointA, Point2* pointB)
 //{
-//	float dx = p1->x - p0->x,
-//		dy = p1->y - p0->y;
+//	float dx = pointB->x - pointA->x,
+//		dy = pointB->y - pointA->y;
 //	return sqrt(dx * dx + dy * dy);
 //}
 //
@@ -35,16 +35,16 @@
 //class Stick2
 //{
 //public:
-//	Stick2(Point2* p0, Point2* p1)
+//	Stick2(Point2* pointA, Point2* pointB)
 //	{
-//		this->p0 = p0;
-//		this->p1 = p1;
-//		length = Distance(p0, p1);
+//		this->pointA = pointA;
+//		this->pointB = pointB;
+//		length = Distance(pointA, pointB);
 //	}
 //
 //
-//	Point2* p0;
-//	Point2* p1;
+//	Point2* pointA;
+//	Point2* pointB;
 //	float length = 0;
 //};
 //
@@ -101,38 +101,38 @@
 //	for (int i = 0; i < sticks.size(); i++)
 //	{
 //		Stick2* s = sticks[i];
-//		float dx = s->p1->x - s->p0->x,
-//			dy = s->p1->y - s->p0->y,
+//		float dx = s->pointB->x - s->pointA->x,
+//			dy = s->pointB->y - s->pointA->y,
 //			distance = sqrt(dx * dx + dy * dy),
 //			difference = s->length - distance,
 //			percent = difference / distance / 2,
 //			offsetX = dx * percent,
 //			offsetY = dy * percent;
 //
-//		s->p0->x -= offsetX;
-//		s->p0->y -= offsetY;
-//		s->p1->x += offsetX;
-//		s->p1->y += offsetY;
+//		s->pointA->x -= offsetX;
+//		s->pointA->y -= offsetY;
+//		s->pointB->x += offsetX;
+//		s->pointB->y += offsetY;
 //	}
 //}
 //int main()
 //{
 //
 //	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML wisndow");
-//	Point2* p0 = new Point2(100, 100);
-//	Point2* p1 = new Point2(200, 100);
+//	Point2* pointA = new Point2(100, 100);
+//	Point2* pointB = new Point2(200, 100);
 //	Point2* p3 = new Point2(100, 200);
 //	Point2* p2 = new Point2(200, 200);
 //
-//	points.push_back(p0);
-//	points.push_back(p1);
+//	points.push_back(pointA);
+//	points.push_back(pointB);
 //	points.push_back(p2);
 //	points.push_back(p3);
 //
-//	Stick2* stick = new Stick2(p0, p1);
-//	Stick2* stick2 = new Stick2(p1, p2);
+//	Stick2* stick = new Stick2(pointA, pointB);
+//	Stick2* stick2 = new Stick2(pointB, p2);
 //	Stick2* stick3 = new Stick2(p2, p3);
-//	Stick2* stick4 = new Stick2(p3, p0);
+//	Stick2* stick4 = new Stick2(p3, pointA);
 //
 //	sticks.push_back(stick);
 //	sticks.push_back(stick2);
@@ -178,8 +178,8 @@
 //		for (int i = 0; i < sticks.size(); i++)
 //		{
 //			sf::VertexArray line(sf::LineStrip, 2);
-//			line[0].position = sf::Vector2f(sticks[i]->p0->x + 10, sticks[i]->p0->y + 10);
-//			line[1].position = sf::Vector2f(sticks[i]->p1->x + 10, sticks[i]->p1->y + 10);
+//			line[0].position = sf::Vector2f(sticks[i]->pointA->x + 10, sticks[i]->pointA->y + 10);
+//			line[1].position = sf::Vector2f(sticks[i]->pointB->x + 10, sticks[i]->pointB->y + 10);
 //
 //			window.draw(line);
 //		}

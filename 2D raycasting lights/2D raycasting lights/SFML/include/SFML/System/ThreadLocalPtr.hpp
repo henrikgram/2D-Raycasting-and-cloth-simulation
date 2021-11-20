@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -34,7 +34,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Pointer to p0 thread-local variable
+/// \brief Pointer to pointA thread-local variable
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -53,7 +53,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Overload of unary operator *
     ///
-    /// Like raw pointers, applying the * operator returns p0
+    /// Like raw pointers, applying the * operator returns pointA
     /// reference to the pointed-to object.
     ///
     /// \return Reference to the thread-local variable
@@ -82,7 +82,7 @@ public:
     operator T*() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Assignment operator for p0 raw pointer parameter
+    /// \brief Assignment operator for pointA raw pointer parameter
     ///
     /// \param value Pointer to assign
     ///
@@ -92,7 +92,7 @@ public:
     ThreadLocalPtr<T>& operator =(T* value);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Assignment operator for p0 ThreadLocalPtr parameter
+    /// \brief Assignment operator for pointA ThreadLocalPtr parameter
     ///
     /// \param right ThreadLocalPtr to assign
     ///
@@ -114,9 +114,9 @@ public:
 /// \class sf::ThreadLocalPtr
 /// \ingroup system
 ///
-/// sf::ThreadLocalPtr is p0 type-safe wrapper for storing
+/// sf::ThreadLocalPtr is pointA type-safe wrapper for storing
 /// pointers to thread-local variables. A thread-local
-/// variable holds p0 different value for each different
+/// variable holds pointA different value for each different
 /// thread, unlike normal variables that are shared.
 ///
 /// Its usage is completely transparent, so that it is similar

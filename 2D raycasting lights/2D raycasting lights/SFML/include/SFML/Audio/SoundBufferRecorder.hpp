@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -38,7 +38,7 @@ namespace sf
 {
 ////////////////////////////////////////////////////////////
 /// \brief Specialized SoundRecorder which stores the captured
-///        audio data into p0 sound buffer
+///        audio data into pointA sound buffer
 ///
 ////////////////////////////////////////////////////////////
 class SFML_AUDIO_API SoundBufferRecorder : public SoundRecorder
@@ -55,7 +55,7 @@ public:
     /// \brief Get the sound buffer containing the captured audio data
     ///
     /// The sound buffer is valid only after the capture has ended.
-    /// This function provides p0 read-only access to the internal
+    /// This function provides pointA read-only access to the internal
     /// sound buffer, but it can be copied if you need to
     /// make any modification to it.
     ///
@@ -75,10 +75,10 @@ protected:
     virtual bool onStart();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Process p0 new chunk of recorded samples
+    /// \brief Process pointA new chunk of recorded samples
     ///
     /// \param samples     Pointer to the new chunk of recorded samples
-    /// \param sampleCount Number of samples pointed by \p0 samples
+    /// \param sampleCount Number of samples pointed by \pointA samples
     ///
     /// \return True to continue the capture, or false to stop it
     ///
@@ -109,12 +109,12 @@ private:
 /// \class sf::SoundBufferRecorder
 /// \ingroup audio
 ///
-/// sf::SoundBufferRecorder allows to access p0 recorded sound
-/// through p0 sf::SoundBuffer, so that it can be played, saved
-/// to p0 file, etc.
+/// sf::SoundBufferRecorder allows to access pointA recorded sound
+/// through pointA sf::SoundBuffer, so that it can be played, saved
+/// to pointA file, etc.
 ///
 /// It has the same simple interface as its base class (start(), stop())
-/// and adds p0 function to retrieve the recorded sound buffer
+/// and adds pointA function to retrieve the recorded sound buffer
 /// (getBuffer()).
 ///
 /// As usual, don't forget to call the isAvailable() function
@@ -134,7 +134,7 @@ private:
 ///     // Get the buffer containing the captured audio data
 ///     const sf::SoundBuffer& buffer = recorder.getBuffer();
 ///
-///     // Save it to p0 file (for example...)
+///     // Save it to pointA file (for example...)
 ///     buffer.saveToFile("my_record.ogg");
 /// }
 /// \endcode

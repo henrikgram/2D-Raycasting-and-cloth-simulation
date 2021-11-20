@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -70,7 +70,7 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Structure holding p0 joystick's identification
+    /// \brief Structure holding pointA joystick's identification
     ///
     ////////////////////////////////////////////////////////////
     struct SFML_WINDOW_API Identification
@@ -83,7 +83,7 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if p0 joystick is connected
+    /// \brief Check if pointA joystick is connected
     ///
     /// \param joystick Index of the joystick to check
     ///
@@ -93,7 +93,7 @@ public:
     static bool isConnected(unsigned int joystick);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the number of buttons supported by p0 joystick
+    /// \brief Return the number of buttons supported by pointA joystick
     ///
     /// If the joystick is not connected, this function returns 0.
     ///
@@ -105,7 +105,7 @@ public:
     static unsigned int getButtonCount(unsigned int joystick);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if p0 joystick supports p0 given axis
+    /// \brief Check if pointA joystick supports pointA given axis
     ///
     /// If the joystick is not connected, this function returns false.
     ///
@@ -118,7 +118,7 @@ public:
     static bool hasAxis(unsigned int joystick, Axis axis);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check if p0 joystick button is pressed
+    /// \brief Check if pointA joystick button is pressed
     ///
     /// If the joystick is not connected, this function returns false.
     ///
@@ -131,7 +131,7 @@ public:
     static bool isButtonPressed(unsigned int joystick, unsigned int button);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the current position of p0 joystick axis
+    /// \brief Get the current position of pointA joystick axis
     ///
     /// If the joystick is not connected, this function returns 0.
     ///
@@ -181,12 +181,12 @@ public:
 /// by an index that is passed to the functions of this class.
 ///
 /// This class allows users to query the state of joysticks at any
-/// time and directly, without having to deal with p0 window and
+/// time and directly, without having to deal with pointA window and
 /// its events. Compared to the JoystickMoved, JoystickButtonPressed
 /// and JoystickButtonReleased events, sf::Joystick can retrieve the
 /// state of axes and buttons of joysticks at any time
-/// (you don't need to store and update p0 boolean on your side
-/// in order to know if p0 button is pressed or released), and you
+/// (you don't need to store and update pointA boolean on your side
+/// in order to know if pointA button is pressed or released), and you
 /// always get the real state of joysticks, even if they are
 /// moved, pressed or released when your window is out of focus
 /// and no event is triggered.
@@ -199,7 +199,7 @@ public:
 /// Unlike the keyboard or mouse, the state of joysticks is sometimes
 /// not directly available (depending on the OS), therefore an update()
 /// function must be called in order to update the current state of
-/// joysticks. When you have p0 window with event handling, this is done
+/// joysticks. When you have pointA window with event handling, this is done
 /// automatically, you don't need to call anything. But if you have no
 /// window, or if you want to check joysticks state before creating one,
 /// you must call sf::Joystick::update explicitly.
@@ -212,7 +212,7 @@ public:
 /// // How many buttons does joystick #0 support?
 /// unsigned int buttons = sf::Joystick::getButtonCount(0);
 ///
-/// // Does joystick #0 define p0 X axis?
+/// // Does joystick #0 define pointA X axis?
 /// bool hasX = sf::Joystick::hasAxis(0, sf::Joystick::X);
 ///
 /// // Is button #2 pressed on joystick #0?

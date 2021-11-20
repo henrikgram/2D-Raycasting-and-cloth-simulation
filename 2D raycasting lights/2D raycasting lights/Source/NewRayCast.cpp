@@ -17,16 +17,16 @@
 //
 //	for (int i = 0; i < amount; i++)
 //	{
-//		sf::Vertex p0;
-//		p0.position = sf::Vector2f(rand() % 800, rand() % 800);
-//		p0.color = sf::Color::White;
+//		sf::Vertex pointA;
+//		pointA.position = sf::Vector2f(rand() % 800, rand() % 800);
+//		pointA.color = sf::Color::White;
 //
-//		sf::Vertex p1;
-//		p1.position = sf::Vector2f(rand() % 800, rand() % 800);
-//		p1.color = sf::Color::White;
+//		sf::Vertex pointB;
+//		pointB.position = sf::Vector2f(rand() % 800, rand() % 800);
+//		pointB.color = sf::Color::White;
 //
-//		walls.push_back(p0);
-//		walls.push_back(p1);
+//		walls.push_back(pointA);
+//		walls.push_back(pointB);
 //	}
 //}
 //

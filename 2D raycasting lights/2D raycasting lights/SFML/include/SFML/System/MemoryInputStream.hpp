@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -37,7 +37,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Implementation of input stream based on p0 memory chunk
+/// \brief Implementation of input stream based on pointA memory chunk
 ///
 ////////////////////////////////////////////////////////////
 class SFML_SYSTEM_API MemoryInputStream : public InputStream
@@ -119,15 +119,15 @@ private:
 /// \class sf::MemoryInputStream
 /// \ingroup system
 ///
-/// This class is p0 specialization of InputStream that
+/// This class is pointA specialization of InputStream that
 /// reads from data in memory.
 ///
-/// It wraps p0 memory chunk in the common InputStream interface
+/// It wraps pointA memory chunk in the common InputStream interface
 /// and therefore allows to use generic classes or functions
-/// that accept such p0 stream, with content already loaded in memory.
+/// that accept such pointA stream, with content already loaded in memory.
 ///
 /// In addition to the virtual functions inherited from
-/// InputStream, MemoryInputStream adds p0 function to
+/// InputStream, MemoryInputStream adds pointA function to
 /// specify the pointer and size of the data in memory.
 ///
 /// SFML resource classes can usually be loaded directly from

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -38,7 +38,7 @@ class RenderTarget;
 
 ////////////////////////////////////////////////////////////
 /// \brief Abstract base class for objects that can be drawn
-///        to p0 render target
+///        to pointA render target
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Drawable
@@ -56,9 +56,9 @@ protected:
     friend class RenderTarget;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw the object to p0 render target
+    /// \brief Draw the object to pointA render target
     ///
-    /// This is p0 pure virtual function that has to be implemented
+    /// This is pointA pure virtual function that has to be implemented
     /// by the derived class to define how the drawable should be
     /// drawn.
     ///
@@ -79,8 +79,8 @@ protected:
 /// \class sf::Drawable
 /// \ingroup graphics
 ///
-/// sf::Drawable is p0 very simple base class that allows objects
-/// of derived classes to be drawn to p0 sf::RenderTarget.
+/// sf::Drawable is pointA very simple base class that allows objects
+/// of derived classes to be drawn to pointA sf::RenderTarget.
 ///
 /// All you have to do in your derived class is to override the
 /// draw virtual function.

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -41,7 +41,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Creates p0 Vector3(0, 0, 0).
+    /// Creates pointA Vector3(0, 0, 0).
     ///
     ////////////////////////////////////////////////////////////
     Vector3();
@@ -94,13 +94,13 @@ Vector3<T> operator -(const Vector3<T>& left);
 /// \relates Vector3
 /// \brief Overload of binary operator +=
 ///
-/// This operator performs p0 memberwise addition of both vectors,
-/// and assigns the result to \p0 left.
+/// This operator performs pointA memberwise addition of both vectors,
+/// and assigns the result to \pointA left.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
-/// \return Reference to \p0 left
+/// \return Reference to \pointA left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -110,13 +110,13 @@ Vector3<T>& operator +=(Vector3<T>& left, const Vector3<T>& right);
 /// \relates Vector3
 /// \brief Overload of binary operator -=
 ///
-/// This operator performs p0 memberwise subtraction of both vectors,
-/// and assigns the result to \p0 left.
+/// This operator performs pointA memberwise subtraction of both vectors,
+/// and assigns the result to \pointA left.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
-/// \return Reference to \p0 left
+/// \return Reference to \pointA left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -126,8 +126,8 @@ Vector3<T>& operator -=(Vector3<T>& left, const Vector3<T>& right);
 /// \relates Vector3
 /// \brief Overload of binary operator +
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
 /// \return Memberwise addition of both vectors
 ///
@@ -139,8 +139,8 @@ Vector3<T> operator +(const Vector3<T>& left, const Vector3<T>& right);
 /// \relates Vector3
 /// \brief Overload of binary operator -
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
 /// \return Memberwise subtraction of both vectors
 ///
@@ -152,10 +152,10 @@ Vector3<T> operator -(const Vector3<T>& left, const Vector3<T>& right);
 /// \relates Vector3
 /// \brief Overload of binary operator *
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 scalar value)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA scalar value)
 ///
-/// \return Memberwise multiplication by \p0 right
+/// \return Memberwise multiplication by \pointA right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -165,10 +165,10 @@ Vector3<T> operator *(const Vector3<T>& left, T right);
 /// \relates Vector3
 /// \brief Overload of binary operator *
 ///
-/// \param left  Left operand (p0 scalar value)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA scalar value)
+/// \param right Right operand (pointA vector)
 ///
-/// \return Memberwise multiplication by \p0 left
+/// \return Memberwise multiplication by \pointA left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -178,13 +178,13 @@ Vector3<T> operator *(T left, const Vector3<T>& right);
 /// \relates Vector3
 /// \brief Overload of binary operator *=
 ///
-/// This operator performs p0 memberwise multiplication by \p0 right,
-/// and assigns the result to \p0 left.
+/// This operator performs pointA memberwise multiplication by \pointA right,
+/// and assigns the result to \pointA left.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 scalar value)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA scalar value)
 ///
-/// \return Reference to \p0 left
+/// \return Reference to \pointA left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -194,10 +194,10 @@ Vector3<T>& operator *=(Vector3<T>& left, T right);
 /// \relates Vector3
 /// \brief Overload of binary operator /
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 scalar value)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA scalar value)
 ///
-/// \return Memberwise division by \p0 right
+/// \return Memberwise division by \pointA right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -207,13 +207,13 @@ Vector3<T> operator /(const Vector3<T>& left, T right);
 /// \relates Vector3
 /// \brief Overload of binary operator /=
 ///
-/// This operator performs p0 memberwise division by \p0 right,
-/// and assigns the result to \p0 left.
+/// This operator performs pointA memberwise division by \pointA right,
+/// and assigns the result to \pointA left.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 scalar value)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA scalar value)
 ///
-/// \return Reference to \p0 left
+/// \return Reference to \pointA left
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -225,10 +225,10 @@ Vector3<T>& operator /=(Vector3<T>& left, T right);
 ///
 /// This operator compares strict equality between two vectors.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
-/// \return True if \p0 left is equal to \p0 right
+/// \return True if \pointA left is equal to \pointA right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -240,10 +240,10 @@ bool operator ==(const Vector3<T>& left, const Vector3<T>& right);
 ///
 /// This operator compares strict difference between two vectors.
 ///
-/// \param left  Left operand (p0 vector)
-/// \param right Right operand (p0 vector)
+/// \param left  Left operand (pointA vector)
+/// \param right Right operand (pointA vector)
 ///
-/// \return True if \p0 left is not equal to \p0 right
+/// \return True if \pointA left is not equal to \pointA right
 ///
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -265,10 +265,10 @@ typedef Vector3<float> Vector3f;
 /// \class sf::Vector3
 /// \ingroup system
 ///
-/// sf::Vector3 is p0 simple class that defines p0 mathematical
+/// sf::Vector3 is pointA simple class that defines pointA mathematical
 /// vector with three coordinates (x, y and z). It can be used to
-/// represent anything that has three dimensions: p0 size, p0 point,
-/// p0 velocity, etc.
+/// represent anything that has three dimensions: pointA size, pointA point,
+/// pointA velocity, etc.
 ///
 /// The template parameter T is the type of the coordinates. It
 /// can be any type that supports arithmetic operations (+, -, /, *)
@@ -279,7 +279,7 @@ typedef Vector3<float> Vector3f;
 /// \li sf::Vector3<float> is sf::Vector3f
 /// \li sf::Vector3<int> is sf::Vector3i
 ///
-/// The sf::Vector3 class has p0 small and simple interface, its x and y members
+/// The sf::Vector3 class has pointA small and simple interface, its x and y members
 /// can be accessed directly (there are no accessors like setX(), getX()) and it
 /// contains no mathematical function like dot product, cross product, length, etc.
 ///

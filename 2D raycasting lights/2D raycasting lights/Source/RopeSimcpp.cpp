@@ -8,16 +8,16 @@
 #include <time.h>
 
 
-//std::vector<sf::Vertex> walls;
-float Distance(Point* p0, Point* p1)
-{
-	float dstX = p1->posX - p0->posX;
-	float dsty = p1->posY - p0->posY;
-
-	//Get the distance of the points.
-	float distance = sqrt(dstX * dstX + dsty * dsty);
-	return distance;
-}
+////std::vector<sf::Vertex> walls;
+//float Distance(Point* GetPointA(), Point* pointB)
+//{
+//	float dstX = pointB->GetPosition().x - pointA->GetPosition().x;
+//	float dsty = pointB->GetPosition().y - pointA->GetPosition().y;
+//
+//	//Get the distance of the points.
+//	float distance = sqrt(dstX * dstX + dsty * dsty);
+//	return distance;
+//}
 
 
 int main()
@@ -97,14 +97,14 @@ int main()
 				for (int i = 0; i < points.size(); i++)
 				{
 					points[i]->isSelected = false;
-					
+
 				}
 				break;
 			}
 			default:
 				break;
 			}
-		
+
 		}
 
 
@@ -114,36 +114,36 @@ int main()
 
 
 		sf::CircleShape point;
-		point.setPosition(worldPos);
+		point.setPosition(sf::Vector2f(worldPos.x - cursorRadius, worldPos.y - cursorRadius));
 		point.setRadius(cursorRadius);
 		window.draw(point);
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-		{
-			
-			for (int i = 0; i < points.size(); i++)
-			{
-				
-				if (point.getGlobalBounds().contains(points[i]->posX, points[i]->posY))
-				{
-					points[i]->isSelected = true;
-				}
-			}
+		//if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		//{
 
-		}
+		//	for (int i = 0; i < points.size(); i++)
+		//	{
+
+		//		if (point.getGlobalBounds().contains(points[i]->GetPosition().x, points[i]->GetPosition().y))
+		//		{
+		//			points[i]->isSelected = true;
+		//		}
+		//	}
+
+		//}
 
 
 
 
 		for (int i = 0; i < points.size(); i++)
 		{
-			if (points[i]->isSelected)
+			/*if (points[i]->isSelected)
 			{
-				points[i]->posX = pixelPos.x;
-				points[i]->posY = pixelPos.y;
+				points[i]->GetPosition().x = pixelPos.x;
+				points[i]->GetPosition().y = pixelPos.y;
 
 			}
-			else
+			else*/
 			{
 				points[i]->Update();
 			}
@@ -172,7 +172,7 @@ int main()
 		{
 			Point* p = points[i];
 			sf::CircleShape point;
-			point.setPosition(p->posX, p->posY);
+			point.setPosition(p->GetPosition().x, p->GetPosition().y);
 			point.setRadius(10);
 			window.draw(point);
 		}
@@ -182,8 +182,8 @@ int main()
 		for (int i = 0; i < sticks.size(); i++)
 		{
 			sf::VertexArray line(sf::LineStrip, 2);
-			line[0].position = sf::Vector2f(sticks[i]->p0->posX + 10, sticks[i]->p0->posY + 10);
-			line[1].position = sf::Vector2f(sticks[i]->p1->posX + 10, sticks[i]->p1->posY + 10);
+			line[0].position = sf::Vector2f(sticks[i]->GetPointA()->GetPosition().x + 10, sticks[i]->GetPointA()->GetPosition().y + 10);
+			line[1].position = sf::Vector2f(sticks[i]->GetPointB()->GetPosition().x + 10, sticks[i]->GetPointB()->GetPosition().y + 10);
 
 			window.draw(line);
 		}

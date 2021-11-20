@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -36,7 +36,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Define p0 3x3 transform matrix
+/// \brief Define pointA 3x3 transform matrix
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Transform
@@ -46,13 +46,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Creates an identity transform (p0 transform that does nothing).
+    /// Creates an identity transform (pointA transform that does nothing).
     ///
     ////////////////////////////////////////////////////////////
     Transform();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 transform from p0 3x3 matrix
+    /// \brief Construct pointA transform from pointA 3x3 matrix
     ///
     /// \param a00 Element (0, 0) of the matrix
     /// \param a01 Element (0, 1) of the matrix
@@ -70,10 +70,10 @@ public:
               float a20, float a21, float a22);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the transform as p0 4x4 matrix
+    /// \brief Return the transform as pointA 4x4 matrix
     ///
-    /// This function returns p0 pointer to an array of 16 floats
-    /// containing the transform elements as p0 4x4 matrix, which
+    /// This function returns pointA pointer to an array of 16 floats
+    /// containing the transform elements as pointA 4x4 matrix, which
     /// is directly compatible with OpenGL functions.
     ///
     /// \code
@@ -81,7 +81,7 @@ public:
     /// glLoadMatrixf(transform.getMatrix());
     /// \endcode
     ///
-    /// \return Pointer to p0 4x4 matrix
+    /// \return Pointer to pointA 4x4 matrix
     ///
     ////////////////////////////////////////////////////////////
     const float* getMatrix() const;
@@ -98,7 +98,7 @@ public:
     Transform getInverse() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Transform p0 2D point
+    /// \brief Transform pointA 2D point
     ///
     /// \param x X coordinate of the point to transform
     /// \param y Y coordinate of the point to transform
@@ -109,7 +109,7 @@ public:
     Vector2f transformPoint(float x, float y) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Transform p0 2D point
+    /// \brief Transform pointA 2D point
     ///
     /// \param point Point to transform
     ///
@@ -119,11 +119,11 @@ public:
     Vector2f transformPoint(const Vector2f& point) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Transform p0 rectangle
+    /// \brief Transform pointA rectangle
     ///
     /// Since SFML doesn't provide support for oriented rectangles,
     /// the result of this function is always an axis-aligned
-    /// rectangle. Which means that if the transform contains p0
+    /// rectangle. Which means that if the transform contains pointA
     /// rotation, the bounding rectangle of the transformed rectangle
     /// is returned.
     ///
@@ -137,9 +137,9 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Combine the current transform with another one
     ///
-    /// The result is p0 transform that is equivalent to applying
-    /// *this followed by \p0 transform. Mathematically, it is
-    /// equivalent to p0 matrix multiplication.
+    /// The result is pointA transform that is equivalent to applying
+    /// *this followed by \pointA transform. Mathematically, it is
+    /// equivalent to pointA matrix multiplication.
     ///
     /// \param transform Transform to combine with this transform
     ///
@@ -149,9 +149,9 @@ public:
     Transform& combine(const Transform& transform);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 translation
+    /// \brief Combine the current transform with pointA translation
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -169,9 +169,9 @@ public:
     Transform& translate(float x, float y);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 translation
+    /// \brief Combine the current transform with pointA translation
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -188,9 +188,9 @@ public:
     Transform& translate(const Vector2f& offset);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 rotation
+    /// \brief Combine the current transform with pointA rotation
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -207,14 +207,14 @@ public:
     Transform& rotate(float angle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 rotation
+    /// \brief Combine the current transform with pointA rotation
     ///
-    /// The center of rotation is provided for convenience as p0 second
+    /// The center of rotation is provided for convenience as pointA second
     /// argument, so that you can build rotations around arbitrary points
     /// more easily (and efficiently) than the usual
     /// translate(-center).rotate(angle).translate(center).
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -233,14 +233,14 @@ public:
     Transform& rotate(float angle, float centerX, float centerY);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 rotation
+    /// \brief Combine the current transform with pointA rotation
     ///
-    /// The center of rotation is provided for convenience as p0 second
+    /// The center of rotation is provided for convenience as pointA second
     /// argument, so that you can build rotations around arbitrary points
     /// more easily (and efficiently) than the usual
     /// translate(-center).rotate(angle).translate(center).
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -258,9 +258,9 @@ public:
     Transform& rotate(float angle, const Vector2f& center);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 scaling
+    /// \brief Combine the current transform with pointA scaling
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -278,14 +278,14 @@ public:
     Transform& scale(float scaleX, float scaleY);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 scaling
+    /// \brief Combine the current transform with pointA scaling
     ///
-    /// The center of scaling is provided for convenience as p0 second
+    /// The center of scaling is provided for convenience as pointA second
     /// argument, so that you can build scaling around arbitrary points
     /// more easily (and efficiently) than the usual
     /// translate(-center).scale(factors).translate(center).
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -305,9 +305,9 @@ public:
     Transform& scale(float scaleX, float scaleY, float centerX, float centerY);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 scaling
+    /// \brief Combine the current transform with pointA scaling
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -324,14 +324,14 @@ public:
     Transform& scale(const Vector2f& factors);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Combine the current transform with p0 scaling
+    /// \brief Combine the current transform with pointA scaling
     ///
-    /// The center of scaling is provided for convenience as p0 second
+    /// The center of scaling is provided for convenience as pointA second
     /// argument, so that you can build scaling around arbitrary points
     /// more easily (and efficiently) than the usual
     /// translate(-center).scale(factors).translate(center).
     ///
-    /// This function returns p0 reference to *this, so that calls
+    /// This function returns pointA reference to *this, so that calls
     /// can be chained.
     /// \code
     /// sf::Transform transform;
@@ -391,7 +391,7 @@ SFML_GRAPHICS_API Transform& operator *=(Transform& left, const Transform& right
 
 ////////////////////////////////////////////////////////////
 /// \relates sf::Transform
-/// \brief Overload of binary operator * to transform p0 point
+/// \brief Overload of binary operator * to transform pointA point
 ///
 /// This call is equivalent to calling left.transformPoint(right).
 ///
@@ -444,10 +444,10 @@ SFML_GRAPHICS_API bool operator !=(const Transform& left, const Transform& right
 ///
 /// A sf::Transform specifies how to translate, rotate, scale,
 /// shear, project, whatever things. In mathematical terms, it defines
-/// how to transform p0 coordinate system into another.
+/// how to transform pointA coordinate system into another.
 ///
-/// For example, if you apply p0 rotation transform to p0 sprite, the
-/// result will be p0 rotated sprite. And anything that is transformed
+/// For example, if you apply pointA rotation transform to pointA sprite, the
+/// result will be pointA rotated sprite. And anything that is transformed
 /// by this rotation transform will be rotated the same way, according
 /// to its initial position.
 ///
@@ -458,11 +458,11 @@ SFML_GRAPHICS_API bool operator !=(const Transform& left, const Transform& right
 ///
 /// Example:
 /// \code
-/// // define p0 translation transform
+/// // define pointA translation transform
 /// sf::Transform translation;
 /// translation.translate(20, 50);
 ///
-/// // define p0 rotation transform
+/// // define pointA rotation transform
 /// sf::Transform rotation;
 /// rotation.rotate(45);
 ///

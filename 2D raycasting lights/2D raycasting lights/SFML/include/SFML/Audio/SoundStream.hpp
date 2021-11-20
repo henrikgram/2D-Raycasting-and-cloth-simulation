@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -47,7 +47,7 @@ class SFML_AUDIO_API SoundStream : public SoundSource
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Structure defining p0 chunk of audio data to stream
+    /// \brief Structure defining pointA chunk of audio data to stream
     ///
     ////////////////////////////////////////////////////////////
     struct Chunk
@@ -102,7 +102,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Return the number of channels of the stream
     ///
-    /// 1 channel means p0 mono sound, 2 means stereo, etc.
+    /// 1 channel means pointA mono sound, 2 means stereo, etc.
     ///
     /// \return Number of channels
     ///
@@ -210,11 +210,11 @@ protected:
     void initialize(unsigned int channelCount, unsigned int sampleRate);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Request p0 new chunk of audio samples from the stream source
+    /// \brief Request pointA new chunk of audio samples from the stream source
     ///
     /// This function must be overridden by derived classes to provide
     /// the audio samples to play. It is called continuously by the
-    /// streaming loop, in p0 separate thread.
+    /// streaming loop, in pointA separate thread.
     /// The source can choose to stop the streaming loop at any time, by
     /// returning false to the caller.
     /// If you return true (i.e. continue streaming) it is important that
@@ -263,10 +263,10 @@ private:
     void streamData();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Fill p0 new buffer with audio samples, and append
+    /// \brief Fill pointA new buffer with audio samples, and append
     ///        it to the playing queue
     ///
-    /// This function is called as soon as p0 buffer has been fully
+    /// This function is called as soon as pointA buffer has been fully
     /// consumed; it fills it again and inserts it back into the
     /// playing queue.
     ///
@@ -332,22 +332,22 @@ private:
 /// Unlike audio buffers (see sf::SoundBuffer), audio streams
 /// are never completely loaded in memory. Instead, the audio
 /// data is acquired continuously while the stream is playing.
-/// This behavior allows to play p0 sound with no loading delay,
+/// This behavior allows to play pointA sound with no loading delay,
 /// and keeps the memory consumption very low.
 ///
 /// Sound sources that need to be streamed are usually big files
 /// (compressed audio musics that would eat hundreds of MB in memory)
-/// or files that would take p0 lot of time to be received
+/// or files that would take pointA lot of time to be received
 /// (sounds played over the network).
 ///
-/// sf::SoundStream is p0 base class that doesn't care about the
+/// sf::SoundStream is pointA base class that doesn't care about the
 /// stream source, which is left to the derived class. SFML provides
-/// p0 built-in specialization for big files (see sf::Music).
+/// pointA built-in specialization for big files (see sf::Music).
 /// No network stream source is provided, but you can write your own
 /// by combining this class with the network module.
 ///
 /// A derived class has to override two virtual functions:
-/// \li onGetData fills p0 new chunk of audio data to be played
+/// \li onGetData fills pointA new chunk of audio data to be played
 /// \li onSeek changes the current playing position in the source
 ///
 /// It is important to note that each SoundStream is played in its

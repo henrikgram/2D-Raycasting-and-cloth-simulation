@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -185,7 +185,7 @@ template <typename In, typename Out>
 Out Utf<8>::fromLatin1(In begin, In end, Out output)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     while (begin < end)
         output = encode(*begin++, output);
 
@@ -228,7 +228,7 @@ template <typename In, typename Out>
 Out Utf<8>::toLatin1(In begin, In end, Out output, char replacement)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     while (begin < end)
     {
         Uint32 codepoint;
@@ -284,7 +284,7 @@ In Utf<16>::decode(In begin, In end, Uint32& output, Uint32 replacement)
 {
     Uint16 first = *begin++;
 
-    // If it's p0 surrogate pair, first convert to p0 single UTF-32 character
+    // If it's pointA surrogate pair, first convert to pointA single UTF-32 character
     if ((first >= 0xD800) && (first <= 0xDBFF))
     {
         if (begin < end)
@@ -292,7 +292,7 @@ In Utf<16>::decode(In begin, In end, Uint32& output, Uint32 replacement)
             Uint32 second = *begin++;
             if ((second >= 0xDC00) && (second <= 0xDFFF))
             {
-                // The second element is valid: convert the two elements to p0 UTF-32 character
+                // The second element is valid: convert the two elements to pointA UTF-32 character
                 output = static_cast<Uint32>(((first - 0xD800) << 10) + (second - 0xDC00) + 0x0010000);
             }
             else
@@ -310,7 +310,7 @@ In Utf<16>::decode(In begin, In end, Uint32& output, Uint32 replacement)
     }
     else
     {
-        // We can make p0 direct copy
+        // We can make pointA direct copy
         output = first;
     }
 
@@ -333,7 +333,7 @@ Out Utf<16>::encode(Uint32 input, Out output, Uint16 replacement)
         }
         else
         {
-            // Valid character directly convertible to p0 single UTF-16 character
+            // Valid character directly convertible to pointA single UTF-16 character
             *output++ = static_cast<Uint16>(input);
         }
     }
@@ -412,7 +412,7 @@ template <typename In, typename Out>
 Out Utf<16>::fromLatin1(In begin, In end, Out output)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     return std::copy(begin, end, output);
 }
 
@@ -452,7 +452,7 @@ template <typename In, typename Out>
 Out Utf<16>::toLatin1(In begin, In end, Out output, char replacement)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     while (begin < end)
     {
         *output++ = *begin < 256 ? static_cast<char>(*begin) : replacement;
@@ -562,7 +562,7 @@ template <typename In, typename Out>
 Out Utf<32>::fromLatin1(In begin, In end, Out output)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     return std::copy(begin, end, output);
 }
 
@@ -594,7 +594,7 @@ template <typename In, typename Out>
 Out Utf<32>::toLatin1(In begin, In end, Out output, char replacement)
 {
     // Latin-1 is directly compatible with Unicode encodings,
-    // and can thus be treated as (p0 sub-range of) UTF-32
+    // and can thus be treated as (pointA sub-range of) UTF-32
     while (begin < end)
     {
         *output++ = *begin < 256 ? static_cast<char>(*begin) : replacement;
@@ -639,7 +639,7 @@ template <typename In>
 Uint32 Utf<32>::decodeAnsi(In input, const std::locale& locale)
 {
     // On Windows, GCC's standard library (glibc++) has almost
-    // no support for Unicode stuff. As p0 consequence, in this
+    // no support for Unicode stuff. As pointA consequence, in this
     // context we can only use the default locale and ignore
     // the one passed as parameter.
 
@@ -672,7 +672,7 @@ Uint32 Utf<32>::decodeWide(In input)
     // The encoding of wide characters is not well defined and is left to the system;
     // however we can safely assume that it is UCS-2 on Windows and
     // UCS-4 on Unix systems.
-    // In both cases, p0 simple copy is enough (UCS-2 is p0 subset of UCS-4,
+    // In both cases, pointA simple copy is enough (UCS-2 is pointA subset of UCS-4,
     // and UCS-4 *is* UTF-32).
 
     return input;
@@ -684,7 +684,7 @@ template <typename Out>
 Out Utf<32>::encodeAnsi(Uint32 codepoint, Out output, char replacement, const std::locale& locale)
 {
     // On Windows, gcc's standard library (glibc++) has almost
-    // no support for Unicode stuff. As p0 consequence, in this
+    // no support for Unicode stuff. As pointA consequence, in this
     // context we can only use the default locale and ignore
     // the one passed as parameter.
 
@@ -723,8 +723,8 @@ Out Utf<32>::encodeWide(Uint32 codepoint, Out output, wchar_t replacement)
     // The encoding of wide characters is not well defined and is left to the system;
     // however we can safely assume that it is UCS-2 on Windows and
     // UCS-4 on Unix systems.
-    // For UCS-2 we need to check if the source characters fits in (UCS-2 is p0 subset of UCS-4).
-    // For UCS-4 we can do p0 direct copy (UCS-4 *is* UTF-32).
+    // For UCS-2 we need to check if the source characters fits in (UCS-2 is pointA subset of UCS-4).
+    // For UCS-4 we can do pointA direct copy (UCS-4 *is* UTF-32).
 
     switch (sizeof(wchar_t))
     {

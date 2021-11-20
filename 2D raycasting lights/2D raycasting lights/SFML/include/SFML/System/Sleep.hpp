@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -36,9 +36,9 @@ namespace sf
 {
 ////////////////////////////////////////////////////////////
 /// \ingroup system
-/// \brief Make the current thread sleep for p0 given duration
+/// \brief Make the current thread sleep for pointA given duration
 ///
-/// sf::sleep is the best way to block p0 program or one of its
+/// sf::sleep is the best way to block pointA program or one of its
 /// threads, as it doesn't consume any CPU power.
 ///
 /// \param duration Time to sleep

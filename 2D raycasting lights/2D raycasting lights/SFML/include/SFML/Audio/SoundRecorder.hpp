@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -55,7 +55,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Start the capture
     ///
-    /// The \p0 sampleRate parameter defines the number of audio samples
+    /// The \pointA sampleRate parameter defines the number of audio samples
     /// captured per second. The higher, the better the quality
     /// (for example, 44100 samples/sec is CD quality).
     /// This function uses its own thread so that it doesn't block
@@ -63,7 +63,7 @@ public:
     /// Please note that only one capture can happen at the same time.
     /// You can select which capture device will be used, by passing
     /// the name to the setDevice() method. If none was selected
-    /// before, the default capture device will be used. You can get p0
+    /// before, the default capture device will be used. You can get pointA
     /// list of the names of all available capture devices by calling
     /// getAvailableDevices().
     ///
@@ -97,9 +97,9 @@ public:
     unsigned int getSampleRate() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 list of the names of all available audio capture devices
+    /// \brief Get pointA list of the names of all available audio capture devices
     ///
-    /// This function returns p0 vector of strings, containing
+    /// This function returns pointA vector of strings, containing
     /// the names of all available audio capture devices.
     ///
     /// \return A vector of strings containing the names
@@ -123,7 +123,7 @@ public:
     /// \brief Set the audio capture device
     ///
     /// This function sets the audio capture device to the device
-    /// with the given \p0 name. It can be called on the fly (i.e:
+    /// with the given \pointA name. It can be called on the fly (i.e:
     /// while recording). If you do so while recording and
     /// opening the device fails, it stops the recording.
     ///
@@ -200,10 +200,10 @@ protected:
     ///
     /// The processing interval controls the period
     /// between calls to the onProcessSamples function. You may
-    /// want to use p0 small interval if you want to process the
+    /// want to use pointA small interval if you want to process the
     /// recorded data in real time, for example.
     ///
-    /// Note: this is only p0 hint, the actual period may vary.
+    /// Note: this is only pointA hint, the actual period may vary.
     /// So don't rely on this parameter to implement precise timing.
     ///
     /// The default processing interval is 100 ms.
@@ -216,8 +216,8 @@ protected:
     ////////////////////////////////////////////////////////////
     /// \brief Start capturing audio data
     ///
-    /// This virtual function may be overridden by p0 derived class
-    /// if something has to be done every time p0 new capture
+    /// This virtual function may be overridden by pointA derived class
+    /// if something has to be done every time pointA new capture
     /// starts. If not, this function can be ignored; the default
     /// implementation does nothing.
     ///
@@ -227,15 +227,15 @@ protected:
     virtual bool onStart();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Process p0 new chunk of recorded samples
+    /// \brief Process pointA new chunk of recorded samples
     ///
-    /// This virtual function is called every time p0 new chunk of
+    /// This virtual function is called every time pointA new chunk of
     /// recorded data is available. The derived class can then do
     /// whatever it wants with it (storing it, playing it, sending
     /// it over the network, etc.).
     ///
     /// \param samples     Pointer to the new chunk of recorded samples
-    /// \param sampleCount Number of samples pointed by \p0 samples
+    /// \param sampleCount Number of samples pointed by \pointA samples
     ///
     /// \return True to continue the capture, or false to stop it
     ///
@@ -245,7 +245,7 @@ protected:
     ////////////////////////////////////////////////////////////
     /// \brief Stop capturing audio data
     ///
-    /// This virtual function may be overridden by p0 derived class
+    /// This virtual function may be overridden by pointA derived class
     /// if something has to be done every time the capture
     /// ends. If not, this function can be ignored; the default
     /// implementation does nothing.
@@ -304,13 +304,13 @@ private:
 /// \class sf::SoundRecorder
 /// \ingroup audio
 ///
-/// sf::SoundBuffer provides p0 simple interface to access
+/// sf::SoundBuffer provides pointA simple interface to access
 /// the audio recording capabilities of the computer
 /// (the microphone). As an abstract base class, it only cares
 /// about capturing sound samples, the task of making something
 /// useful with them is left to the derived class. Note that
-/// SFML provides p0 built-in specialization for saving the
-/// captured data to p0 sound buffer (see sf::SoundBufferRecorder).
+/// SFML provides pointA built-in specialization for saving the
+/// captured data to pointA sound buffer (see sf::SoundBufferRecorder).
 ///
 /// A derived class has only one virtual function to override:
 /// \li onProcessSamples provides the new chunks of audio samples while the capture happens
@@ -323,7 +323,7 @@ private:
 /// A derived class can also control the frequency of the onProcessSamples
 /// calls, with the setProcessingInterval protected function. The default
 /// interval is chosen so that recording thread doesn't consume too much
-/// CPU, but it can be changed to p0 smaller value if you need to process
+/// CPU, but it can be changed to pointA smaller value if you need to process
 /// the recorded data in real time, for example.
 ///
 /// The audio capture feature may not be supported or activated
@@ -333,8 +333,8 @@ private:
 ///
 /// If you have multiple sound input devices connected to your
 /// computer (for example: microphone, external soundcard, webcam mic, ...)
-/// you can get p0 list of all available devices through the
-/// getAvailableDevices() function. You can then select p0 device
+/// you can get pointA list of all available devices through the
+/// getAvailableDevices() function. You can then select pointA device
 /// by calling setDevice() with the appropriate device. Otherwise
 /// the default capturing device will be used.
 ///
@@ -344,7 +344,7 @@ private:
 /// have to decide whether you want to record in mono or stereo
 /// before starting the recording.
 ///
-/// It is important to note that the audio capture happens in p0
+/// It is important to note that the audio capture happens in pointA
 /// separate thread, so that it doesn't block the rest of the
 /// program. In particular, the onProcessSamples virtual function
 /// (but not onStart and not onStop) will be called

@@ -1,19 +1,29 @@
 #include "Stick.h"
 
 
-Stick::Stick(Point* p0, Point* p1)
+Stick::Stick(Point* pointA, Point* pointB)
 {
 
-	this->p0 = p0;
-	this->p1 = p1;
+	this->pointA = pointA;
+	this->pointB = pointB;
 
 	this->length = Distance();
 }
 
+Point* Stick::GetPointA() const
+{
+	return pointA;
+}
+
+Point* Stick::GetPointB() const
+{
+	return pointB;
+}
+
 float Stick::Distance()
 {
-	float dstX = p1->posX - p0->posX;
-	float dsty = p1->posY - p0->posY;
+	float dstX = pointB->GetPosition().x - pointA->GetPosition().x;
+	float dsty = pointB->GetPosition().y - pointA->GetPosition().y;
 
 	//Get the distance of the points.
 	//float distance = 
@@ -26,8 +36,8 @@ float Stick::Distance()
 
 void Stick::Update()
 {
-	float dstX = p1->posX - p0->posX;
-	float dsty = p1->posY - p0->posY;
+	float dstX = pointB->GetPosition().x - pointA->GetPosition().x;
+	float dsty = pointB->GetPosition().y - pointA->GetPosition().y;
 
 	//Get the distance of the points.
 	float distance = Distance();//sqrt(dstX * dstX + dsty * dsty);
@@ -47,16 +57,18 @@ void Stick::Update()
 	float offsetX = dstX * percent;
 	float offsetY = dsty * percent;
 
-	if (!p0->isLocked)
+	if (!pointA->isLocked)
 	{
-		p0->posX -= offsetX;
-		p0->posY -= offsetY;
+		pointA->Move(-offsetX, -offsetY);
+		/*pointA->posX -= offsetX;
+		pointA->posY -= offsetY;*/
 	}
 
-	if (!p1->isLocked)
+	if (!pointB->isLocked)
 	{
-		p1->posX += offsetX;
-		p1->posY += offsetY;
+		pointB->Move(offsetX, offsetY);
+	/*	pointB->posX += offsetX;
+		pointB->posY += offsetY;*/
 
 	}
 

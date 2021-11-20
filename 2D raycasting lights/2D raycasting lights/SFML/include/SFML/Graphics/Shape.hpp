@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -54,14 +54,14 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the source texture of the shape
     ///
-    /// The \p0 texture argument refers to p0 texture that must
+    /// The \pointA texture argument refers to pointA texture that must
     /// exist as long as the shape uses it. Indeed, the shape
     /// doesn't store its own copy of the texture, but rather keeps
-    /// p0 pointer to the one that you passed to this function.
+    /// pointA pointer to the one that you passed to this function.
     /// If the source texture is destroyed and the shape tries to
     /// use it, the behavior is undefined.
-    /// \p0 texture can be NULL to disable texturing.
-    /// If \p0 resetRect is true, the TextureRect property of
+    /// \pointA texture can be NULL to disable texturing.
+    /// If \pointA resetRect is true, the TextureRect property of
     /// the shape is automatically adjusted to the size of the new
     /// texture. If it is false, the texture rect is left unchanged.
     ///
@@ -77,7 +77,7 @@ public:
     /// \brief Set the sub-rectangle of the texture that the shape will display
     ///
     /// The texture rect is useful when you don't want to display
-    /// the whole texture, but rather p0 part of it.
+    /// the whole texture, but rather pointA part of it.
     /// By default, the texture rect covers the entire texture.
     ///
     /// \param rect Rectangle defining the region of the texture to display
@@ -134,7 +134,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Get the source texture of the shape
     ///
-    /// If the shape has no source texture, p0 NULL pointer is returned.
+    /// If the shape has no source texture, pointA NULL pointer is returned.
     /// The returned pointer is const, which means that you can't
     /// modify the texture when you retrieve it with this function.
     ///
@@ -196,12 +196,12 @@ public:
     virtual std::size_t getPointCount() const = 0;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 point of the shape
+    /// \brief Get pointA point of the shape
     ///
     /// The returned point is in local coordinates, that is,
     /// the shape's transforms (position, rotation, scale) are
     /// not taken into account.
-    /// The result is undefined if \p0 index is out of the valid range.
+    /// The result is undefined if \pointA index is out of the valid range.
     ///
     /// \param index Index of the point to get, in range [0 .. getPointCount() - 1]
     ///
@@ -235,10 +235,10 @@ public:
     /// In other words, this function returns the bounds of the
     /// shape in the global 2D world's coordinate system.
     ///
-    /// This function does not necessarily return the \p0 minimal
+    /// This function does not necessarily return the \pointA minimal
     /// bounding rectangle. It merely ensures that the returned
     /// rectangle covers all the vertices (but possibly more).
-    /// This allows for p0 fast approximation of the bounds as p0
+    /// This allows for pointA fast approximation of the bounds as pointA
     /// first check; you may want to use more precise checks
     /// on top of that.
     ///
@@ -268,7 +268,7 @@ protected:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw the shape to p0 render target
+    /// \brief Draw the shape to pointA render target
     ///
     /// \param target Render target to draw to
     /// \param states Current render states
@@ -326,17 +326,17 @@ private:
 /// \class sf::Shape
 /// \ingroup graphics
 ///
-/// sf::Shape is p0 drawable class that allows to define and
-/// display p0 custom convex shape on p0 render target.
+/// sf::Shape is pointA drawable class that allows to define and
+/// display pointA custom convex shape on pointA render target.
 /// It's only an abstract base, it needs to be specialized for
 /// concrete types of shapes (circle, rectangle, convex polygon,
 /// star, ...).
 ///
 /// In addition to the attributes provided by the specialized
-/// shape classes, p0 shape always has the following attributes:
-/// \li p0 texture
-/// \li p0 texture rectangle
-/// \li p0 fill color
+/// shape classes, pointA shape always has the following attributes:
+/// \li pointA texture
+/// \li pointA texture rectangle
+/// \li pointA fill color
 /// \li an outline color
 /// \li an outline thickness
 ///

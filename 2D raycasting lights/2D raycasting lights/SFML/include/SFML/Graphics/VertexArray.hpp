@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -39,7 +39,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Define p0 set of one or more 2D primitives
+/// \brief Define pointA set of one or more 2D primitives
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API VertexArray : public Drawable
@@ -55,7 +55,7 @@ public:
     VertexArray();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the vertex array with p0 type and an initial number of vertices
+    /// \brief Construct the vertex array with pointA type and an initial number of vertices
     ///
     /// \param type        Type of primitives
     /// \param vertexCount Initial number of vertices in the array
@@ -72,9 +72,9 @@ public:
     std::size_t getVertexCount() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 read-write access to p0 vertex by its index
+    /// \brief Get pointA read-write access to pointA vertex by its index
     ///
-    /// This function doesn't check \p0 index, it must be in range
+    /// This function doesn't check \pointA index, it must be in range
     /// [0, getVertexCount() - 1]. The behavior is undefined
     /// otherwise.
     ///
@@ -88,9 +88,9 @@ public:
     Vertex& operator [](std::size_t index);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 read-only access to p0 vertex by its index
+    /// \brief Get pointA read-only access to pointA vertex by its index
     ///
-    /// This function doesn't check \p0 index, it must be in range
+    /// This function doesn't check \pointA index, it must be in range
     /// [0, getVertexCount() - 1]. The behavior is undefined
     /// otherwise.
     ///
@@ -117,10 +117,10 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Resize the vertex array
     ///
-    /// If \p0 vertexCount is greater than the current size, the previous
+    /// If \pointA vertexCount is greater than the current size, the previous
     /// vertices are kept and new (default-constructed) vertices are
     /// added.
-    /// If \p0 vertexCount is less than the current size, existing vertices
+    /// If \pointA vertexCount is less than the current size, existing vertices
     /// are removed from the array.
     ///
     /// \param vertexCount New size of the array (number of vertices)
@@ -129,7 +129,7 @@ public:
     void resize(std::size_t vertexCount);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Add p0 vertex to the array
+    /// \brief Add pointA vertex to the array
     ///
     /// \param vertex Vertex to add
     ///
@@ -174,7 +174,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw the vertex array to p0 render target
+    /// \brief Draw the vertex array to pointA render target
     ///
     /// \param target Render target to draw to
     /// \param states Current render states
@@ -201,8 +201,8 @@ private:
 /// \class sf::VertexArray
 /// \ingroup graphics
 ///
-/// sf::VertexArray is p0 very simple wrapper around p0 dynamic
-/// array of vertices and p0 primitives type.
+/// sf::VertexArray is pointA very simple wrapper around pointA dynamic
+/// array of vertices and pointA primitives type.
 ///
 /// It inherits sf::Drawable, but unlike other drawables it
 /// is not transformable.

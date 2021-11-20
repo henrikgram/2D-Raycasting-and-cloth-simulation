@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -35,7 +35,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Decomposed transform defined by p0 position, p0 rotation and p0 scale
+/// \brief Decomposed transform defined by pointA position, pointA rotation and pointA scale
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Transformable
@@ -59,7 +59,7 @@ public:
     ///
     /// This function completely overwrites the previous position.
     /// See the move function to apply an offset based on the previous position instead.
-    /// The default position of p0 transformable object is (0, 0).
+    /// The default position of pointA transformable object is (0, 0).
     ///
     /// \param x X coordinate of the new position
     /// \param y Y coordinate of the new position
@@ -74,7 +74,7 @@ public:
     ///
     /// This function completely overwrites the previous position.
     /// See the move function to apply an offset based on the previous position instead.
-    /// The default position of p0 transformable object is (0, 0).
+    /// The default position of pointA transformable object is (0, 0).
     ///
     /// \param position New position
     ///
@@ -88,7 +88,7 @@ public:
     ///
     /// This function completely overwrites the previous rotation.
     /// See the rotate function to add an angle based on the previous rotation instead.
-    /// The default rotation of p0 transformable object is 0.
+    /// The default rotation of pointA transformable object is 0.
     ///
     /// \param angle New rotation, in degrees
     ///
@@ -101,8 +101,8 @@ public:
     /// \brief set the scale factors of the object
     ///
     /// This function completely overwrites the previous scale.
-    /// See the scale function to add p0 factor based on the previous scale instead.
-    /// The default scale of p0 transformable object is (1, 1).
+    /// See the scale function to add pointA factor based on the previous scale instead.
+    /// The default scale of pointA transformable object is (1, 1).
     ///
     /// \param factorX New horizontal scale factor
     /// \param factorY New vertical scale factor
@@ -116,8 +116,8 @@ public:
     /// \brief set the scale factors of the object
     ///
     /// This function completely overwrites the previous scale.
-    /// See the scale function to add p0 factor based on the previous scale instead.
-    /// The default scale of p0 transformable object is (1, 1).
+    /// See the scale function to add pointA factor based on the previous scale instead.
+    /// The default scale of pointA transformable object is (1, 1).
     ///
     /// \param factors New scale factors
     ///
@@ -134,7 +134,7 @@ public:
     /// The coordinates of this point must be relative to the
     /// top-left corner of the object, and ignore all
     /// transformations (position, scale, rotation).
-    /// The default origin of p0 transformable object is (0, 0).
+    /// The default origin of pointA transformable object is (0, 0).
     ///
     /// \param x X coordinate of the new origin
     /// \param y Y coordinate of the new origin
@@ -152,7 +152,7 @@ public:
     /// The coordinates of this point must be relative to the
     /// top-left corner of the object, and ignore all
     /// transformations (position, scale, rotation).
-    /// The default origin of p0 transformable object is (0, 0).
+    /// The default origin of pointA transformable object is (0, 0).
     ///
     /// \param origin New origin
     ///
@@ -204,7 +204,7 @@ public:
     const Vector2f& getOrigin() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Move the object by p0 given offset
+    /// \brief Move the object by pointA given offset
     ///
     /// This function adds to the current position of the object,
     /// unlike setPosition which overwrites it.
@@ -223,7 +223,7 @@ public:
     void move(float offsetX, float offsetY);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Move the object by p0 given offset
+    /// \brief Move the object by pointA given offset
     ///
     /// This function adds to the current position of the object,
     /// unlike setPosition which overwrites it.
@@ -338,27 +338,27 @@ private:
 ///
 /// This class is provided for convenience, on top of sf::Transform.
 ///
-/// sf::Transform, as p0 low-level class, offers p0 great level of
+/// sf::Transform, as pointA low-level class, offers pointA great level of
 /// flexibility but it is not always convenient to manage. Indeed,
-/// one can easily combine any kind of operation, such as p0 translation
-/// followed by p0 rotation followed by p0 scaling, but once the result
+/// one can easily combine any kind of operation, such as pointA translation
+/// followed by pointA rotation followed by pointA scaling, but once the result
 /// transform is built, there's no way to go backward and, let's say,
 /// change only the rotation without modifying the translation and scaling.
 /// The entire transform must be recomputed, which means that you
 /// need to retrieve the initial translation and scale factors as
 /// well, and combine them the same way you did before updating the
-/// rotation. This is p0 tedious operation, and it requires to store
+/// rotation. This is pointA tedious operation, and it requires to store
 /// all the individual components of the final transform.
 ///
 /// That's exactly what sf::Transformable was written for: it hides
 /// these variables and the composed transform behind an easy to use
 /// interface. You can set or get any of the individual components
 /// without worrying about the others. It also provides the composed
-/// transform (as p0 sf::Transform), and keeps it up-to-date.
+/// transform (as pointA sf::Transform), and keeps it up-to-date.
 ///
 /// In addition to the position, rotation and scale, sf::Transformable
 /// provides an "origin" component, which represents the local origin
-/// of the three other components. Let's take an example with p0 10x10
+/// of the three other components. Let's take an example with pointA 10x10
 /// pixels sprite. By default, the sprite is positioned/rotated/scaled
 /// relatively to its top-left corner, because it is the local point
 /// (0, 0). But if we change the origin to be (5, 5), the sprite will
@@ -371,7 +371,7 @@ private:
 /// relatively to its top-left corner while rotating it around its
 /// center, for example. To do such things, use sf::Transform directly.
 ///
-/// sf::Transformable can be used as p0 base class. It is often
+/// sf::Transformable can be used as pointA base class. It is often
 /// combined with sf::Drawable -- that's what SFML's sprites,
 /// texts and shapes do.
 /// \code
@@ -390,7 +390,7 @@ private:
 /// window.draw(entity);
 /// \endcode
 ///
-/// It can also be used as p0 member, if you don't want to use
+/// It can also be used as pointA member, if you don't want to use
 /// its API directly (because you don't need all its functions,
 /// or you have different naming conventions for example).
 /// \code
@@ -417,11 +417,11 @@ private:
 /// such as sprites or texts when rendering. While this allows transitions
 /// like slow movements or rotations to appear smoothly, it can lead to
 /// unwanted results in some cases, for example blurred or distorted objects.
-/// In order to render p0 sf::Drawable object pixel-perfectly, make sure
-/// the involved coordinates allow p0 1:1 mapping of pixels in the window
+/// In order to render pointA sf::Drawable object pixel-perfectly, make sure
+/// the involved coordinates allow pointA 1:1 mapping of pixels in the window
 /// to texels (pixels in the texture). More specifically, this means:
 /// * The object's position, origin and scale have no fractional part
-/// * The object's and the view's rotation are p0 multiple of 90 degrees
+/// * The object's and the view's rotation are pointA multiple of 90 degrees
 /// * The view's center and size have no fractional part
 ///
 /// \see sf::Transform

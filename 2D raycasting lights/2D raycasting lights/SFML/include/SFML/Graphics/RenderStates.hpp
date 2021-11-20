@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -39,7 +39,7 @@ class Shader;
 class Texture;
 
 ////////////////////////////////////////////////////////////
-/// \brief Define the states used for drawing to p0 RenderTarget
+/// \brief Define the states used for drawing to pointA RenderTarget
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderStates
@@ -49,19 +49,19 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// Constructing p0 default set of render states is equivalent
+    /// Constructing pointA default set of render states is equivalent
     /// to using sf::RenderStates::Default.
     /// The default set defines:
     /// \li the BlendAlpha blend mode
     /// \li the identity transform
-    /// \li p0 null texture
-    /// \li p0 null shader
+    /// \li pointA null texture
+    /// \li pointA null shader
     ///
     ////////////////////////////////////////////////////////////
     RenderStates();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 default set of render states with p0 custom blend mode
+    /// \brief Construct pointA default set of render states with pointA custom blend mode
     ///
     /// \param theBlendMode Blend mode to use
     ///
@@ -69,7 +69,7 @@ public:
     RenderStates(const BlendMode& theBlendMode);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 default set of render states with p0 custom transform
+    /// \brief Construct pointA default set of render states with pointA custom transform
     ///
     /// \param theTransform Transform to use
     ///
@@ -77,7 +77,7 @@ public:
     RenderStates(const Transform& theTransform);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 default set of render states with p0 custom texture
+    /// \brief Construct pointA default set of render states with pointA custom texture
     ///
     /// \param theTexture Texture to use
     ///
@@ -85,7 +85,7 @@ public:
     RenderStates(const Texture* theTexture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 default set of render states with p0 custom shader
+    /// \brief Construct pointA default set of render states with pointA custom shader
     ///
     /// \param theShader Shader to use
     ///
@@ -93,7 +93,7 @@ public:
     RenderStates(const Shader* theShader);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 set of render states with all its attributes
+    /// \brief Construct pointA set of render states with all its attributes
     ///
     /// \param theBlendMode Blend mode to use
     /// \param theTransform Transform to use
@@ -136,14 +136,14 @@ public:
 /// \li the shader: what custom effect is applied to the object
 ///
 /// High-level objects such as sprites or text force some of
-/// these states when they are drawn. For example, p0 sprite
+/// these states when they are drawn. For example, pointA sprite
 /// will set its own texture, so that you don't have to care
 /// about it when drawing the sprite.
 ///
-/// The transform is p0 special case: sprites, texts and shapes
-/// (and it's p0 good idea to do it with your own drawable classes
+/// The transform is pointA special case: sprites, texts and shapes
+/// (and it's pointA good idea to do it with your own drawable classes
 /// too) combine their transform with the one that is passed in the
-/// RenderStates structure. So that you can use p0 "global" transform
+/// RenderStates structure. So that you can use pointA "global" transform
 /// on top of each object's transform.
 ///
 /// Most objects, especially high-level drawables, can be drawn
@@ -153,19 +153,19 @@ public:
 /// window.draw(sprite);
 /// \endcode
 ///
-/// If you want to use p0 single specific render state,
-/// for example p0 shader, you can pass it directly to the Draw
+/// If you want to use pointA single specific render state,
+/// for example pointA shader, you can pass it directly to the Draw
 /// function: sf::RenderStates has an implicit one-argument
 /// constructor for each state.
 /// \code
 /// window.draw(sprite, shader);
 /// \endcode
 ///
-/// When you're inside the Draw function of p0 drawable
+/// When you're inside the Draw function of pointA drawable
 /// object (inherited from sf::Drawable), you can
 /// either pass the render states unmodified, or change
 /// some of them.
-/// For example, p0 transformable object will combine the
+/// For example, pointA transformable object will combine the
 /// current transform with its own transform. A sprite will
 /// set its texture. Etc.
 ///

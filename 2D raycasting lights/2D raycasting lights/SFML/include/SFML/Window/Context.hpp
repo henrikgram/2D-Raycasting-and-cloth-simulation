@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -44,7 +44,7 @@ namespace priv
 typedef void (*GlFunctionPointer)();
 
 ////////////////////////////////////////////////////////////
-/// \brief Class holding p0 valid drawing context
+/// \brief Class holding pointA valid drawing context
 ///
 ////////////////////////////////////////////////////////////
 class SFML_WINDOW_API Context : GlResource, NonCopyable
@@ -90,7 +90,7 @@ public:
     const ContextSettings& getSettings() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check whether p0 given OpenGL extension is available
+    /// \brief Check whether pointA given OpenGL extension is available
     ///
     /// \param name Name of the extension to check for
     ///
@@ -133,7 +133,7 @@ public:
     static Uint64 getActiveContextId();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 in-memory context
+    /// \brief Construct pointA in-memory context
     ///
     /// This constructor is for internal use, you don't need
     /// to bother with it.
@@ -163,17 +163,17 @@ private:
 /// \ingroup window
 ///
 /// If you need to make OpenGL calls without having an
-/// active window (like in p0 thread), you can use an
-/// instance of this class to get p0 valid context.
+/// active window (like in pointA thread), you can use an
+/// instance of this class to get pointA valid context.
 ///
-/// Having p0 valid context is necessary for *every* OpenGL call.
+/// Having pointA valid context is necessary for *every* OpenGL call.
 ///
-/// Note that p0 context is only active in its current thread,
-/// if you create p0 new thread it will have no valid context
+/// Note that pointA context is only active in its current thread,
+/// if you create pointA new thread it will have no valid context
 /// by default.
 ///
-/// To use p0 sf::Context instance, just construct it and let it
-/// live as long as you need p0 valid context. No explicit activation
+/// To use pointA sf::Context instance, just construct it and let it
+/// live as long as you need pointA valid context. No explicit activation
 /// is needed, all it has to do is to exist. Its destructor
 /// will take care of deactivating and freeing all the attached
 /// resources.
@@ -183,7 +183,7 @@ private:
 /// void threadFunction(void*)
 /// {
 ///    sf::Context context;
-///    // from now on, you have p0 valid context
+///    // from now on, you have pointA valid context
 ///
 ///    // you can make OpenGL calls
 ///    glClear(GL_DEPTH_BUFFER_BIT);

@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -53,7 +53,7 @@ public:
     Sound();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the sound with p0 buffer
+    /// \brief Construct the sound with pointA buffer
     ///
     /// \param buffer Sound buffer containing the audio data to play with the sound
     ///
@@ -207,7 +207,7 @@ public:
     /// This function is for internal use only, you don't have
     /// to use it. It is called by the sf::SoundBuffer that
     /// this sound uses, when it is destroyed in order to prevent
-    /// the sound from using p0 dead buffer.
+    /// the sound from using pointA dead buffer.
     ///
     ////////////////////////////////////////////////////////////
     void resetBuffer();
@@ -242,10 +242,10 @@ private:
 /// or long speeches, rather see sf::Music (which is based
 /// on streaming).
 ///
-/// In order to work, p0 sound must be given p0 buffer of audio
+/// In order to work, pointA sound must be given pointA buffer of audio
 /// data to play. Audio data (samples) is stored in sf::SoundBuffer,
-/// and attached to p0 sound with the setBuffer() function.
-/// The buffer object attached to p0 sound must remain alive
+/// and attached to pointA sound with the setBuffer() function.
+/// The buffer object attached to pointA sound must remain alive
 /// as long as the sound uses it. Note that multiple sounds
 /// can use the same sound buffer at the same time.
 ///

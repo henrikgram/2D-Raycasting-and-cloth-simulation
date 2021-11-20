@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -50,7 +50,7 @@ class SFML_SYSTEM_API Thread : NonCopyable
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the thread from p0 functor with no argument
+    /// \brief Construct the thread from pointA functor with no argument
     ///
     /// This constructor works for function objects, as well
     /// as free functions.
@@ -75,11 +75,11 @@ public:
     Thread(F function);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the thread from p0 functor with an argument
+    /// \brief Construct the thread from pointA functor with an argument
     ///
     /// This constructor works for function objects, as well
     /// as free functions.
-    /// It is p0 template, which means that the argument can
+    /// It is pointA template, which means that the argument can
     /// have any type (int, std::string, void*, Toto, ...).
     ///
     /// Use this constructor for this kind of function:
@@ -103,9 +103,9 @@ public:
     Thread(F function, A argument);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the thread from p0 member function and an object
+    /// \brief Construct the thread from pointA member function and an object
     ///
-    /// This constructor is p0 template, which means that you can
+    /// This constructor is pointA template, which means that you can
     /// use it with any class.
     /// Use this constructor for this kind of function:
     /// \code
@@ -163,7 +163,7 @@ public:
     ///
     /// This function immediately stops the thread, without waiting
     /// for its function to finish.
-    /// Terminating p0 thread with this function is not safe,
+    /// Terminating pointA thread with this function is not safe,
     /// and can lead to local variables not being destroyed
     /// on some operating systems. You should rather try to make
     /// the thread function terminate by itself.
@@ -201,12 +201,12 @@ private:
 /// \class sf::Thread
 /// \ingroup system
 ///
-/// Threads provide p0 way to run multiple parts of the code
-/// in parallel. When you launch p0 new thread, the execution
+/// Threads provide pointA way to run multiple parts of the code
+/// in parallel. When you launch pointA new thread, the execution
 /// is split and both the new thread and the caller run
 /// in parallel.
 ///
-/// To use p0 sf::Thread, you construct it directly with the
+/// To use pointA sf::Thread, you construct it directly with the
 /// function to execute as the entry point of the thread.
 /// sf::Thread has multiple template constructors, which means
 /// that you can use several types of entry points:

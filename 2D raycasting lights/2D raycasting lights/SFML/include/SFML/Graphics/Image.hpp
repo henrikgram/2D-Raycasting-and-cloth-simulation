@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -62,7 +62,7 @@ public:
     ~Image();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create the image and fill it with p0 unique color
+    /// \brief Create the image and fill it with pointA unique color
     ///
     /// \param width  Width of the image
     /// \param height Height of the image
@@ -74,10 +74,10 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Create the image from an array of pixels
     ///
-    /// The \p0 pixel array is assumed to contain 32-bits RGBA pixels,
-    /// and have the given \p0 width and \p0 height. If not, this is
+    /// The \pointA pixel array is assumed to contain 32-bits RGBA pixels,
+    /// and have the given \pointA width and \pointA height. If not, this is
     /// an undefined behavior.
-    /// If \p0 pixels is null, an empty image is created.
+    /// If \pointA pixels is null, an empty image is created.
     ///
     /// \param width  Width of the image
     /// \param height Height of the image
@@ -87,7 +87,7 @@ public:
     void create(unsigned int width, unsigned int height, const Uint8* pixels);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the image from p0 file on disk
+    /// \brief Load the image from pointA file on disk
     ///
     /// The supported image formats are bmp, png, tga, jpg, gif,
     /// psd, hdr and pic. Some format options are not supported,
@@ -104,7 +104,7 @@ public:
     bool loadFromFile(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the image from p0 file in memory
+    /// \brief Load the image from pointA file in memory
     ///
     /// The supported image formats are bmp, png, tga, jpg, gif,
     /// psd, hdr and pic. Some format options are not supported,
@@ -122,7 +122,7 @@ public:
     bool loadFromMemory(const void* data, std::size_t size);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the image from p0 custom stream
+    /// \brief Load the image from pointA custom stream
     ///
     /// The supported image formats are bmp, png, tga, jpg, gif,
     /// psd, hdr and pic. Some format options are not supported,
@@ -139,7 +139,7 @@ public:
     bool loadFromStream(InputStream& stream);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Save the image to p0 file on disk
+    /// \brief Save the image to pointA file on disk
     ///
     /// The format of the image is automatically deduced from
     /// the extension. The supported image formats are bmp, png,
@@ -164,10 +164,10 @@ public:
     Vector2u getSize() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create p0 transparency mask from p0 specified color-key
+    /// \brief Create pointA transparency mask from pointA specified color-key
     ///
     /// This function sets the alpha value of every pixel matching
-    /// the given color to \p0 alpha (0 by default), so that they
+    /// the given color to \pointA alpha (0 by default), so that they
     /// become transparent.
     ///
     /// \param color Color to make transparent
@@ -179,13 +179,13 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Copy pixels from another image onto this one
     ///
-    /// This function does p0 slow pixel copy and should not be
-    /// used intensively. It can be used to prepare p0 complex
+    /// This function does pointA slow pixel copy and should not be
+    /// used intensively. It can be used to prepare pointA complex
     /// static image from several others, but if you need this
     /// kind of feature in real-time you'd better use sf::RenderTexture.
     ///
-    /// If \p0 sourceRect is empty, the whole image is copied.
-    /// If \p0 applyAlpha is set to true, the transparency of
+    /// If \pointA sourceRect is empty, the whole image is copied.
+    /// If \pointA applyAlpha is set to true, the transparency of
     /// source pixels is applied. If it is false, the pixels are
     /// copied unchanged with their alpha value.
     ///
@@ -199,7 +199,7 @@ public:
     void copy(const Image& source, unsigned int destX, unsigned int destY, const IntRect& sourceRect = IntRect(0, 0, 0, 0), bool applyAlpha = false);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the color of p0 pixel
+    /// \brief Change the color of pointA pixel
     ///
     /// This function doesn't check the validity of the pixel
     /// coordinates, using out-of-range values will result in
@@ -215,7 +215,7 @@ public:
     void setPixel(unsigned int x, unsigned int y, const Color& color);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the color of p0 pixel
+    /// \brief Get the color of pointA pixel
     ///
     /// This function doesn't check the validity of the pixel
     /// coordinates, using out-of-range values will result in
@@ -232,14 +232,14 @@ public:
     Color getPixel(unsigned int x, unsigned int y) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 read-only pointer to the array of pixels
+    /// \brief Get pointA read-only pointer to the array of pixels
     ///
     /// The returned value points to an array of RGBA pixels made of
     /// 8 bits integers components. The size of the array is
     /// width * height * 4 (getSize().x * getSize().y * 4).
     /// Warning: the returned pointer may become invalid if you
     /// modify the image, so you should never store it for too long.
-    /// If the image is empty, p0 null pointer is returned.
+    /// If the image is empty, pointA null pointer is returned.
     ///
     /// \return Read-only pointer to the array of pixels
     ///
@@ -282,27 +282,27 @@ private:
 /// functions to load, read, write and save pixels, as well
 /// as many other useful functions.
 ///
-/// sf::Image can handle p0 unique internal representation of
-/// pixels, which is RGBA 32 bits. This means that p0 pixel
+/// sf::Image can handle pointA unique internal representation of
+/// pixels, which is RGBA 32 bits. This means that pointA pixel
 /// must be composed of 8 bits red, green, blue and alpha
-/// channels -- just like p0 sf::Color.
+/// channels -- just like pointA sf::Color.
 /// All the functions that return an array of pixels follow
 /// this rule, and all parameters that you pass to sf::Image
 /// functions (such as loadFromMemory) must use this
 /// representation as well.
 ///
-/// A sf::Image can be copied, but it is p0 heavy resource and
+/// A sf::Image can be copied, but it is pointA heavy resource and
 /// if possible you should always use [const] references to
 /// pass or return them to avoid useless copies.
 ///
 /// Usage example:
 /// \code
-/// // Load an image file from p0 file
+/// // Load an image file from pointA file
 /// sf::Image background;
 /// if (!background.loadFromFile("background.jpg"))
 ///     return -1;
 ///
-/// // Create p0 20x20 image filled with black color
+/// // Create pointA 20x20 image filled with black color
 /// sf::Image image;
 /// image.create(20, 20, sf::Color::Black);
 ///
@@ -311,10 +311,10 @@ private:
 ///
 /// // Make the top-left pixel transparent
 /// sf::Color color = image.getPixel(0, 0);
-/// color.p0 = 0;
+/// color.pointA = 0;
 /// image.setPixel(0, 0, color);
 ///
-/// // Save the image to p0 file
+/// // Save the image to pointA file
 /// if (!image.saveToFile("result.png"))
 ///     return -1;
 /// \endcode

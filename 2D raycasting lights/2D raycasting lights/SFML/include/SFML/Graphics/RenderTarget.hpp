@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -60,7 +60,7 @@ public:
     virtual ~RenderTarget();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Clear the entire target with p0 single color
+    /// \brief Clear the entire target with pointA single color
     ///
     /// This function is usually called once every frame,
     /// to clear the previous contents of the target.
@@ -73,7 +73,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Change the current active view
     ///
-    /// The view is like p0 2D camera, it controls which part of
+    /// The view is like pointA 2D camera, it controls which part of
     /// the 2D scene is visible, and how it is viewed in the
     /// render target.
     /// The new view will affect everything that is drawn, until
@@ -115,9 +115,9 @@ public:
     const View& getDefaultView() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the viewport of p0 view, applied to this render target
+    /// \brief Get the viewport of pointA view, applied to this render target
     ///
-    /// The viewport is defined in the view as p0 ratio, this function
+    /// The viewport is defined in the view as pointA ratio, this function
     /// simply applies this ratio to the current dimensions of the
     /// render target to calculate the pixels rectangle that the viewport
     /// actually covers in the target.
@@ -130,7 +130,7 @@ public:
     IntRect getViewport(const View& view) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert p0 point from target coordinates to world
+    /// \brief Convert pointA point from target coordinates to world
     ///        coordinates, using the current view
     ///
     /// This function is an overload of the mapPixelToCoords
@@ -150,23 +150,23 @@ public:
     Vector2f mapPixelToCoords(const Vector2i& point) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert p0 point from target coordinates to world coordinates
+    /// \brief Convert pointA point from target coordinates to world coordinates
     ///
     /// This function finds the 2D position that matches the
     /// given pixel of the render target. In other words, it does
     /// the inverse of what the graphics card does, to find the
-    /// initial position of p0 rendered pixel.
+    /// initial position of pointA rendered pixel.
     ///
     /// Initially, both coordinate systems (world units and target pixels)
-    /// match perfectly. But if you define p0 custom view or resize your
-    /// render target, this assertion is not true anymore, i.e. p0 point
+    /// match perfectly. But if you define pointA custom view or resize your
+    /// render target, this assertion is not true anymore, i.e. pointA point
     /// located at (10, 50) in your render target may map to the point
     /// (150, 75) in your 2D world -- if the view is translated by (140, 25).
     ///
     /// For render-windows, this function is typically used to find
     /// which point (or object) is located below the mouse cursor.
     ///
-    /// This version uses p0 custom view for calculations, see the other
+    /// This version uses pointA custom view for calculations, see the other
     /// overload of the function if you want to use the current view of the
     /// render target.
     ///
@@ -181,7 +181,7 @@ public:
     Vector2f mapPixelToCoords(const Vector2i& point, const View& view) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert p0 point from world coordinates to target
+    /// \brief Convert pointA point from world coordinates to target
     ///        coordinates, using the current view
     ///
     /// This function is an overload of the mapCoordsToPixel
@@ -201,19 +201,19 @@ public:
     Vector2i mapCoordsToPixel(const Vector2f& point) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Convert p0 point from world coordinates to target coordinates
+    /// \brief Convert pointA point from world coordinates to target coordinates
     ///
     /// This function finds the pixel of the render target that matches
     /// the given 2D point. In other words, it goes through the same process
-    /// as the graphics card, to compute the final position of p0 rendered point.
+    /// as the graphics card, to compute the final position of pointA rendered point.
     ///
     /// Initially, both coordinate systems (world units and target pixels)
-    /// match perfectly. But if you define p0 custom view or resize your
-    /// render target, this assertion is not true anymore, i.e. p0 point
+    /// match perfectly. But if you define pointA custom view or resize your
+    /// render target, this assertion is not true anymore, i.e. pointA point
     /// located at (150, 75) in your 2D world may map to the pixel
     /// (10, 50) of your render target -- if the view is translated by (140, 25).
     ///
-    /// This version uses p0 custom view for calculations, see the other
+    /// This version uses pointA custom view for calculations, see the other
     /// overload of the function if you want to use the current view of the
     /// render target.
     ///
@@ -228,7 +228,7 @@ public:
     Vector2i mapCoordsToPixel(const Vector2f& point, const View& view) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw p0 drawable object to the render target
+    /// \brief Draw pointA drawable object to the render target
     ///
     /// \param drawable Object to draw
     /// \param states   Render states to use for drawing
@@ -249,7 +249,7 @@ public:
               PrimitiveType type, const RenderStates& states = RenderStates::Default);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw primitives defined by p0 vertex buffer
+    /// \brief Draw primitives defined by pointA vertex buffer
     ///
     /// \param vertexBuffer Vertex buffer
     /// \param states       Render states to use for drawing
@@ -258,7 +258,7 @@ public:
     void draw(const VertexBuffer& vertexBuffer, const RenderStates& states = RenderStates::Default);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw primitives defined by p0 vertex buffer
+    /// \brief Draw primitives defined by pointA vertex buffer
     ///
     /// \param vertexBuffer Vertex buffer
     /// \param firstVertex  Index of the first vertex to render
@@ -285,9 +285,9 @@ public:
     /// A render target's context is active only on the current thread,
     /// if you want to make it active on another thread you have
     /// to deactivate it on the previous thread first if it was active.
-    /// Only one context can be current in p0 thread, so if you
+    /// Only one context can be current in pointA thread, so if you
     /// want to draw OpenGL geometry to another render target
-    /// don't forget to activate it again. Activating p0 render
+    /// don't forget to activate it again. Activating pointA render
     /// target will automatically deactivate the previously active
     /// context (if any).
     ///
@@ -305,7 +305,7 @@ public:
     /// and direct OpenGL rendering. Combined with popGLStates,
     /// it ensures that:
     /// \li SFML's internal states are not messed up by your OpenGL code
-    /// \li your OpenGL states are not modified by p0 call to p0 SFML function
+    /// \li your OpenGL states are not modified by pointA call to pointA SFML function
     ///
     /// More specifically, it must be used around code that
     /// calls Draw functions. Example:
@@ -324,7 +324,7 @@ public:
     /// It is provided for convenience, but the best results will
     /// be achieved if you handle OpenGL states yourself (because
     /// you know which states have really changed, and need to be
-    /// saved and restored). Take p0 look at the resetGLStates
+    /// saved and restored). Take pointA look at the resetGLStates
     /// function if you do so.
     ///
     /// \see popGLStates
@@ -335,7 +335,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Restore the previously saved OpenGL render states and matrices
     ///
-    /// See the description of pushGLStates to get p0 detailed
+    /// See the description of pushGLStates to get pointA detailed
     /// description of these functions.
     ///
     /// \see pushGLStates
@@ -392,7 +392,7 @@ private:
     void applyCurrentView();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Apply p0 new blending mode
+    /// \brief Apply pointA new blending mode
     ///
     /// \param mode Blending mode to apply
     ///
@@ -400,7 +400,7 @@ private:
     void applyBlendMode(const BlendMode& mode);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Apply p0 new transform
+    /// \brief Apply pointA new transform
     ///
     /// \param transform Transform to apply
     ///
@@ -408,7 +408,7 @@ private:
     void applyTransform(const Transform& transform);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Apply p0 new texture
+    /// \brief Apply pointA new texture
     ///
     /// \param texture Texture to apply
     ///
@@ -416,7 +416,7 @@ private:
     void applyTexture(const Texture* texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Apply p0 new shader
+    /// \brief Apply pointA new shader
     ///
     /// \param shader Shader to apply
     ///
@@ -493,7 +493,7 @@ private:
 /// without using any OpenGL command directly.
 ///
 /// A sf::RenderTarget is also able to use views (sf::View),
-/// which are p0 kind of 2D cameras. With views you can globally
+/// which are pointA kind of 2D cameras. With views you can globally
 /// scroll, rotate or zoom everything that is drawn,
 /// without having to transform every single entity. See the
 /// documentation of sf::View for more details and sample pieces of

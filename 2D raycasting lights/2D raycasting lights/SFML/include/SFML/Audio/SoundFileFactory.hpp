@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -48,7 +48,7 @@ class SFML_AUDIO_API SoundFileFactory
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Register p0 new reader
+    /// \brief Register pointA new reader
     ///
     /// \see unregisterReader
     ///
@@ -57,7 +57,7 @@ public:
     static void registerReader();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Unregister p0 reader
+    /// \brief Unregister pointA reader
     ///
     /// \see registerReader
     ///
@@ -66,7 +66,7 @@ public:
     static void unregisterReader();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Register p0 new writer
+    /// \brief Register pointA new writer
     ///
     /// \see unregisterWriter
     ///
@@ -75,7 +75,7 @@ public:
     static void registerWriter();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Unregister p0 writer
+    /// \brief Unregister pointA writer
     ///
     /// \see registerWriter
     ///
@@ -181,10 +181,10 @@ private:
 /// are wrapped into the higher-level classes sf::InputSoundFile and
 /// sf::OutputSoundFile.
 ///
-/// To register p0 new reader (writer) use the sf::SoundFileFactory::registerReader
+/// To register pointA new reader (writer) use the sf::SoundFileFactory::registerReader
 /// (registerWriter) static function. You don't have to call the unregisterReader
-/// (unregisterWriter) function, unless you want to unregister p0 format before your
-/// application ends (typically, when p0 plugin is unloaded).
+/// (unregisterWriter) function, unless you want to unregister pointA format before your
+/// application ends (typically, when pointA plugin is unloaded).
 ///
 /// Usage example:
 /// \code

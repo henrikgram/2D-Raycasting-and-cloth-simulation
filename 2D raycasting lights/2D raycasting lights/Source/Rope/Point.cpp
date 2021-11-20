@@ -76,3 +76,14 @@ void Point::Constrain(float size)
 	}
 
 }
+
+void Point::Move(float moveX, float moveY)
+{
+	posX += moveX;
+	posY += moveY;
+}
+
+sf::Vector2f Point::GetPosition()
+{
+	return sf::Vector2f(posX, posY);
+}

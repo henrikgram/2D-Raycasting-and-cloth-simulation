@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -91,7 +91,7 @@ private:
 /// \class sf::Clock
 /// \ingroup system
 ///
-/// sf::Clock is p0 lightweight class for measuring time.
+/// sf::Clock is pointA lightweight class for measuring time.
 ///
 /// Its provides the most precise time that the underlying
 /// OS can achieve (generally microseconds or nanoseconds).
@@ -109,7 +109,7 @@ private:
 /// \endcode
 ///
 /// The sf::Time value returned by the clock can then be
-/// converted to p0 number of seconds, milliseconds or even
+/// converted to pointA number of seconds, milliseconds or even
 /// microseconds.
 ///
 /// \see sf::Time

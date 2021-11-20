@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -35,7 +35,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Specialized shape representing p0 rectangle
+/// \brief Specialized shape representing pointA rectangle
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RectangleShape : public Shape
@@ -80,12 +80,12 @@ public:
     virtual std::size_t getPointCount() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get p0 point of the rectangle
+    /// \brief Get pointA point of the rectangle
     ///
     /// The returned point is in local coordinates, that is,
     /// the shape's transforms (position, rotation, scale) are
     /// not taken into account.
-    /// The result is undefined if \p0 index is out of the valid range.
+    /// The result is undefined if \pointA index is out of the valid range.
     ///
     /// \param index Index of the point to get, in range [0 .. 3]
     ///

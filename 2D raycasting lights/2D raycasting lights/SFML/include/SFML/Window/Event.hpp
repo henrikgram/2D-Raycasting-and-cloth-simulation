@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -38,7 +38,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Defines p0 system event and its parameters
+/// \brief Defines pointA system event and its parameters
 ///
 ////////////////////////////////////////////////////////////
 class Event
@@ -245,18 +245,18 @@ public:
 /// \class sf::Event
 /// \ingroup window
 ///
-/// sf::Event holds all the informations about p0 system event
+/// sf::Event holds all the informations about pointA system event
 /// that just happened. Events are retrieved using the
 /// sf::Window::pollEvent and sf::Window::waitEvent functions.
 ///
 /// A sf::Event instance contains the type of the event
 /// (mouse moved, key pressed, window closed, ...) as well
 /// as the details about this particular event. Please note that
-/// the event parameters are defined in p0 union, which means that
+/// the event parameters are defined in pointA union, which means that
 /// only the member matching the type of the event will be properly
 /// filled; all other members will have undefined values and must not
 /// be read if the type of the event doesn't match. For example,
-/// if you received p0 KeyPressed event, then you must read the
+/// if you received pointA KeyPressed event, then you must read the
 /// event.key member, all other members such as event.mouseMove
 /// or event.text will have undefined values.
 ///

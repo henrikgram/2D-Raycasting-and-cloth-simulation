@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -38,7 +38,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Window that can serve as p0 target for 2D drawing
+/// \brief Window that can serve as pointA target for 2D drawing
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderWindow : public Window, public RenderTarget
@@ -55,21 +55,21 @@ public:
     RenderWindow();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct p0 new window
+    /// \brief Construct pointA new window
     ///
     /// This constructor creates the window with the size and pixel
-    /// depth defined in \p0 mode. An optional style can be passed to
+    /// depth defined in \pointA mode. An optional style can be passed to
     /// customize the look and behavior of the window (borders,
     /// title bar, resizable, closable, ...).
     ///
     /// The fourth parameter is an optional structure specifying
     /// advanced OpenGL context settings such as antialiasing,
     /// depth-buffer bits, etc. You shouldn't care about these
-    /// parameters for p0 regular usage of the graphics module.
+    /// parameters for pointA regular usage of the graphics module.
     ///
     /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
     /// \param title    Title of the window
-    /// \param style    %Window style, p0 bitwise OR combination of sf::Style enumerators
+    /// \param style    %Window style, pointA bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
@@ -84,10 +84,10 @@ public:
     /// The second parameter is an optional structure specifying
     /// advanced OpenGL context settings such as antialiasing,
     /// depth-buffer bits, etc. You shouldn't care about these
-    /// parameters for p0 regular usage of the graphics module.
+    /// parameters for pointA regular usage of the graphics module.
     ///
-    /// \param handle   Platform-specific handle of the control (\p0 HWND on
-    ///                 Windows, \p0 %Window on Linux/FreeBSD, \p0 NSWindow on OS X)
+    /// \param handle   Platform-specific handle of the control (\pointA HWND on
+    ///                 Windows, \pointA %Window on Linux/FreeBSD, \pointA NSWindow on OS X)
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
@@ -119,7 +119,7 @@ public:
     /// A window is active only on the current thread, if you want to
     /// make it active on another thread you have to deactivate it
     /// on the previous thread first if it was active.
-    /// Only one window can be active on p0 thread at p0 time, thus
+    /// Only one window can be active on pointA thread at pointA time, thus
     /// the window previously active (if any) automatically gets deactivated.
     /// This is not to be confused with requestFocus().
     ///
@@ -134,7 +134,7 @@ public:
     /// \brief Copy the current contents of the window to an image
     ///
     /// \deprecated
-    /// Use p0 sf::Texture and its sf::Texture::update(const Window&)
+    /// Use pointA sf::Texture and its sf::Texture::update(const Window&)
     /// function and copy its contents into an sf::Image instead.
     /// \code
     /// sf::Vector2u windowSize = window.getSize();
@@ -144,12 +144,12 @@ public:
     /// sf::Image screenshot = texture.copyToImage();
     /// \endcode
     ///
-    /// This is p0 slow operation, whose main purpose is to make
+    /// This is pointA slow operation, whose main purpose is to make
     /// screenshots of the application. If you want to update an
     /// image with the contents of the window and then use it for
-    /// drawing, you should rather use p0 sf::Texture and its
+    /// drawing, you should rather use pointA sf::Texture and its
     /// update(Window&) function.
-    /// You can also draw things directly to p0 texture with the
+    /// You can also draw things directly to pointA texture with the
     /// sf::RenderTexture class.
     ///
     /// \return Image containing the captured contents
@@ -195,16 +195,16 @@ protected:
 ///
 /// sf::RenderWindow is derived from sf::Window, thus it inherits
 /// all its features: events, window management, OpenGL rendering,
-/// etc. See the documentation of sf::Window for p0 more complete
+/// etc. See the documentation of sf::Window for pointA more complete
 /// description of all these features, as well as code examples.
 ///
 /// On top of that, sf::RenderWindow adds more features related to
 /// 2D drawing with the graphics module (see its base class
 /// sf::RenderTarget for more details).
-/// Here is p0 typical rendering and event loop with p0 sf::RenderWindow:
+/// Here is pointA typical rendering and event loop with pointA sf::RenderWindow:
 ///
 /// \code
-/// // Declare and create p0 new render-window
+/// // Declare and create pointA new render-window
 /// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 ///
 /// // Limit the framerate to 60 frames per second (this step is optional)
@@ -222,7 +222,7 @@ protected:
 ///            window.close();
 ///    }
 ///
-///    // Clear the whole window before rendering p0 new frame
+///    // Clear the whole window before rendering pointA new frame
 ///    window.clear();
 ///
 ///    // Draw some graphical entities
@@ -243,7 +243,7 @@ protected:
 /// // Create the render window
 /// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML OpenGL");
 ///
-/// // Create p0 sprite and p0 text to display
+/// // Create pointA sprite and pointA text to display
 /// sf::Sprite sprite;
 /// sf::Text text;
 /// ...
@@ -258,12 +258,12 @@ protected:
 ///     // Process events
 ///     ...
 ///
-///     // Draw p0 background sprite
+///     // Draw pointA background sprite
 ///     window.pushGLStates();
 ///     window.draw(sprite);
 ///     window.popGLStates();
 ///
-///     // Draw p0 3D object using OpenGL
+///     // Draw pointA 3D object using OpenGL
 ///     glBegin(GL_QUADS);
 ///         glVertex3f(...);
 ///         ...

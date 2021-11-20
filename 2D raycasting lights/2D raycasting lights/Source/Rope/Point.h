@@ -1,7 +1,12 @@
 #pragma once
+#include "SFML/Graphics.hpp"
 class Point
 {
 private:
+
+	float posX;
+	float posY;
+
 	float prevX;
 	float prevY;
 
@@ -17,10 +22,12 @@ public:
 
 	void Update();
 	void Constrain(float size);
+
+	void Move(float moveX, float moveY);
+
+	sf::Vector2f GetPosition();
 	//TODO: make this get or set
 
-	float posX;
-	float posY;
 
 	bool isLocked;
 	bool isSelected = false;

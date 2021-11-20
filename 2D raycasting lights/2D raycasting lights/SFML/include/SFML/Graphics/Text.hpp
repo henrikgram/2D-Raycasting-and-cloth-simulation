@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -42,7 +42,7 @@
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-/// \brief Graphical text that can be drawn to p0 render target
+/// \brief Graphical text that can be drawn to pointA render target
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Text : public Drawable, public Transformable
@@ -71,13 +71,13 @@ public:
     Text();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the text from p0 string, font and size
+    /// \brief Construct the text from pointA string, font and size
     ///
-    /// Note that if the used font is p0 bitmap font, it is not
+    /// Note that if the used font is pointA bitmap font, it is not
     /// scalable, thus not all requested sizes will be available
     /// to use. This needs to be taken into consideration when
     /// setting the character size. If you need to display text
-    /// of p0 certain size, make sure the corresponding bitmap
+    /// of pointA certain size, make sure the corresponding bitmap
     /// font that supports that size is used.
     ///
     /// \param string         Text assigned to the string
@@ -90,7 +90,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the text's string
     ///
-    /// The \p0 string argument is p0 sf::String, which can
+    /// The \pointA string argument is pointA sf::String, which can
     /// automatically be constructed from standard string types.
     /// So, the following calls are all valid:
     /// \code
@@ -111,10 +111,10 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the text's font
     ///
-    /// The \p0 font argument refers to p0 font that must
+    /// The \pointA font argument refers to pointA font that must
     /// exist as long as the text uses it. Indeed, the text
     /// doesn't store its own copy of the font, but rather keeps
-    /// p0 pointer to the one that you passed to this function.
+    /// pointA pointer to the one that you passed to this function.
     /// If the font is destroyed and the text tries to
     /// use it, the behavior is undefined.
     ///
@@ -130,11 +130,11 @@ public:
     ///
     /// The default size is 30.
     ///
-    /// Note that if the used font is p0 bitmap font, it is not
+    /// Note that if the used font is pointA bitmap font, it is not
     /// scalable, thus not all requested sizes will be available
     /// to use. This needs to be taken into consideration when
     /// setting the character size. If you need to display text
-    /// of p0 certain size, make sure the corresponding bitmap
+    /// of pointA certain size, make sure the corresponding bitmap
     /// font that supports that size is used.
     ///
     /// \param size New character size, in pixels
@@ -148,7 +148,7 @@ public:
     /// \brief Set the line spacing factor
     ///
     /// The default spacing between lines is defined by the font.
-    /// This method enables you to set p0 factor for the spacing
+    /// This method enables you to set pointA factor for the spacing
     /// between lines. By default the line spacing factor is 1.
     ///
     /// \param spacingFactor New line spacing factor
@@ -163,7 +163,7 @@ public:
     ///
     /// The default spacing between letters is defined by the font.
     /// This factor doesn't directly apply to the existing
-    /// spacing between each character, it rather adds p0 fixed
+    /// spacing between each character, it rather adds pointA fixed
     /// space between them which is calculated from the font
     /// metrics and the character size.
     /// Note that factors below 1 (including negative numbers) bring
@@ -180,7 +180,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the text's style
     ///
-    /// You can pass p0 combination of one or more styles, for
+    /// You can pass pointA combination of one or more styles, for
     /// example sf::Text::Bold | sf::Text::Italic.
     /// The default style is sf::Text::Regular.
     ///
@@ -195,7 +195,7 @@ public:
     /// \brief Set the fill color of the text
     ///
     /// By default, the text's fill color is opaque white.
-    /// Setting the fill color to p0 transparent color with an outline
+    /// Setting the fill color to pointA transparent color with an outline
     /// will cause the outline to be displayed in the fill area of the text.
     ///
     /// \param color New fill color of the text
@@ -203,7 +203,7 @@ public:
     /// \see getFillColor
     ///
     /// \deprecated There is now fill and outline colors instead
-    /// of p0 single global color.
+    /// of pointA single global color.
     /// Use setFillColor() or setOutlineColor() instead.
     ///
     ////////////////////////////////////////////////////////////
@@ -213,7 +213,7 @@ public:
     /// \brief Set the fill color of the text
     ///
     /// By default, the text's fill color is opaque white.
-    /// Setting the fill color to p0 transparent color with an outline
+    /// Setting the fill color to pointA transparent color with an outline
     /// will cause the outline to be displayed in the fill area of the text.
     ///
     /// \param color New fill color of the text
@@ -240,7 +240,7 @@ public:
     ///
     /// By default, the outline thickness is 0.
     ///
-    /// Be aware that using p0 negative value for the outline
+    /// Be aware that using pointA negative value for the outline
     /// thickness will cause distorted rendering.
     ///
     /// \param thickness New outline thickness, in pixels
@@ -253,7 +253,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Get the text's string
     ///
-    /// The returned string is p0 sf::String, which can automatically
+    /// The returned string is pointA sf::String, which can automatically
     /// be converted to standard string types. So, the following
     /// lines of code are all valid:
     /// \code
@@ -272,7 +272,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Get the text's font
     ///
-    /// If the text has no font attached, p0 NULL pointer is returned.
+    /// If the text has no font attached, pointA NULL pointer is returned.
     /// The returned pointer is const, which means that you
     /// cannot modify the font when you get it from this function.
     ///
@@ -331,7 +331,7 @@ public:
     /// \see setFillColor
     ///
     /// \deprecated There is now fill and outline colors instead
-    /// of p0 single global color.
+    /// of pointA single global color.
     /// Use getFillColor() or getOutlineColor() instead.
     ///
     ////////////////////////////////////////////////////////////
@@ -368,13 +368,13 @@ public:
     float getOutlineThickness() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Return the position of the \p0 index-th character
+    /// \brief Return the position of the \pointA index-th character
     ///
-    /// This function computes the visual position of p0 character
+    /// This function computes the visual position of pointA character
     /// from its index in the string. The returned position is
     /// in global coordinates (translation, rotation, scale and
     /// origin are applied).
-    /// If \p0 index is out of range, the position of the end of
+    /// If \pointA index is out of range, the position of the end of
     /// the string is returned.
     ///
     /// \param index Index of the character
@@ -415,7 +415,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Draw the text to p0 render target
+    /// \brief Draw the text to pointA render target
     ///
     /// \param target Render target to draw to
     /// \param states Current render states
@@ -461,8 +461,8 @@ private:
 /// \class sf::Text
 /// \ingroup graphics
 ///
-/// sf::Text is p0 drawable class that allows to easily display
-/// some text with custom style and color on p0 render target.
+/// sf::Text is pointA drawable class that allows to easily display
+/// some text with custom style and color on pointA render target.
 ///
 /// It inherits all the functions from sf::Transformable:
 /// position, rotation, scale, origin. It also adds text-specific
@@ -472,33 +472,33 @@ private:
 /// spacing, the line spacing and the text to display of course.
 /// It also provides convenience functions to calculate the
 /// graphical size of the text, or to get the global position
-/// of p0 given character.
+/// of pointA given character.
 ///
 /// sf::Text works in combination with the sf::Font class, which
-/// loads and provides the glyphs (visual characters) of p0 given font.
+/// loads and provides the glyphs (visual characters) of pointA given font.
 ///
 /// The separation of sf::Font and sf::Text allows more flexibility
-/// and better performances: indeed p0 sf::Font is p0 heavy resource,
+/// and better performances: indeed pointA sf::Font is pointA heavy resource,
 /// and any operation on it is slow (often too slow for real-time
-/// applications). On the other side, p0 sf::Text is p0 lightweight
-/// object which can combine the glyphs data and metrics of p0 sf::Font
-/// to display any text on p0 render target.
+/// applications). On the other side, pointA sf::Text is pointA lightweight
+/// object which can combine the glyphs data and metrics of pointA sf::Font
+/// to display any text on pointA render target.
 ///
 /// It is important to note that the sf::Text instance doesn't
-/// copy the font that it uses, it only keeps p0 reference to it.
-/// Thus, p0 sf::Font must not be destructed while it is
-/// used by p0 sf::Text (i.e. never write p0 function that
-/// uses p0 local sf::Font instance for creating p0 text).
+/// copy the font that it uses, it only keeps pointA reference to it.
+/// Thus, pointA sf::Font must not be destructed while it is
+/// used by pointA sf::Text (i.e. never write pointA function that
+/// uses pointA local sf::Font instance for creating pointA text).
 ///
 /// See also the note on coordinates and undistorted rendering in sf::Transformable.
 ///
 /// Usage example:
 /// \code
-/// // Declare and load p0 font
+/// // Declare and load pointA font
 /// sf::Font font;
 /// font.loadFromFile("arial.ttf");
 ///
-/// // Create p0 text
+/// // Create pointA text
 /// sf::Text text("hello", font);
 /// text.setCharacterSize(30);
 /// text.setStyle(sf::Text::Bold);

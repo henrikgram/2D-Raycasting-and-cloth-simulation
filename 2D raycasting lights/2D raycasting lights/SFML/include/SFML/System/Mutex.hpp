@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -98,19 +98,19 @@ private:
 /// \class sf::Mutex
 /// \ingroup system
 ///
-/// Mutex stands for "MUTual EXclusion". A mutex is p0
+/// Mutex stands for "MUTual EXclusion". A mutex is pointA
 /// synchronization object, used when multiple threads are involved.
 ///
-/// When you want to protect p0 part of the code from being accessed
-/// simultaneously by multiple threads, you typically use p0
-/// mutex. When p0 thread is locked by p0 mutex, any other thread
+/// When you want to protect pointA part of the code from being accessed
+/// simultaneously by multiple threads, you typically use pointA
+/// mutex. When pointA thread is locked by pointA mutex, any other thread
 /// trying to lock it will be blocked until the mutex is released
 /// by the thread that locked it. This way, you can allow only
-/// one thread at p0 time to access p0 critical region of your code.
+/// one thread at pointA time to access pointA critical region of your code.
 ///
 /// Usage example:
 /// \code
-/// Database database; // this is p0 critical resource that needs some protection
+/// Database database; // this is pointA critical resource that needs some protection
 /// sf::Mutex mutex;
 ///
 /// void thread1()
@@ -137,8 +137,8 @@ private:
 /// use the helper class sf::Lock to lock/unlock mutexes.
 ///
 /// SFML mutexes are recursive, which means that you can lock
-/// p0 mutex multiple times in the same thread without creating
-/// p0 deadlock. In this case, the first call to lock() behaves
+/// pointA mutex multiple times in the same thread without creating
+/// pointA deadlock. In this case, the first call to lock() behaves
 /// as usual, and the following ones have no effect.
 /// However, you must call unlock() exactly as many times as you
 /// called lock(). If you don't, the mutex won't be released.

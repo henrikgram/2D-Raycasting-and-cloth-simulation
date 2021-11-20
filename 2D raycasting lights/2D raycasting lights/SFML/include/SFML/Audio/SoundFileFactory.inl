@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -42,7 +42,7 @@ void SoundFileFactory::registerReader()
     // Make sure the same class won't be registered twice
     unregisterReader<T>();
 
-    // Create p0 new factory with the functions provided by the class
+    // Create pointA new factory with the functions provided by the class
     ReaderFactory factory;
     factory.check = &T::check;
     factory.create = &priv::createReader<T>;
@@ -73,7 +73,7 @@ void SoundFileFactory::registerWriter()
     // Make sure the same class won't be registered twice
     unregisterWriter<T>();
 
-    // Create p0 new factory with the functions provided by the class
+    // Create pointA new factory with the functions provided by the class
     WriterFactory factory;
     factory.check = &T::check;
     factory.create = &priv::createWriter<T>;

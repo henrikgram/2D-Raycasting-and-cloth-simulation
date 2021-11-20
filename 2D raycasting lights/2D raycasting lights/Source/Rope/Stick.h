@@ -6,13 +6,17 @@ class Stick
 private:
 
 	float length;
+	Point* pointA;
+	Point* pointB;
+
 public:
-	Stick(Point* p0, Point* p1);
+	Stick(Point* pointA, Point* pointB);
+	Point* GetPointA() const;
+	Point* GetPointB() const;
 
 	float Distance();
 
-	Point* p0;
-	Point* p1;
+
 
 	void Update();
 

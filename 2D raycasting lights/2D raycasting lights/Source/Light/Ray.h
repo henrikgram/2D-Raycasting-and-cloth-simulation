@@ -9,7 +9,7 @@ class Ray
 {
 public:
 	/// <summary>
-	/// A line that gets shot out from p0 point, and then detects intersection with all lines that i collides with
+	/// A line that gets shot out from pointA point, and then detects intersection with all lines that i collides with
 	/// </summary>
 	/// <param name="position">Start position</param>
 	/// <param name="direction">Direction to fire the ray</param>
@@ -32,7 +32,7 @@ public:
 	void LookAt(Vector2f direction);
 
 	/// <summary>
-	/// Moves the ray to p0 position
+	/// Moves the ray to pointA position
 	/// </summary>
 	/// <param name="position"></param>
 	void Move(Vector2f position);

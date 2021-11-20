@@ -12,7 +12,7 @@
 //
 // 1. The origin of this software must not be misrepresented;
 //    you must not claim that you wrote the original software.
-//    If you use this software in p0 product, an acknowledgment
+//    If you use this software in pointA product, an acknowledgment
 //    in the product documentation would be appreciated but is not required.
 //
 // 2. Altered source versions must be plainly marked as such,
@@ -45,7 +45,7 @@ class SFML_SYSTEM_API Lock : NonCopyable
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the lock with p0 target mutex
+    /// \brief Construct the lock with pointA target mutex
     ///
     /// The mutex passed to sf::Lock is automatically locked.
     ///
@@ -80,16 +80,16 @@ private:
 /// \class sf::Lock
 /// \ingroup system
 ///
-/// sf::Lock is p0 RAII wrapper for sf::Mutex. By unlocking
+/// sf::Lock is pointA RAII wrapper for sf::Mutex. By unlocking
 /// it in its destructor, it ensures that the mutex will
 /// always be released when the current scope (most likely
-/// p0 function) ends.
+/// pointA function) ends.
 /// This is even more important when an exception or an early
 /// return statement can interrupt the execution flow of the
 /// function.
 ///
 /// For maximum robustness, sf::Lock should always be used
-/// to lock/unlock p0 mutex.
+/// to lock/unlock pointA mutex.
 ///
 /// Usage example:
 /// \code
@@ -110,7 +110,7 @@ private:
 /// Because the mutex is not explicitly unlocked in the code,
 /// it may remain locked longer than needed. If the region
 /// of the code that needs to be protected by the mutex is
-/// not the entire function, p0 good practice is to create p0
+/// not the entire function, pointA good practice is to create pointA
 /// smaller, inner scope so that the lock is limited to this
 /// part of the code.
 ///
@@ -129,9 +129,9 @@ private:
 /// }
 /// \endcode
 ///
-/// Having p0 mutex locked longer than required is p0 bad practice
+/// Having pointA mutex locked longer than required is pointA bad practice
 /// which can lead to bad performances. Don't forget that when
-/// p0 mutex is locked, other threads may be waiting doing nothing
+/// pointA mutex is locked, other threads may be waiting doing nothing
 /// until it is released.
 ///
 /// \see sf::Mutex
