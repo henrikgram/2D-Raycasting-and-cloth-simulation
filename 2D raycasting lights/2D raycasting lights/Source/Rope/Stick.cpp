@@ -3,7 +3,7 @@
 
 Stick::Stick(Point* pointA, Point* pointB)
 {
-
+	maxStretch = 3.2;
 	this->pointA = pointA;
 	this->pointB = pointB;
 
@@ -42,7 +42,10 @@ void Stick::Update()
 	//Get the distance of the points.
 	float distance = Distance();//sqrt(dstX * dstX + dsty * dsty);
 
-
+	if (distance > length * maxStretch)
+	{
+		isBroken = true;
+	}
 	//Get the difference relative to what the distance should be(stick length)
 	//positive if too close
 	//negative if too far away
@@ -57,19 +60,14 @@ void Stick::Update()
 	float offsetX = dstX * percent;
 	float offsetY = dsty * percent;
 
-	if (!pointA->isLocked)
+	if (!pointA->IsLocked())
 	{
 		pointA->Move(-offsetX, -offsetY);
-		/*pointA->posX -= offsetX;
-		pointA->posY -= offsetY;*/
 	}
 
-	if (!pointB->isLocked)
+	if (!pointB->IsLocked())
 	{
 		pointB->Move(offsetX, offsetY);
-	/*	pointB->posX += offsetX;
-		pointB->posY += offsetY;*/
-
 	}
 
 

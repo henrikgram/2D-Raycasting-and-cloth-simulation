@@ -14,6 +14,8 @@ Point::Point(float posX, float posY, bool isLocked)
 	 bounce = 0.9f;
 	 gravity = 0.5f;
 	 friction = 0.999f;
+
+	 isSelected = false;
 }
 
 Point::~Point()
@@ -83,7 +85,46 @@ void Point::Move(float moveX, float moveY)
 	posY += moveY;
 }
 
+void Point::MoveTo(float dstX, float dstY)
+{
+	posX = dstX;
+	posY = dstY;
+
+	prevX = posX;
+	prevY = posY;
+}
+
 sf::Vector2f Point::GetPosition()
 {
 	return sf::Vector2f(posX, posY);
+}
+
+void Point::Lock()
+{
+	isLocked = true;
+}
+
+void Point::UnLock()
+{
+	isLocked = false;
+}
+
+bool Point::IsLocked()
+{
+	return isLocked;
+}
+
+void Point::Select()
+{
+	isSelected = true;
+}
+
+bool Point::IsSelected()
+{
+	return isSelected;
+}
+
+void Point::DeSelect()
+{
+	isSelected = false;
 }

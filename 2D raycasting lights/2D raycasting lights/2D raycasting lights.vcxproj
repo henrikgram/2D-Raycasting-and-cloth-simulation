@@ -145,6 +145,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\ClothsimTest.cpp" />
+    <ClCompile Include="Source\NewLight\Ray2.cpp" />
     <ClCompile Include="Source\RopeSimcpp.cpp" />
     <ClCompile Include="Source\RopesimTest.cpp" />
     <ClCompile Include="Source\Rope\Point.cpp" />
@@ -158,6 +160,7 @@
     <ClCompile Include="Source\Rope\Stick.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\NewLight\Ray2.h" />
     <ClInclude Include="Source\Rope\Point.h" />
     <ClInclude Include="Source\Light\DirectionalLight.h" />
     <ClInclude Include="Source\Light\LightSource.h" />

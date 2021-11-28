@@ -6,6 +6,8 @@ class Stick
 private:
 
 	float length;
+	float maxStretch;
+
 	Point* pointA;
 	Point* pointB;
 
@@ -16,7 +18,7 @@ public:
 
 	float Distance();
 
-
+	bool isBroken;
 
 	void Update();
 

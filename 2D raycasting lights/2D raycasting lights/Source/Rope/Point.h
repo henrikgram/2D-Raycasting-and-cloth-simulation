@@ -14,7 +14,8 @@ private:
 	float gravity;
 	float friction;
 
-	
+	bool isLocked;
+	bool isSelected;
 
 public:
 	Point(float posX, float posY, bool isLocked = false);
@@ -24,13 +25,23 @@ public:
 	void Constrain(float size);
 
 	void Move(float moveX, float moveY);
+	void MoveTo(float dstX, float dstY);
 
 	sf::Vector2f GetPosition();
+
 	//TODO: make this get or set
+	void Lock();
+	void UnLock();
+
+	void Select();
+	void DeSelect();
+
+	bool IsLocked();
+	bool IsSelected();
 
 
-	bool isLocked;
-	bool isSelected = false;
+	
+	
 
 };
 
