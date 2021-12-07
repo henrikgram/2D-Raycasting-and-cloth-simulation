@@ -2,13 +2,13 @@
 #include "SFML/Graphics.hpp"
 class Ray2
 {
-public:
-	Ray2(sf::Vector2f position, float angle);
+private:
 	sf::Vector2f position;
 	float angle;
-	sf::VertexArray ray;
 
-	bool Cast(sf::VertexArray* wall);
+public:
+	Ray2(sf::Vector2f position, float angle);
+	bool Cast(sf::Vector2f LineP1, sf::Vector2f lineP2);
 	sf::Vector2f intersection;
 };
 

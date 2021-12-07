@@ -8,20 +8,20 @@ Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
 	this->walls = &walls;
 
 
-		sf::Vertex pointA;
-		pointA.position = sf::Vector2f(position.x, position.y);
-		pointA.color = sf::Color::Yellow;
+	//	sf::Vertex pointA;
+	//	pointA.position = sf::Vector2f(position.x, position.y);
+	//	pointA.color = sf::Color::Yellow;
 
-		sf::Vertex pointB;
+	//	sf::Vertex pointB;
 
-		double angle = atan2(pointA.position.x - pointB.position.x, pointA.position.y - pointB.position.y);
+	//	double angle = atan2(pointA.position.x - pointB.position.x, pointA.position.y - pointB.position.y);
 
-		pointB.position.x = cos(angle) + walls[0].position.x;
-		pointB.position.y = sin(angle) + walls[0].position.y;
+	//	pointB.position.x = cos(angle) + walls[0].position.x;
+	//	pointB.position.y = sin(angle) + walls[0].position.y;
 
-		rays2.push_back(Ray2(position, angle));
+	//	rays2.push_back(Ray2(position, angle));
 
-	rays.reserve(walls.size() * 4);
+	//rays.reserve(walls.size() * 4);
 
 
 	for (int i = 0; i < walls.size(); i += 2)
@@ -34,10 +34,11 @@ Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
 
 		sf::Vertex pointB;
 
-		double angle = atan2(pointA.position.x - pointB.position.x, pointA.position.y - pointB.position.y);
+		double angle = atan2(pointA.position.x - walls[i].position.x, pointA.position.y -walls[i].position.y);
+		double degrees = angle * 180 / 3.14;
 
-		pointB.position.x = cos(angle) + walls[i].position.x;
-		pointB.position.y = sin(angle) + walls[i].position.y;
+		pointB.position.x = cos(angle) *40 + position.x;
+		pointB.position.y = sin(angle) *40+ position.y;
 
 		//sf::Vertex pointAA;
 		//pointAA.position = sf::Vector2f(position.x, position.y);
@@ -53,9 +54,12 @@ Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
 		c.color = sf::Color::Yellow;
 
 		sf::Vertex d;
-		d.position = walls[i + 1].position;//sf::Vector2f(walls[i].position.x, walls[i].position.y);
-		d.color = sf::Color::Yellow;
 
+		 angle = atan2(c.position.x - walls[i + 1].position.x, c.position.y - walls[i + 1].position.y);
+		 degrees = angle * 180 / 3.14;
+
+		d.position.x = cos(angle) + position.x;
+		d.position.y = sin(angle) + position.y;
 
 		rays.push_back(pointA);
 		rays.push_back(pointB);
