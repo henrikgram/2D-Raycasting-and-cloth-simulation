@@ -50,3 +50,8 @@ bool Ray2::Cast(sf::Vector2f LineP1, sf::Vector2f lineP2)
 	}
 }
 
+void Ray2::Move(sf::Vector2f destination)
+{
+	position = destination;
+}
+

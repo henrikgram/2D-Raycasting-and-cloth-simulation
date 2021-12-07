@@ -141,12 +141,12 @@ int main()
 	sf::Vertex e;
 	e.position = b.position;
 
-	double angle = atan2(a.position.y - 400, a.position.x - 400);
-	double dx = cos(angle);
-	double dy = sin(angle);
+	float angle = atan2(a.position.y - 400, a.position.x - 400);
+	float dx = cos(angle);
+	float dy = sin(angle);
 
-	double rayx = 400 + dx;
-	double rayy = 400 + dy;
+	float rayx = 400 + dx;
+	float rayy = 400 + dy;
 
 	sf::Vertex f;
 	f.position = c.position;
@@ -160,7 +160,7 @@ int main()
 	Intersect(a.position,b.position,c.position,sf::Vector2f(400+dx,400+dy));
 
 	 angle = atan2(a.position.y - 400, a.position.x - 400);
-	 double newangle = angle - 0.0001;
+	 float newangle = angle - 0.0001;
 	 dx = cos(newangle);
 	 dy = sin(newangle);
 
@@ -174,7 +174,6 @@ int main()
 	 sf::Vertex i;
 	 i.position = sf::Vector2f(400 + dx * 1000, 400 + dy * 1000);
 	 i.color = sf::Color::Magenta;
-
 
 	 Intersect(a.position, b.position, c.position, i.position);
 
@@ -194,7 +193,6 @@ int main()
 	k.position = sf::Vector2f(400 + dx * 1000, 400 + dy * 1000);
 	k.color = sf::Color::Green;
 
-
 	Intersect(a.position, b.position, c.position, sf::Vector2f(400 + dx, 400 + dy));
 
 	//d.position = sf::Vector2f(c.position.x+dx*100, c.position.y + dy*100);
@@ -203,30 +201,39 @@ int main()
 	lines.append(a);
 	lines.append(b);
 
-	lines.append(c);
-	lines.append(d);
+	//lines.append(c);
+	//lines.append(d);
 
-	lines.append(c);
-	lines.append(e);
+	//lines.append(c);
+	//lines.append(e);
 
-	lines.append(f);
-	lines.append(g);
+	//lines.append(f);
+	//lines.append(g);
 
-	lines.append(h);
-	lines.append(i);
+	//lines.append(h);
+	//lines.append(i);
 
-	lines.append(j);
-	lines.append(k);
+	//lines.append(j);
+	//lines.append(k);
 
-
-
-	//Light light(sf::Vector2f(400, 400), walls);
+	Light light(sf::Vector2f(400, 400), walls);
 
 	//sf::VertexArray walls2 = sf::VertexArray(sf::LinesStrip,2);
 	//walls2[0] = pointA;
 	//walls2[1] = pointB;
 	//light.rays2[0].Cast(&walls2);
 
+	for (int i = 0; i < light.rays.size(); i++)
+	{
+		lines.append(light.rays[i].position);
+
+		dx = cos(light.rays[i].angle);
+		dy = sin(light.rays[i].angle);
+
+		lines.append(sf::Vector2f(light.rays[i].position.x + dx *1000, light.rays[i].position.y + dy * 1000));
+
+		light.rays[i].Cast(a.position, b.position);
+	}
 
 	while (window.isOpen())
 	{
@@ -242,6 +249,7 @@ int main()
 		sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
 		sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 
+		
 		//light.UpdatePosition(worldPos);
 
 		//window.draw(light.rays.data(), light.rays.size(), sf::Lines);

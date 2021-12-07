@@ -7,11 +7,9 @@ class Light
 private:
 	std::vector<sf::Vertex>* walls;
 	sf::Vector2f position;
-	//std::vector<sf::Vertex> rays;
 public:
 	Light(sf::Vector2f position, std::vector<sf::Vertex>& walls);
-	std::vector<sf::Vertex> rays;
-	std::vector<Ray2> rays2;
+	std::vector<Ray2> rays;
 
 	void UpdatePosition(sf::Vector2f position);
 	
