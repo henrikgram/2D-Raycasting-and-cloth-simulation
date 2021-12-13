@@ -13,6 +13,7 @@ private:
 
 public:
 	Stick(Point* pointA, Point* pointB);
+	Stick(Point* pointA, Point* pointB, float distance);
 	Point* GetPointA() const;
 	Point* GetPointB() const;
 

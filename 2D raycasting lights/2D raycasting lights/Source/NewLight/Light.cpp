@@ -1,29 +1,76 @@
 #include "Light.h"
 
-
-
-Light::Light(sf::Vector2f position, std::vector<sf::Vertex>& walls)
+Light::Light(sf::Vector2f position, sf::VertexArray& walls)
 {
-	//TODO: this doesnt seem right
-	this->walls = &walls;
-	rays.reserve(walls.size() * 3);
-	for (int i = 0; i < walls.size(); i ++)
-	{
-		float angle = atan2(walls[i].position.y - position.y, walls[i].position.x - position.x);
+	this->position = position;
+	rays.reserve(walls.getVertexCount() * 3);
 
-		rays.push_back(Ray2(position, angle + 0.0001f));
-		rays.push_back(Ray2(position, angle));
-		rays.push_back(Ray2(position, angle + 0.0001f));
-	}
+	angleOffset = 0.0001f;
 
 }
 
-void Light::UpdatePosition(sf::Vector2f position)
+Light::Light(sf::Vector2f position,sf::VertexArray& walls, sf::Vector2f offset)
 {
 	this->position = position;
-	for (int i = 0; i < rays.size(); i += 2)
+	rays.reserve(walls.getVertexCount() * 3);
+
+	angleOffset = 0.0001f;
+
+	this->offSetPosition = offset;
+}
+
+void Light::UpdatePosition(sf::Vector2f position, sf::VertexArray& walls)
+{
+	this->position = position+offSetPosition;
+	rays.clear();
+
+}
+
+void Light::CastRays(sf::VertexArray& walls)
+{
+	instersections.clear();
+
+	//TODO: this might not be optimal
+	CreateRays(walls);
+
+
+	for (int i = 0; i < rays.size(); i++)
 	{
-		rays[i].Move(position);
+		sf::Vector2f closestIntersection(9999,9999);
+
+		for (int j = 0; j < walls.getVertexCount(); j+=2)
+		{
+			if (rays[i].Cast(walls[j].position, walls[j+1].position))
+			{
+				float dstIntersection = Distance(position, rays[i].intersection);
+				rays[i].hasIntersected = true;
+
+				if (dstIntersection < Distance(position, closestIntersection))
+				{
+					closestIntersection = rays[i].intersection;
+				}
+			}
+		}
+
+		if (rays[i].hasIntersected)
+		{
+			rays[i].intersection = closestIntersection;
+			instersections.push_back(rays[i]);
+		}
+	}
+}
+
+void Light::CreateRays(sf::VertexArray& walls)
+{
+	rays.reserve(walls.getVertexCount() * 3);
+
+	for (int i = 0; i < walls.getVertexCount(); i++)
+	{
+		float angle = atan2(walls[i].position.y - position.y, walls[i].position.x - position.x);
+
+		rays.push_back(Ray(position, angle - angleOffset));
+		rays.push_back(Ray(position, angle));
+		rays.push_back(Ray(position, angle + angleOffset));
 	}
 }
 
@@ -40,3 +87,5 @@ double Light::Distance(sf::Vector2f pointA, sf::Vector2f pointB)
 
 	return (float)distance;
 }
+
+

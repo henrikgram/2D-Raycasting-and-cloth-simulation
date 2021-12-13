@@ -3,13 +3,33 @@
 #include "NewLight/Light.h"
 #include "Rope/Point.h"
 
+
+#include <chrono>
+
+#include <iostream>
+
+
 #include <random>
 #include <time.h>
+#include "Rope/Stick.h"
 
 
-int size = 800-10;
-sf::RenderWindow window(sf::VideoMode(800, 800), "SFML window");
-std::vector<sf::Vertex> walls;
+int size = 800 - 10;
+sf::RenderWindow window(sf::VideoMode(800, 1200), "SFML window");
+sf::VertexArray walls(sf::Lines);
+sf::VertexArray rays(sf::Lines);
+sf::VertexArray lines(sf::Lines);
+
+sf::VertexArray lightshape(sf::Triangles);
+std::vector<Point*> points;
+std::vector<Stick*> sticks;
+std::vector<Light> lights;
+
+sf::VertexArray raysNonInstersect(sf::Lines);
+
+bool drawCone = true;
+bool drawRays;
+int FuzzyResolution = 10;
 
 void GenerateRandomWalls(int amount)
 {
@@ -25,215 +45,371 @@ void GenerateRandomWalls(int amount)
 		pointB.position = sf::Vector2f(rand() % 800, rand() % 800);
 		pointB.color = sf::Color::Blue;
 
-		walls.push_back(pointA);
-		walls.push_back(pointB);
+		walls.append(pointA);
+		walls.append(pointB);
 	}
 }
 
-//bool Intersect(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
-//{
-//	//Uses the folowing formula from wikipedia.
-//	//https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
-//
-//	//All values are saved as x1x2 etc.. to make it easier to follow the formula.
-//	//double x1 = p1.x;
-//	//double y1 = p1.y;
-//
-//	//double x2 = p2.x;
-//	//double y2 = p2.y;
-//
-//	//double x3 = p3.x;
-//	//double y3 = p3.y;
-//
-//	//double x4 = p4.x;
-//	//double y4 = p4.y;
-//
-//	double denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-//
-//	//If the deniminator is 0, it meaans that the lines are parallel and will never collide. 
-//	if (denominator == 0)
-//	{
-//		return false;
-//	}
-//
-//	double t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denominator;
-//	double u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / denominator;
-//
-//	//if there is intersection point return true
-//	//"The intersection point falls within the first line segment if 0.0 ≤ t ≤ 1.0,"
-//	//The reason u is only check for > 0 is that they ray is thought of an endless line. 
-//	//and it only needs to check if it intersects with t eventually, and not only between the to given points. 
-//	if (t > 0 && t < 1 && u > 0)
-//	{
-//		return true;
-//	}
-//	else
-//	{
-//		return false;
-//	}
-//}
-
-bool Intersect(sf::Vector2f p1, sf::Vector2f p2, sf::Vector2f p3, sf::Vector2f p4)
+void SetupBounds(int offset)
 {
-	//Uses the folowing formula from wikipedia.
-	//https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
 
-	//All values are saved as x1x2 etc.. to make it easier to follow the formula.
-	float x1 = p1.x;
-	float y1 = p1.y;
+	sf::Vertex c;
+	sf::Vertex d;
 
-	float x2 = p2.x;
-	float y2 = p2.y;
+	sf::Vertex e;
+	sf::Vertex f;
 
-	float x3 = p3.x;
-	float y3 = p3.y;
+	sf::Vertex i;
+	sf::Vertex j;
 
-	float x4 = p4.x;
-	float y4 = p4.y;
+	sf::Vertex k;
+	sf::Vertex l;
 
-	float denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+	c.position = sf::Vector2f(0 + offset, 0 + offset);
+	d.position = sf::Vector2f(800 - offset, 0 + offset);
 
-	//If the deniminator is 0, it meaans that the lines are parallel and will never collide. 
-	if (denominator == 0)
-	{
-		return false;
-	}
+	e.position = sf::Vector2f(800 - offset, 0 + offset);
+	f.position = sf::Vector2f(800 - offset, 800 - offset);
 
-	float t =  ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denominator;
-	float u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / denominator;
+	i.position = sf::Vector2f(800 - offset, 800 - offset);
+	j.position = sf::Vector2f(0 + offset, 800 - offset);
 
-	//if there is intersection point return true
-	//"The intersection point falls within the first line segment if 0.0 ≤ t ≤ 1.0,"
-	//The reason u is only check for > 0 is that they ray is thought of an endless line. 
-	//and it only needs to check if it intersects with t eventually, and not only between the to given points. 
-	if (t > 0 && t < 1 && u > 0 )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	k.position = sf::Vector2f(0 + offset, 800 - offset);
+	l.position = sf::Vector2f(0 + offset, 0 + offset);
+
+
+	walls.append(c);
+	walls.append(d);
+
+	walls.append(e);
+	walls.append(f);
+
+	walls.append(i);
+	walls.append(j);
+
+	walls.append(k);
+	walls.append(l);
+
 }
 
+void SetupRope()
+{
+
+	for (int i = 0; i < 20; i++)
+	{
+		points.push_back(new Point(0 + 40 * i, 0));
+	
+	}
+
+	points[0]->Lock();
+	points[points.size()-1]->Lock();
+
+	for (int i = 0; i < points.size()-1; i++)
+	{
+		sticks.push_back(new Stick(points[i], points[i + 1]));
+	}
+
+	int size = 50;
+	int startX = 400;
+
+	Point* p4 = new Point(startX, 0);
+
+	Point* p5 = new Point(startX + size, -size);
+	Point* p6 = new Point(startX + size * 2, -size * 2);
+	Point* p7 = new Point(startX + size * 3, -size * 3);
+
+	Point* p0 = new Point(startX + size * 4, -size * 4);
+	Point* p1 = new Point(startX + size * 4, -size * 5);
+	Point* p2 = new Point(startX + size * 5, -size * 5);
+	Point* p3 = new Point(startX + size * 5, -size * 4);
+
+	//Point* specialBoi = new Point(500, 400);
+	sticks.push_back(new Stick(p4, points[9]));
+
+	points.push_back(p0);
+	points.push_back(p1);
+	points.push_back(p2);
+	points.push_back(p3);
+
+	points.push_back(p4);
+	points.push_back(p5);
+	points.push_back(p6);
+	points.push_back(p7);
+
+	int distance = 100;
+
+	Stick* stick0 = new Stick(p0, p1);
+	Stick* stick1 = new Stick(p1, p2);
+	Stick* stick2 = new Stick(p2, p3);
+	Stick* stick3 = new Stick(p3, p0);
+	Stick* stick4 = new Stick(p0, p2);
+
+	Stick* stick5 = new Stick(p4, p5);
+	Stick* stick6 = new Stick(p5, p6);
+	Stick* stick7 = new Stick(p6, p7);
+	Stick* stick8 = new Stick(p7, p0);
+
+	sticks.push_back(stick0);
+	sticks.push_back(stick1);
+	sticks.push_back(stick2);
+	sticks.push_back(stick3);
+	sticks.push_back(stick4);
+
+	sticks.push_back(stick5);
+	sticks.push_back(stick6);
+	sticks.push_back(stick7);
+	sticks.push_back(stick8);
+
+	lines.resize(sticks.size() * 2);
+
+}
+
+void DrawLight(Light& light)
+{
+	std::sort(light.instersections.begin(), light.instersections.end());
+	float alpha = 50;
+
+	for (int i = 0; i < light.instersections.size() - 1; i++)
+	{
+		sf::Vertex a = light.position;
+		sf::Vertex b = light.instersections[i].intersection;
+
+		a.color = sf::Color::Yellow;
+		b.color = sf::Color::Yellow;
+
+		rays.append(a);
+		rays.append(b);
+
+		sf::Vertex c = light.position;
+		c.color = sf::Color(255, 255, 255, alpha);
+
+		sf::Vertex d = light.instersections[i].intersection;
+		d.color = sf::Color(255, 255, 255, alpha);
+
+		sf::Vertex e = light.instersections[i + 1].intersection;
+		e.color = sf::Color(255, 255, 255, alpha);
+
+		lightshape.append(c);
+		lightshape.append(d);
+		lightshape.append(e);
+
+	}
+
+	sf::Vertex c = light.position;
+	c.color = sf::Color(255, 255, 255, alpha);
+
+	sf::Vertex d = light.instersections[light.instersections.size() - 1].intersection;
+	d.color = sf::Color(255, 255, 255, alpha);
+
+	sf::Vertex e = light.instersections[0].intersection;
+	e.color = sf::Color(255, 255, 255, alpha);
+
+	lightshape.append(c);
+	lightshape.append(d);
+	lightshape.append(e);
+}
+
+void DrawRope()
+{
+
+	// i hate this
+	/*for (int i = 0; i < points.size(); i++)
+	{
+		Point* p = points[i];
+		sf::CircleShape point;
+		point.setFillColor(sf::Color::Black);
+		point.setPosition(p->GetPosition().x, p->GetPosition().y);
+		point.setRadius(2);
+
+		if (p->IsLocked())
+		{
+			point.setFillColor(sf::Color::Red);
+		}
+		window.draw(point);
+	}*/
+
+	lines.clear();
+
+	for (int i = 0; i < sticks.size(); i++)
+	{
+		sf::Vertex a;
+		sf::Vertex b;
+		a.color = sf::Color::Black;
+		b.color = sf::Color::Black;
+		a.position = sf::Vector2f(sticks[i]->GetPointA()->GetPosition().x + 2, sticks[i]->GetPointA()->GetPosition().y + 2);
+		b.position = sf::Vector2f(sticks[i]->GetPointB()->GetPosition().x + 2, sticks[i]->GetPointB()->GetPosition().y + 2);
+
+		lines.append(a);
+		lines.append(b);
+
+	}
+
+	window.draw(lines);
+}
+
+void UpdateLights(sf::Vector2f worldPos)
+{
+	for (int i = 0; i < lights.size(); i++)
+	{
+		lights[i].UpdatePosition(worldPos, walls);
+	}
+
+	for (int i = 0; i < lights.size(); i++)
+	{
+		lights[i].CastRays(walls);
+	}
+
+
+	rays.clear();
+	raysNonInstersect.clear();
+
+
+	lightshape.clear();
+
+	for (int i = 0; i < lights.size(); i++)
+	{
+		DrawLight(lights[i]);
+	}
+
+
+	if (drawCone)
+	{
+		window.draw(lightshape);
+	}
+
+}
+
+void UpdateRope(sf::Vector2f pixelPos)
+{
+
+
+
+	for (int i = 0; i < points.size(); i++)
+	{
+		if (points[i]->IsSelected())
+		{
+			points[i]->MoveTo(pixelPos.x, pixelPos.y);
+			/*points[i]->GetPosition().x = pixelPos.x;
+			points[i]->GetPosition().y = pixelPos.y;*/
+
+		}
+		else
+		{
+			points[i]->Update();
+		}
+
+	}
+
+
+	//Stabilizing the simulation
+	for (int j = 0; j < 5; j++)
+	{
+		for (int i = 0; i < points.size(); i++)
+		{
+			points[i]->Constrain(750);
+		}
+
+		for (int i = 0; i < sticks.size(); i++)
+		{
+			if (sticks[i]->isBroken)
+			{
+				sticks.erase(sticks.begin() + i);
+			}
+			else
+			{
+				sticks[i]->Update();
+			}
+
+		}
+	}
+
+
+}
+
+void SetupBoxes()
+{
+	int   height = 80;
+	int offset = 400;
+	walls.append(sf::Vector2f(114.16627,/*  /*  height -*/ 664.27052 + offset));
+	walls.append(sf::Vector2f(339.50439,/*  /*  height -*/  696.61571 + offset));
+
+	walls.append(sf::Vector2f(339.50439, /*  height -*/0696.61571 + offset));
+	walls.append(sf::Vector2f(353.52064, /*  height -*/0583.40756 + offset));
+
+	walls.append(sf::Vector2f(114.16627, /*  height -*/0664.27052 + offset));
+	walls.append(sf::Vector2f(353.52064, /*  height -*/0583.40756 + offset));
+
+
+
+	walls.append(sf::Vector2f(596.10953, /*  height -*/0547.82786 + offset));
+	walls.append(sf::Vector2f(640.31461, /*  height -*/0548.90603 + offset));
+
+	walls.append(sf::Vector2f(596.10953, /*  height -*/0547.82786 + offset));
+	walls.append(sf::Vector2f(637.08009, /*  height -*/0376.39838 + offset));
+
+	walls.append(sf::Vector2f(640.31461, /*  height -*/0548.90603 + offset));
+	walls.append(sf::Vector2f(668.34711, /*  height -*/0368.85117 + offset));
+
+	walls.append(sf::Vector2f(637.08009, /*  height -*/0376.39838 + offset));
+	walls.append(sf::Vector2f(668.34711, /*  height -*/0368.85117 + offset));
+
+
+	walls.append(sf::Vector2f(25.7561, /*  height -*/0394.72732 + offset));
+	walls.append(sf::Vector2f(112.00993, /*  height -*/0334.34964 + offset));
+	walls.append(sf::Vector2f(112.00993, /*  height -*/0334.34964 + offset));
+	walls.append(sf::Vector2f(279.12672, /*  height -*/0414.13443 + offset));
+	walls.append(sf::Vector2f(279.12672, /*  height -*/0414.13443 + offset));
+	walls.append(sf::Vector2f(159.44953, /*  height -*/0188.79631 + offset));
+	walls.append(sf::Vector2f(159.44953, /*  height -*/0188.79631 + offset));
+	walls.append(sf::Vector2f(25.7561, /*  height -*/0394.72732 + offset));
+
+
+	walls.append(sf::Vector2f(400, /*  height -*/0400 + offset));
+	walls.append(sf::Vector2f(500, /*  height -*/0300 + offset));
+	walls.append(sf::Vector2f(500, /*  height -*/0300 + offset));
+	walls.append(sf::Vector2f(400, /*  height -*/0200 + offset));
+	walls.append(sf::Vector2f(400, /*  height -*/0200 + offset));
+	walls.append(sf::Vector2f(300, /*  height -*/0300 + offset));
+	walls.append(sf::Vector2f(300, /*  height -*/0300 + offset));
+	walls.append(sf::Vector2f(400, /*  height -*/0400 + offset));
+
+	walls.append(sf::Vector2f(628.45471, /*  height -*/0151.06026 + offset));
+	walls.append(sf::Vector2f(672.6598, /*  height -*/049.71201 + offset));
+
+	walls.append(sf::Vector2f(672.6598, /*  height -*/049.71201 + offset));
+	walls.append(sf::Vector2f(500, /*  height -*/0100 + offset));
+
+	walls.append(sf::Vector2f(628.45471, /*  height -*/0151.06026 + offset));
+	walls.append(sf::Vector2f(500, /*  height -*/0100 + offset));
+
+}
 
 int main()
 {
+	float cursorRadius = 20;
+	SetupBounds(-500);
+	SetupRope();
+	SetupBoxes();
 
-	sf::VertexArray lines(sf::Lines, 2);
+	//GenerateRandomWalls(5);
+	//window.setFramerateLimit(60);
+	//Light in the center
+	Light light(sf::Vector2f(400, 400), walls, sf::Vector2f(0, 0));
 
-	GenerateRandomWalls(1);
-	sf::Vertex a = walls[0];
-	/*a.position = sf::Vector2f(693, 724);
-	a.color = sf::Color::Red;*/
+	lights.push_back(light);
 
-	sf::Vertex b = walls[1];
-	//b.position = sf::Vector2f(742, 243);
-	//b.color = sf::Color::Blue;
+	float radius = 10;
 
-	sf::Vertex c;
-	c.position = sf::Vector2f(400, 400);
-	c.color = sf::Color::White;
-
-	sf::Vertex d;
-	d.position = a.position;
-
-	sf::Vertex e;
-	e.position = b.position;
-
-	float angle = atan2(a.position.y - 400, a.position.x - 400);
-	float dx = cos(angle);
-	float dy = sin(angle);
-
-	float rayx = 400 + dx;
-	float rayy = 400 + dy;
-
-	sf::Vertex f;
-	f.position = c.position;
-	f.color = sf::Color::Yellow;
-
-	sf::Vertex g;
-	g.position = sf::Vector2f(400 + dx * 1000, 400 + dy * 1000);
-	g.color = sf::Color::Yellow;
-	
-	//Intersect(a.position, b.position, sf::Vector2f(400, 400), sf::Vector2f(rayx, rayy));
-	Intersect(a.position,b.position,c.position,sf::Vector2f(400+dx,400+dy));
-
-	 angle = atan2(a.position.y - 400, a.position.x - 400);
-	 float newangle = angle - 0.0001;
-	 dx = cos(newangle);
-	 dy = sin(newangle);
-
-	 rayx = 400 + dx;
-	 rayy = 400 + dy;
-
-	 sf::Vertex h;
-	 h.position = c.position;
-	 h.color = sf::Color::Magenta;
-
-	 sf::Vertex i;
-	 i.position = sf::Vector2f(400 + dx * 1000, 400 + dy * 1000);
-	 i.color = sf::Color::Magenta;
-
-	 Intersect(a.position, b.position, c.position, i.position);
-
-	angle = atan2(a.position.y - 400, a.position.x - 400);
-	newangle = angle + 0.0001;
-	dx = cos(newangle);
-	dy = sin(newangle);
-
-	rayx = 400 + dx;
-	rayy = 400 + dy;
-
-	sf::Vertex j;
-	j.position = c.position;
-	j.color = sf::Color::Green;
-
-	sf::Vertex k;
-	k.position = sf::Vector2f(400 + dx * 1000, 400 + dy * 1000);
-	k.color = sf::Color::Green;
-
-	Intersect(a.position, b.position, c.position, sf::Vector2f(400 + dx, 400 + dy));
-
-	//d.position = sf::Vector2f(c.position.x+dx*100, c.position.y + dy*100);
-	//d.color = sf::Color::Yellow;
-
-	lines.append(a);
-	lines.append(b);
-
-	//lines.append(c);
-	//lines.append(d);
-
-	//lines.append(c);
-	//lines.append(e);
-
-	//lines.append(f);
-	//lines.append(g);
-
-	//lines.append(h);
-	//lines.append(i);
-
-	//lines.append(j);
-	//lines.append(k);
-
-	Light light(sf::Vector2f(400, 400), walls);
-
-	//sf::VertexArray walls2 = sf::VertexArray(sf::LinesStrip,2);
-	//walls2[0] = pointA;
-	//walls2[1] = pointB;
-	//light.rays2[0].Cast(&walls2);
-
-	for (int i = 0; i < light.rays.size(); i++)
+	//In a radius of 10, make a circle of lights
+	for (float angle = 0; angle < PI * 2; angle += (PI * 2) / FuzzyResolution)
 	{
-		lines.append(light.rays[i].position);
+		float dx = cos(angle) * radius;
+		float dy = sin(angle) * radius;
+		sf::Vector2f offsetPosition = sf::Vector2f(dx, dy);
 
-		dx = cos(light.rays[i].angle);
-		dy = sin(light.rays[i].angle);
-
-		lines.append(sf::Vector2f(light.rays[i].position.x + dx *1000, light.rays[i].position.y + dy * 1000));
-
-		light.rays[i].Cast(a.position, b.position);
+		lights.push_back(Light(sf::Vector2f(light.position.x + dx, light.position.y + dy), walls, offsetPosition));
 	}
+
 
 	while (window.isOpen())
 	{
@@ -243,29 +419,72 @@ int main()
 		while (window.pollEvent(event))
 		{
 			// Close window: exit
-			if (event.type == sf::Event::Closed)
+			switch (event.type)
+			{
+			case(sf::Event::Closed):
 				window.close();
+				break;
+			case(sf::Event::MouseButtonReleased):
+			{
+				for (int i = 0; i < points.size(); i++)
+				{
+					points[i]->DeSelect();
+
+				}
+				break;
+			}
+
+			default:
+				break;
+			}
 		}
+
 		sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
 		sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 
-		
-		//light.UpdatePosition(worldPos);
 
-		//window.draw(light.rays.data(), light.rays.size(), sf::Lines);
+		sf::CircleShape point;
+		point.setPosition(sf::Vector2f(worldPos.x - cursorRadius, worldPos.y - cursorRadius));
+		point.setRadius(cursorRadius);
+		window.draw(point);
 
-	/*	sf::VertexArray ray = sf::VertexArray(sf::Lines, 2);
-		ray[0].position = light.rays2[0].ray[0].position;
-		ray[1].position = sf::Vector2f(100,200);
-		ray[0].color = sf::Color::Green;
-		ray[1].color = sf::Color::Green;*/
-	
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		{
 
-		window.draw(lines);
+			for (int i = 0; i < points.size(); i++)
+			{
 
-	/*	window.draw(ray);*/
+				if (point.getGlobalBounds().contains(points[i]->GetPosition().x, points[i]->GetPosition().y))
+				{
+					points[i]->Select();
+				}
+			}
+		}
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+		{
+			drawRays = !drawRays;
+			//drawCone = !drawCone;
+		}
+		auto start = std::chrono::high_resolution_clock::now();
+
+		UpdateRope(worldPos);
+		UpdateLights(points[20]->GetPosition());
+
+		DrawRope();
+
+		window.draw(walls);
+
+		if (drawRays)
+		{
+			window.draw(rays);
+		}
 
 		window.display();
+
+		auto stop = std::chrono::high_resolution_clock::now();
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+		std::cout << "Time taken by Update(): " << duration.count() << " microseconds" << std::endl;
 	}
 	return 0;
 }

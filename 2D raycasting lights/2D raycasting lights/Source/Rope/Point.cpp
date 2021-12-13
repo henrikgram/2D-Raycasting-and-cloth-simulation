@@ -55,7 +55,9 @@ void Point::Constrain(float size)
 
 	//When it reaches an edge it set the position inside the simulation.
 	//by setting the prevX to be equal the position + the velocity, that will ensure it the velocity will change next frame to the opposite.
-	if (posX > size)
+
+
+	/*if (posX > size)
 	{
 		posX = size;
 		prevX = posX + velX * bounce;
@@ -66,6 +68,7 @@ void Point::Constrain(float size)
 		prevX = posX + velX * bounce;
 	}
 
+
 	if (posY > size)
 	{
 		posY = size;
@@ -75,7 +78,7 @@ void Point::Constrain(float size)
 	{
 		posY = 0;
 		prevY = posY + velY * bounce;
-	}
+	}*/
 
 }
 

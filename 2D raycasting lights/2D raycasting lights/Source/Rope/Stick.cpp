@@ -10,6 +10,15 @@ Stick::Stick(Point* pointA, Point* pointB)
 	this->length = Distance();
 }
 
+Stick::Stick(Point* pointA, Point* pointB, float distance)
+{
+	maxStretch = 3.2;
+	this->pointA = pointA;
+	this->pointB = pointB;
+
+	this->length = distance;
+}
+
 Point* Stick::GetPointA() const
 {
 	return pointA;

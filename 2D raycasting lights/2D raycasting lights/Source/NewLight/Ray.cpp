@@ -1,12 +1,14 @@
-﻿#include "Ray2.h"
+﻿#include "Ray.h"
 
-Ray2::Ray2(sf::Vector2f position, float angle)
+
+Ray::Ray(sf::Vector2f position, float angle)
 {
 	this->position = position;
 	this->angle = angle;
+	hasIntersected = false;
 }
 
-bool Ray2::Cast(sf::Vector2f LineP1, sf::Vector2f lineP2)
+bool Ray::Cast(sf::Vector2f LineP1, sf::Vector2f lineP2)
 {
 	//Uses the folowing formula from wikipedia.
 	//https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
@@ -42,16 +44,26 @@ bool Ray2::Cast(sf::Vector2f LineP1, sf::Vector2f lineP2)
 	//and it only needs to check if it intersects with t eventually, and not only between the to given points. 
 	if (t > 0 && t < 1 && u > 0)
 	{
+		intersection.x = x1 + t * (x2 - x1);
+		intersection.y = y1 + t * (y2 - y1);
+
+	/*	float dx = cos(angle);
+		float dy = sin(angle);
+		intersection = sf::Vector2f(position.x + dx * 400, position.y + dy * 400);*/
+
 		return true;
 	}
 	else
 	{
 		return false;
 	}
+
+
 }
 
-void Ray2::Move(sf::Vector2f destination)
+void Ray::Move(sf::Vector2f destination)
 {
 	position = destination;
 }
+
 
