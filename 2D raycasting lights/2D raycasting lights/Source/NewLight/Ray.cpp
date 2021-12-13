@@ -66,4 +66,29 @@ void Ray::Move(sf::Vector2f destination)
 	position = destination;
 }
 
+sf::Vector2f Ray::GetIntersection()
+{
+	return intersection;
+}
+
+void Ray::SetIntersection(sf::Vector2f intersection)
+{
+	this->intersection = intersection;
+}
+
+float Ray::GetAngle()
+{
+	return angle;
+}
+
+bool Ray::GetHasIntersected()
+{
+	return hasIntersected;
+}
+
+void Ray::SetHasIntersected(bool value)
+{
+	hasIntersected = value;
+}
+
 

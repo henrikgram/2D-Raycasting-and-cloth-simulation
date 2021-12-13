@@ -148,9 +148,7 @@
     <ClCompile Include="Source\ClothsimTest.cpp" />
     <ClCompile Include="Source\NewLight\Ray.cpp" />
     <ClCompile Include="Source\RopeSimcpp.cpp" />
-    <ClCompile Include="Source\RopesimTest.cpp" />
     <ClCompile Include="Source\Rope\Point.cpp" />
-    <ClCompile Include="Source\OldRayCast.cpp" />
     <ClCompile Include="Source\NewRayCast.cpp" />
     <ClCompile Include="Source\NewLight\Light.cpp" />
     <ClCompile Include="Source\Rope\Stick.cpp" />

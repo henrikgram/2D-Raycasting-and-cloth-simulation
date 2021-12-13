@@ -29,7 +29,7 @@ sf::VertexArray raysNonInstersect(sf::Lines);
 
 bool drawCone = true;
 bool drawRays;
-int FuzzyResolution = 10;
+int FuzzyResolution = 4;
 
 void GenerateRandomWalls(int amount)
 {
@@ -136,8 +136,6 @@ void SetupRope()
 	points.push_back(p6);
 	points.push_back(p7);
 
-	int distance = 100;
-
 	Stick* stick0 = new Stick(p0, p1);
 	Stick* stick1 = new Stick(p1, p2);
 	Stick* stick2 = new Stick(p2, p3);
@@ -160,19 +158,119 @@ void SetupRope()
 	sticks.push_back(stick7);
 	sticks.push_back(stick8);
 
+	size = 50;
+	startX = 600;
+
+	Point* p12 = new Point(startX, 0);
+	Point* p13 = new Point(startX + size, -size);
+	Point* p14 = new Point(startX + size * 2, -size * 2);
+	Point* p15 = new Point(startX + size * 3, -size * 3);
+
+	sticks.push_back(new Stick(p12, points[12]));
+
+	Point* p8 = new Point(startX + size * 4, -size * 4);
+	Point* p9 = new Point(startX + size * 4, -size * 5);
+	Point* p10 = new Point(startX + size * 5, -size * 5);
+	Point* p11 = new Point(startX + size * 5, -size * 4);
+
+	//Point* specialBoi = new Point(500, 400);
+	
+	points.push_back(p8);
+	points.push_back(p9);
+	points.push_back(p10);
+	points.push_back(p11);
+
+	points.push_back(p12);
+	points.push_back(p13);
+	points.push_back(p14);
+	points.push_back(p15);
+
+	Stick* stick9 = new Stick(p8, p9);
+	Stick* stick10 = new Stick(p9, p10);
+	Stick* stick11 = new Stick(p10, p11);
+	Stick* stick12 = new Stick(p11, p8);
+	Stick* stick13 = new Stick(p8, p10);
+
+	Stick* stick14 = new Stick(p12, p13);
+	Stick* stick15 = new Stick(p13, p14);
+	Stick* stick16 = new Stick(p14, p15);
+	Stick* stick17 = new Stick(p15, p8);
+
+	sticks.push_back(stick9);
+	sticks.push_back(stick10);
+	sticks.push_back(stick11);
+	sticks.push_back(stick12);
+	sticks.push_back(stick13);
+
+	sticks.push_back(stick14);
+	sticks.push_back(stick15);
+	sticks.push_back(stick16);
+	sticks.push_back(stick17);
+
+
+	size = 50;
+	startX = 800;
+
+	Point* p20 = new Point(startX, 0);
+	Point* p21 = new Point(startX + size, -size);
+	Point* p22 = new Point(startX + size * 2, -size * 2);
+	Point* p23 = new Point(startX + size * 3, -size * 3);
+
+	sticks.push_back(new Stick(p20, points[18]));
+
+	Point* p16 = new Point(startX + size * 4, -size * 4);
+	Point* p17 = new Point(startX + size * 4, -size * 5);
+	Point* p18 = new Point(startX + size * 5, -size * 5);
+	Point* p19 = new Point(startX + size * 5, -size * 4);
+
+	//Point* specialBoi = new Point(500, 400);
+	points.push_back(p16);
+	points.push_back(p17);
+	points.push_back(p18);
+	points.push_back(p19);
+
+	points.push_back(p20);
+	points.push_back(p21);
+	points.push_back(p22);
+	points.push_back(p23);
+
+	Stick* stick18= new Stick(p16, p17);
+	Stick* stick19 = new Stick(p17, p18);
+	Stick* stick20 = new Stick(p18, p19);
+	Stick* stick21 = new Stick(p19, p16);
+	Stick* stick22 = new Stick(p16, p18);
+
+	Stick* stick23 = new Stick(p20, p21);
+	Stick* stick24 = new Stick(p21, p22);
+	Stick* stick25 = new Stick(p22, p23);
+	Stick* stick26 = new Stick(p23, p16);
+
+	sticks.push_back(stick18);
+	sticks.push_back(stick19);
+	sticks.push_back(stick20);
+	sticks.push_back(stick21);
+	sticks.push_back(stick22);
+
+	sticks.push_back(stick23);
+	sticks.push_back(stick24);
+	sticks.push_back(stick25);
+	sticks.push_back(stick26);
+
 	lines.resize(sticks.size() * 2);
 
 }
 
 void DrawLight(Light& light)
 {
-	std::sort(light.instersections.begin(), light.instersections.end());
+	
 	float alpha = 50;
 
-	for (int i = 0; i < light.instersections.size() - 1; i++)
+	std::vector<Ray>* intersections = light.GetIntersections();
+
+	for (int i = 0; i < intersections->size() - 1; i++)
 	{
-		sf::Vertex a = light.position;
-		sf::Vertex b = light.instersections[i].intersection;
+		sf::Vertex a = light.GetPosition();
+		sf::Vertex b = intersections->at(i).GetIntersection();
 
 		a.color = sf::Color::Yellow;
 		b.color = sf::Color::Yellow;
@@ -180,13 +278,13 @@ void DrawLight(Light& light)
 		rays.append(a);
 		rays.append(b);
 
-		sf::Vertex c = light.position;
+		sf::Vertex c = light.GetPosition();
 		c.color = sf::Color(255, 255, 255, alpha);
 
-		sf::Vertex d = light.instersections[i].intersection;
+		sf::Vertex d = intersections->at(i).GetIntersection();
 		d.color = sf::Color(255, 255, 255, alpha);
 
-		sf::Vertex e = light.instersections[i + 1].intersection;
+		sf::Vertex e = intersections->at(i+1).GetIntersection();
 		e.color = sf::Color(255, 255, 255, alpha);
 
 		lightshape.append(c);
@@ -195,13 +293,13 @@ void DrawLight(Light& light)
 
 	}
 
-	sf::Vertex c = light.position;
+	sf::Vertex c = light.GetPosition();
 	c.color = sf::Color(255, 255, 255, alpha);
 
-	sf::Vertex d = light.instersections[light.instersections.size() - 1].intersection;
+	sf::Vertex d = intersections->at(intersections->size() - 1).GetIntersection();
 	d.color = sf::Color(255, 255, 255, alpha);
 
-	sf::Vertex e = light.instersections[0].intersection;
+	sf::Vertex e = intersections->begin()->GetIntersection();
 	e.color = sf::Color(255, 255, 255, alpha);
 
 	lightshape.append(c);
@@ -394,20 +492,44 @@ int main()
 	//GenerateRandomWalls(5);
 	//window.setFramerateLimit(60);
 	//Light in the center
-	Light light(sf::Vector2f(400, 400), walls, sf::Vector2f(0, 0));
+	Light light(sf::Vector2f(400, 400), walls, points[20]);
 
 	lights.push_back(light);
-
 	float radius = 10;
 
 	//In a radius of 10, make a circle of lights
+
 	for (float angle = 0; angle < PI * 2; angle += (PI * 2) / FuzzyResolution)
 	{
 		float dx = cos(angle) * radius;
 		float dy = sin(angle) * radius;
 		sf::Vector2f offsetPosition = sf::Vector2f(dx, dy);
 
-		lights.push_back(Light(sf::Vector2f(light.position.x + dx, light.position.y + dy), walls, offsetPosition));
+		lights.push_back(Light(sf::Vector2f(light.GetPosition().x + dx, light.GetPosition().y + dy), walls, offsetPosition, points[20]));
+	}
+
+	Light light2(sf::Vector2f(400, 400), walls, points[29]);
+
+
+	for (float angle = 0; angle < PI * 2; angle += (PI * 2) / FuzzyResolution)
+	{
+		float dx = cos(angle) * radius;
+		float dy = sin(angle) * radius;
+		sf::Vector2f offsetPosition = sf::Vector2f(dx, dy);
+
+		lights.push_back(Light(sf::Vector2f(light2.GetPosition().x + dx, light2.GetPosition().y + dy), walls, offsetPosition, points[29]));
+	}
+
+	Light light3(sf::Vector2f(400, 400), walls, points[36]);
+
+
+	for (float angle = 0; angle < PI * 2; angle += (PI * 2) / FuzzyResolution)
+	{
+		float dx = cos(angle) * radius;
+		float dy = sin(angle) * radius;
+		sf::Vector2f offsetPosition = sf::Vector2f(dx, dy);
+
+		lights.push_back(Light(sf::Vector2f(light3.GetPosition().x + dx, light3.GetPosition().y + dy), walls, offsetPosition, points[36]));
 	}
 
 

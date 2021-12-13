@@ -1,34 +1,48 @@
 #include "Light.h"
 
-Light::Light(sf::Vector2f position, sf::VertexArray& walls)
+Light::Light(sf::Vector2f position, sf::VertexArray& walls, Point* parent)
 {
 	this->position = position;
 	rays.reserve(walls.getVertexCount() * 3);
-
 	angleOffset = 0.0001f;
 
+	instersections = new std::vector<Ray>;
+	this->parent = parent;
+	isChild = true;
 }
 
-Light::Light(sf::Vector2f position,sf::VertexArray& walls, sf::Vector2f offset)
+Light::Light(sf::Vector2f position,sf::VertexArray& walls, sf::Vector2f offset, Point* parent)
 {
+
 	this->position = position;
 	rays.reserve(walls.getVertexCount() * 3);
-
 	angleOffset = 0.0001f;
-
 	this->offSetPosition = offset;
+
+	this->parent = parent;
+	isChild = true;
+	instersections = new std::vector<Ray>;
+
 }
 
 void Light::UpdatePosition(sf::Vector2f position, sf::VertexArray& walls)
 {
-	this->position = position+offSetPosition;
-	rays.clear();
+	if (!isChild)
+	{
+		this->position = position + offSetPosition;
+	}
+	else
+	{
+		this->position = parent->GetPosition() + offSetPosition;;
+	}
+
 
 }
 
 void Light::CastRays(sf::VertexArray& walls)
 {
-	instersections.clear();
+	instersections->clear();
+	rays.clear();
 
 	//TODO: this might not be optimal
 	CreateRays(walls);
@@ -42,20 +56,20 @@ void Light::CastRays(sf::VertexArray& walls)
 		{
 			if (rays[i].Cast(walls[j].position, walls[j+1].position))
 			{
-				float dstIntersection = Distance(position, rays[i].intersection);
-				rays[i].hasIntersected = true;
+				float dstIntersection = Distance(position, rays[i].GetIntersection());
+				rays[i].SetHasIntersected(true);
 
 				if (dstIntersection < Distance(position, closestIntersection))
 				{
-					closestIntersection = rays[i].intersection;
+					closestIntersection = rays[i].GetIntersection();
 				}
 			}
 		}
 
-		if (rays[i].hasIntersected)
+		if (rays[i].GetHasIntersected())
 		{
-			rays[i].intersection = closestIntersection;
-			instersections.push_back(rays[i]);
+			rays[i].SetIntersection(closestIntersection);
+			instersections->push_back(rays[i]);
 		}
 	}
 }
@@ -72,6 +86,19 @@ void Light::CreateRays(sf::VertexArray& walls)
 		rays.push_back(Ray(position, angle));
 		rays.push_back(Ray(position, angle + angleOffset));
 	}
+}
+
+sf::Vector2f Light::GetPosition()
+{
+	return position;
+}
+
+std::vector<Ray>* Light::GetIntersections()
+{
+	std::sort(instersections->begin(), instersections->end());
+
+	return instersections;
+
 }
 
 double Light::Distance(sf::Vector2f pointA, sf::Vector2f pointB)
