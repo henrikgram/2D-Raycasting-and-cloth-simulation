@@ -81,11 +81,11 @@ int Index(int x, int y, int width)
 {
 	return y * width + x;
 }
-int maisn()
+int main()
 {
 	float cursorRadius = 20;
 	float size = 800;
-	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML window");
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Cloth sim");
 
 	std::vector<Point*> points;
 	sf::VertexArray lines(sf::Lines, 2);
@@ -105,7 +105,7 @@ int maisn()
 	{
 		for (int x = 0; x < ClothWidth; x++)
 		{
-			if (y == 0 /*&& x % 9 == 0*/ )
+			if (y == 0 && x % 9 == 0 )
 			{
 				points.push_back(new Point(x * spacing + offset, y * spacing + offset,true));
 			}
@@ -264,67 +264,7 @@ int maisn()
 
 		auto stop = std::chrono::high_resolution_clock::now();
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-		std::cout << "Time taken by Update(): " << duration.count() << " microseconds" << std::endl;
-
-
-
-
-		//// i hate this
-		//for (int i = 0; i < points.size(); i++)
-		//{
-		//	Point* p = points[i];
-		//	sf::CircleShape point;
-		//	point.setRadius(10);
-		//	point.setPosition(p->GetPosition().x - point.getRadius()/2, p->GetPosition().y - point.getRadius() / 2);
-		//	
-
-		//	if (p->IsLocked())
-		//	{
-		//		point.setFillColor(sf::Color::Red);
-		//	}
-		//	window.draw(point);
-		//}
-
-		 //i hate this pt. 2
-
-
-	/*	for (int i = 0; i < sticks.size(); i++)
-		{
-			sf::VertexArray line(sf::LineStrip, 2);
-			line[0].position = sf::Vector2f(sticks[i]->GetPointA()->GetPosition().x + 1, sticks[i]->GetPointA()->GetPosition().y + 1);
-			line[1].position = sf::Vector2f(sticks[i]->GetPointB()->GetPosition().x + 1, sticks[i]->GetPointB()->GetPosition().y + 1);
-
-			window.draw(line);
-		}*/
-
-	
-
-		//for (int y = 0; y < ClothWidth; y++)
-		//{
-		//	for (int x = 0; x < ClothWidth; x++)
-		//	{
-		//		/*if (Index(x + 1, y, ClothWidth) < sticks.size() && x < ClothWidth)
-		//		{
-		//			lines[Index(x, y, ClothWidth)].position     = sf::Vector2f(sticks[Index(x, y, ClothWidth)]->GetPointA()->GetPosition().x + 1, sticks[Index(x, y, ClothWidth)]->GetPointA()->GetPosition().y + 1);
-		//			lines[Index(x + 1, y, ClothWidth)].position = sf::Vector2f(sticks[Index(x + 1, y, ClothWidth)]->GetPointB()->GetPosition().x + 1, sticks[Index(x + 1, y, ClothWidth)]->GetPointB()->GetPosition().y + 1);
-		//		}*/
-
-		//		if (Index(x, y + 1, ClothWidth) < sticks.size())
-		//		{
-		//			//lines.append(sf::Vector2f(sticks[Index(x, y, ClothWidth)]->GetPointA()->GetPosition().x + 1, sticks[Index(x, y, ClothWidth)]->GetPointA()->GetPosition().y + 1));
-		//			lines.append(sf::Vector2f(sticks[Index(x, y, ClothWidth)]    ->GetPointA()->GetPosition().x + 1, 
-		//									  sticks[Index(x, y + 1, ClothWidth)]->GetPointA()->GetPosition().y + 1));
-		//		}
-		//	}
-		//}
-
-		/*lines.resize(sticks.size() * 2);
-
-		for (int i = 0; i < sticks.size(); i++)
-		{
-			lines[2 * i].position = sticks[i]->GetPointA()->GetPosition();
-			lines[2 *i+1].position = sticks[i]->GetPointB()->GetPosition();
-		}*/
+		//std::cout << "Time taken by Update(): " << duration.count() << " microseconds" << std::endl;
 
 		lines.resize(sticks.size() * 2);
 
